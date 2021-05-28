@@ -47,6 +47,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'joshdick/onedark.vim'
+Plug 'codota/tabnine-vim'
 call plug#end()
 
 " Theming and styling
