@@ -117,8 +117,6 @@ source ~/.extended/.rails-aliases
 source ~/.extended/.system-aliases 
 source ~/.extended/.system-envs 
 
-alias gclean="git clean -fd"
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
