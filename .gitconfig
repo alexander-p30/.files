@@ -1,0 +1,8 @@
+[core]
+	editor = vim
+	excludesfile = /home/alexander/.config/git/.gitignore
+[user]
+	name = alexander-p30
+	email = alexanderp30e@gmail.com
+[init]
+	defaultBranch = main

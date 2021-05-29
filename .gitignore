@@ -1,0 +1,15 @@
+# Ignore all files
+*
+.extended/.system*
+
+# Except these
+!.bashrc
+!.extended/*
+!.fzf/
+!.fzf.zsh
+!.gitconfig
+!.gitignore
+!.oh-my-zsh/
+!.p10k.zsh
+!.zshrc
+

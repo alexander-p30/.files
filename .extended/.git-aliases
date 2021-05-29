@@ -1,0 +1,4 @@
+alias gr="git restore"
+alias grs="git resore --staged"
+alias gcln="git clean -fd"
+
