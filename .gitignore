@@ -1,10 +1,11 @@
 # Ignore all files
 *
-.extended/.system*
+.extended/*
 
 # Except these
 !.bashrc
-!.extended/*
+!.extended/git-aliases
+!.extended/rails-aliases
 !.fzf/
 !.fzf.zsh
 !.gitconfig
