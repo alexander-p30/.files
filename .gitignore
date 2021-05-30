@@ -6,6 +6,7 @@
 !.bashrc
 !.extended/git-aliases
 !.extended/rails-aliases
+!.extended/soft-aliases
 !.fzf/
 !.fzf.zsh
 !.gitconfig

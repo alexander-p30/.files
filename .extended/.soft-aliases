@@ -1,0 +1,7 @@
+# Neovim
+alias cfgnvim="nvim ~/.config/nvim/init.vim"
+alias cdnvim="cd ~/.config/nvim"
+
+# Kitty
+alias cfgkitty="nvim ~/.config/kitty/kitty.conf"
+alias cdkitty="cd ~/.config/kitty"

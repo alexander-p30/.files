@@ -114,6 +114,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.extended/.git-aliases 
 source ~/.extended/.rails-aliases 
+source ~/.extended/.soft-aliases 
 source ~/.extended/.system-aliases 
 source ~/.extended/.system-envs 
 
