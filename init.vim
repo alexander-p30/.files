@@ -13,7 +13,7 @@ set exrc
 
 " Text editing
 " Line information
-"" set relativenumber
+set relativenumber
 set number
 
 set nowrap
@@ -47,7 +47,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'joshdick/onedark.vim'
-Plug 'codota/tabnine-vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 " Theming and styling
