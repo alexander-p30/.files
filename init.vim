@@ -48,6 +48,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'joshdick/onedark.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'vim-test/vim-test'
+Plug 'kassio/neoterm'
 call plug#end()
 
 " Theming and styling
@@ -56,19 +58,47 @@ let g:airline_theme='onedark'
 
 "" Keybindings
 let mapleader=" "
+
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
+" Test-related bindings
+nnoremap <leader>tn :TestNearest<cr>
+nnoremap <leader>tf :TestFile<cr>
+nnoremap <leader>ts :TestSuite<cr>
+nnoremap <leader>tl :TestLast<cr>
+nnoremap <leader>tv :TestVisit<cr>
+nnoremap <leader>cc :Tclose!<cr>
+
+" Yanking and pasting clipboard
 vnoremap <C-y> "+y
 nnoremap <C-p> "+p
 vnoremap <C-p> "+p
 
+" Definition navigation
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
 
+" Tab managing
+nnoremap <C-t> :tabnew<cr>
+nnoremap <C-w> :tabclose<cr>
+nnoremap <C-h> :tabprev<cr>
+nnoremap <C-j> :tabfirst<cr>
+nnoremap <C-l> :tabnext<cr>
+nnoremap <C-k> :tablast<cr>
+nnoremap <C-s> :so ~/.config/nvim/init.vim<cr>
+
+" Coc floating window scroll
+nnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+nnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+inoremap <nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+inoremap <nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+
+" Plugin configs
+let test#strategy = "neoterm"
 let g:blamer_delay = 500
 let g:blamer_enabled = 1
 let g:gitgutter_sign_added = '🔵'
@@ -76,16 +106,10 @@ let g:gitgutter_sign_modified = '⚪'
 let g:gitgutter_sign_removed = '🔴'
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
-"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
-"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
 if (empty($TMUX))
   if (has("nvim"))
-    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
   endif
-  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
-  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
   if (has("termguicolors"))
     set termguicolors
   endif
