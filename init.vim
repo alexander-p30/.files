@@ -1,10 +1,10 @@
 " Indentation
-set tabstop=4 softtabstop=4
-set shiftwidth=4
+set tabstop=2 softtabstop=2
+set shiftwidth=2
 set expandtab
 set smartindent
 
-set updatetime=50
+set updatetime=500
 " Cursor
 set guicursor=
 " Dinamically loaded vim configs
@@ -56,7 +56,7 @@ call plug#end()
 colorscheme onedark
 let g:airline_theme='onedark'
 
-"" Keybindings
+" Keybindings
 let mapleader=" "
 
 " Find files using Telescope command-line sugar.
