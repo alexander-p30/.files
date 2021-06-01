@@ -89,6 +89,11 @@ nnoremap <C-h> :tabprev<cr>
 nnoremap <C-j> :tabfirst<cr>
 nnoremap <C-l> :tabnext<cr>
 nnoremap <C-k> :tablast<cr>
+
+" Clear search highlighting
+nnoremap <leader>h :noh<cr>
+
+" Update configs
 nnoremap <C-s> :so ~/.config/nvim/init.vim<cr>
 
 " Coc floating window scroll
