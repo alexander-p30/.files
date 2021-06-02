@@ -83,7 +83,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
 
 " Tab managing
-nnoremap <C-t> :tabnew<cr>
+nnoremap <C-t> :tabedit %<cr>
 nnoremap <C-w> :tabclose<cr>
 nnoremap <C-h> :tabprev<cr>
 nnoremap <C-j> :tabfirst<cr>
