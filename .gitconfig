@@ -6,3 +6,5 @@
 	email = alexanderp30e@gmail.com
 [init]
 	defaultBranch = main
+[pull]
+	rebase = false
