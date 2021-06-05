@@ -10,7 +10,6 @@ set guicursor=
 " Dinamically loaded vim configs
 set exrc
 
-
 " Text editing
 " Line information
 set relativenumber
@@ -25,6 +24,7 @@ set undodir=~/.vim/undodir
 set undofile
 set hidden
 
+set title
 set incsearch
 set scrolloff=4
 set completeopt=menuone,noinsert,noselect
@@ -109,6 +109,14 @@ let g:blamer_enabled = 1
 let g:gitgutter_sign_added = '🔵'
 let g:gitgutter_sign_modified = '⚪'
 let g:gitgutter_sign_removed = '🔴'
+
+" Delete current file
+nnoremap <Leader>df :call DeleteFileAndCloseBuffer()<cr>
+
+fun! DeleteFileAndCloseBuffer()
+  let choice = confirm("Delete file and close buffer?", "&Do it!\n&Nonono", 1)
+  if choice == 1 | call delete(expand('%:p')) | q! | endif
+endfun
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 if (empty($TMUX))
