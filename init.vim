@@ -111,7 +111,7 @@ nnoremap <C-k> :tablast<cr>
 nnoremap <leader>ww :w<cr>
 nnoremap <leader>wq :wq<cr>
 nnoremap <leader>qq :q<cr>
-nnoremap <leader>QQ :q<cr>
+nnoremap <leader>QQ :q!<cr>
 
 " Clear search highlighting
 nnoremap <leader>h :noh<cr>
