@@ -66,12 +66,27 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Test-related bindings
-nnoremap <leader>tn :TestNearest<cr>
-nnoremap <leader>tf :TestFile<cr>
-nnoremap <leader>ts :TestSuite<cr>
-nnoremap <leader>tl :TestLast<cr>
+"" nnoremap <leader>tn :TestNearest<cr>
+nnoremap <leader>tn :call OpenNeotermInNewTabAndFocus('tn')<cr>
+nnoremap <leader>tf :call OpenNeotermInNewTabAndFocus('tf')<cr>
+nnoremap <leader>ts :call OpenNeotermInNewTabAndFocus('ts')<cr>
+nnoremap <leader>tl :call OpenNeotermInNewTabAndFocus('tl')<cr>
 nnoremap <leader>tv :TestVisit<cr>
 nnoremap <leader>cc :Tclose!<cr>
+
+fun! OpenNeotermInNewTabAndFocus(option)
+  if a:option == 'tn' 
+    TestNearest 
+  elseif a:option == 'tf' 
+    TestFile 
+  elseif a:option == 'ts' 
+    TestSuite
+  elseif a:option == 'tl' 
+    TestLast 
+  endif
+
+  tabnext
+endfun
 
 " Yanking and pasting clipboard
 vnoremap <C-y> "+y
@@ -91,6 +106,12 @@ nnoremap <C-l> :tabnext<cr>
 nnoremap <C-k> :tablast<cr>
 
 " Clear search highlighting
+nnoremap <leader>ww :w<cr>
+nnoremap <leader>wq :wq<cr>
+nnoremap <leader>qq :q<cr>
+nnoremap <leader>QQ :q<cr>
+
+" Clear search highlighting
 nnoremap <leader>h :noh<cr>
 
 " Update configs
@@ -104,6 +125,7 @@ inoremap <nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(
 
 " Plugin configs
 let test#strategy = "neoterm"
+let g:neoterm_default_mod='tab'
 let g:blamer_delay = 500
 let g:blamer_enabled = 1
 let g:gitgutter_sign_added = '🔵'
