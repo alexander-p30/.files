@@ -50,6 +50,8 @@ Plug 'joshdick/onedark.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'vim-test/vim-test'
 Plug 'kassio/neoterm'
+Plug 'rstacruz/vim-closer'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 " Theming and styling
