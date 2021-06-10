@@ -1,0 +1,4 @@
+export nv=~/.config/.nvim
+export kt=~/.config/.kitty
+export risk=~/Projects/Stone/risk-manager
+

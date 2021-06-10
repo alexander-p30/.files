@@ -9,7 +9,6 @@
 !.extended/soft-aliases
 !.fzf/
 !.fzf.zsh
-!.gitconfig
 !.gitignore
 !.oh-my-zsh/
 !.p10k.zsh
