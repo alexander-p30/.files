@@ -82,7 +82,7 @@ nnoremap <leader>tv :TestVisit<cr>
 nnoremap <leader>cc :Tclose!<cr>
 "
 " File navigation
-nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeFind<CR>
 
 fun! OpenNeotermInNewTabAndFocus(option)
   if a:option == 'tn' 
