@@ -52,6 +52,13 @@ Plug 'vim-test/vim-test'
 Plug 'kassio/neoterm'
 Plug 'rstacruz/vim-closer'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
+Plug 'ryanoasis/vim-devicons'
+Plug 'preservim/nerdtree' |
+            \ Plug 'Xuyuanp/nerdtree-git-plugin' |
+            \ Plug 'tiagofumo/vim-nerdtree-syntax-highlight' | 
+            \ Plug 'PhilRunninger/nerdtree-visual-selection' 
 call plug#end()
 
 " Theming and styling
