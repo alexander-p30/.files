@@ -35,7 +35,6 @@ set nocursorline
 syntax on
 
 " Plugin managing
-" https://github.com/junegunn/vim-plug#installation
 call plug#begin('~/.vim/plugged')
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -75,13 +74,15 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Test-related bindings
-"" nnoremap <leader>tn :TestNearest<cr>
 nnoremap <leader>tn :call OpenNeotermInNewTabAndFocus('tn')<cr>
 nnoremap <leader>tf :call OpenNeotermInNewTabAndFocus('tf')<cr>
 nnoremap <leader>ts :call OpenNeotermInNewTabAndFocus('ts')<cr>
 nnoremap <leader>tl :call OpenNeotermInNewTabAndFocus('tl')<cr>
 nnoremap <leader>tv :TestVisit<cr>
 nnoremap <leader>cc :Tclose!<cr>
+"
+" File navigation
+nnoremap <C-n> :NERDTreeToggle<CR>
 
 fun! OpenNeotermInNewTabAndFocus(option)
   if a:option == 'tn' 
@@ -150,12 +151,10 @@ fun! DeleteFileAndCloseBuffer()
 endfun
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
-if (empty($TMUX))
-  if (has("nvim"))
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  if (has("termguicolors"))
-    set termguicolors
-  endif
+if (has("nvim"))
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+if (has("termguicolors"))
+  set termguicolors
 endif
 
