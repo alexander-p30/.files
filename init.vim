@@ -58,14 +58,15 @@ Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin' |
             \ Plug 'tiagofumo/vim-nerdtree-syntax-highlight' | 
             \ Plug 'PhilRunninger/nerdtree-visual-selection' 
+Plug 'tpope/vim-commentary' 
 call plug#end()
 
 " Theming and styling
 colorscheme onedark
-let g:airline_theme='onedark'
+let g:airline_theme = 'onedark'
 
 " Keybindings
-let mapleader=" "
+let mapleader = " "
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -79,7 +80,7 @@ nnoremap <leader>tf :call OpenNeotermInNewTabAndFocus('tf')<cr>
 nnoremap <leader>ts :call OpenNeotermInNewTabAndFocus('ts')<cr>
 nnoremap <leader>tl :call OpenNeotermInNewTabAndFocus('tl')<cr>
 nnoremap <leader>tv :TestVisit<cr>
-nnoremap <leader>cc :Tclose!<cr>
+nnoremap <leader>c :Tclose!<cr>
 "
 " File navigation
 nnoremap <C-n> :NERDTreeFind<CR>
@@ -116,10 +117,10 @@ nnoremap <C-l> :tabnext<cr>
 nnoremap <C-k> :tablast<cr>
 
 " Clear search highlighting
-nnoremap <leader>ww :w<cr>
-nnoremap <leader>wq :wq<cr>
+nnoremap <leader>w :w<cr>
+nnoremap <leader>qw :wq<cr>
 nnoremap <leader>qq :q<cr>
-nnoremap <leader>QQ :q!<cr>
+nnoremap <leader>Q :q!<cr>
 
 " Clear search highlighting
 nnoremap <leader>h :noh<cr>
@@ -133,14 +134,9 @@ nnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<
 inoremap <nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
 inoremap <nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
 
-" Plugin configs
-let test#strategy = "neoterm"
-let g:neoterm_default_mod='tab'
-let g:blamer_delay = 500
-let g:blamer_enabled = 1
-let g:gitgutter_sign_added = '🔵'
-let g:gitgutter_sign_modified = '⚪'
-let g:gitgutter_sign_removed = '🔴'
+" gitgutter hunk navigation
+nnoremap <silent> <cr> :GitGutterNextHunk<cr>
+nnoremap <silent> <backspace> :GitGutterPrevHunk<cr>
 
 " Delete current file
 nnoremap <Leader>df :call DeleteFileAndCloseBuffer()<cr>
@@ -149,6 +145,28 @@ fun! DeleteFileAndCloseBuffer()
   let choice = confirm("Delete file and close buffer?", "&Do it!\n&Nonono", 1)
   if choice == 1 | call delete(expand('%:p')) | q! | endif
 endfun
+
+" Plugin configs
+" vim-test
+let test#strategy = "neoterm"
+
+" neoterm
+let g:neoterm_default_mod='tab'
+
+" blamer 
+let g:blamer_delay = 500
+let g:blamer_enabled = 1
+
+" gitgutter
+let g:gitgutter_sign_added = 'Δ'
+let g:gitgutter_sign_modified = '▷'
+let g:gitgutter_sign_removed = '∇'
+let g:gitgutter_sign_removed_first_line = '∅'
+let g:gitgutter_sign_removed_above_and_below = '⩫'
+let g:gitgutter_sign_modified_removed = '◁'
+
+" NERDTree
+let g:NERDTreeQuitOnOpen = 1
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 if (has("nvim"))
