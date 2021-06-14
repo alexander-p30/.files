@@ -69,6 +69,7 @@ Plug 'lambdalisue/fern.vim' |
                 \ Plug  'lambdalisue/glyph-palette.vim' |
                 \ Plug 'yuki-yano/fern-preview.vim'
 Plug 'tpope/vim-endwise'
+Plug 'kdheepak/lazygit.nvim'
 call plug#end()
 
 " Theming and styling
@@ -186,6 +187,9 @@ inoremap <nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(
 " gitgutter hunk navigation
 nnoremap <silent> <cr> :GitGutterNextHunk<cr>
 nnoremap <silent> <backspace> :GitGutterPrevHunk<cr>
+
+" LazyGit
+nnoremap <silent> <leader>lg :LazyGit<CR>
 
 " Fern
 nnoremap <silent> <C-b> :Fern . -reveal=%<cr>
