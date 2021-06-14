@@ -53,17 +53,51 @@ Plug 'rstacruz/vim-closer'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
-Plug 'ryanoasis/vim-devicons'
-Plug 'preservim/nerdtree' |
-            \ Plug 'Xuyuanp/nerdtree-git-plugin' |
-            \ Plug 'tiagofumo/vim-nerdtree-syntax-highlight' | 
-            \ Plug 'PhilRunninger/nerdtree-visual-selection' 
 Plug 'tpope/vim-commentary' 
+Plug 'mg979/vim-visual-multi'
+Plug 'antoinemadec/FixCursorHold.nvim' 
+Plug 'lambdalisue/nerdfont.vim' 
+Plug 'lambdalisue/fern.vim' |
+                \ Plug  'lambdalisue/fern-hijack.vim' |
+                \ Plug 'lambdalisue/fern-git-status.vim' |
+                \ Plug 'lambdalisue/fern-renderer-nerdfont.vim' |
+                \ Plug  'lambdalisue/glyph-palette.vim' |
+                \ Plug 'yuki-yano/fern-preview.vim'
 call plug#end()
 
 " Theming and styling
 colorscheme onedark
 let g:airline_theme = 'onedark'
+"
+" Plugin configs
+" vim-test
+let test#strategy = "neoterm"
+
+" neoterm
+let g:neoterm_default_mod='tab'
+
+" blamer 
+let g:blamer_delay = 500
+let g:blamer_enabled = 1
+
+" gitgutter
+let g:gitgutter_sign_added = 'Δ'
+let g:gitgutter_sign_modified = '▷'
+let g:gitgutter_sign_removed = '∇'
+let g:gitgutter_sign_removed_first_line = '∅'
+let g:gitgutter_sign_removed_above_and_below = '⩫'
+let g:gitgutter_sign_modified_removed = '◁'
+
+" fern
+let g:fern#renderer = "nerdfont"
+
+"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+if (has("nvim"))
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+if (has("termguicolors"))
+  set termguicolors
+endif
 
 " Keybindings
 let mapleader = " "
@@ -81,9 +115,6 @@ nnoremap <leader>ts :call OpenNeotermInNewTabAndFocus('ts')<cr>
 nnoremap <leader>tl :call OpenNeotermInNewTabAndFocus('tl')<cr>
 nnoremap <leader>tv :TestVisit<cr>
 nnoremap <leader>c :Tclose!<cr>
-"
-" File navigation
-nnoremap <C-n> :NERDTreeFind<CR>
 
 fun! OpenNeotermInNewTabAndFocus(option)
   if a:option == 'tn' 
@@ -138,6 +169,20 @@ inoremap <nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(
 nnoremap <silent> <cr> :GitGutterNextHunk<cr>
 nnoremap <silent> <backspace> :GitGutterPrevHunk<cr>
 
+" Fern
+nnoremap <silent> <C-b> :Fern . -reveal=%<cr>
+function! s:fern_settings() abort
+  nmap <silent> <buffer> p     <Plug>(fern-action-preview:toggle)
+  nmap <silent> <buffer> <C-p> <Plug>(fern-action-preview:auto:toggle)
+  nmap <silent> <buffer> <C-d> <Plug>(fern-action-preview:scroll:down:half)
+  nmap <silent> <buffer> <C-u> <Plug>(fern-action-preview:scroll:up:half)
+endfunction
+
+augroup fern-settings
+  autocmd!
+  autocmd FileType fern call s:fern_settings()
+augroup END
+
 " Delete current file
 nnoremap <Leader>df :call DeleteFileAndCloseBuffer()<cr>
 
@@ -145,34 +190,4 @@ fun! DeleteFileAndCloseBuffer()
   let choice = confirm("Delete file and close buffer?", "&Do it!\n&Nonono", 1)
   if choice == 1 | call delete(expand('%:p')) | q! | endif
 endfun
-
-" Plugin configs
-" vim-test
-let test#strategy = "neoterm"
-
-" neoterm
-let g:neoterm_default_mod='tab'
-
-" blamer 
-let g:blamer_delay = 500
-let g:blamer_enabled = 1
-
-" gitgutter
-let g:gitgutter_sign_added = 'Δ'
-let g:gitgutter_sign_modified = '▷'
-let g:gitgutter_sign_removed = '∇'
-let g:gitgutter_sign_removed_first_line = '∅'
-let g:gitgutter_sign_removed_above_and_below = '⩫'
-let g:gitgutter_sign_modified_removed = '◁'
-
-" NERDTree
-let g:NERDTreeQuitOnOpen = 1
-
-"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
-if (has("nvim"))
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-endif
-if (has("termguicolors"))
-  set termguicolors
-endif
 
