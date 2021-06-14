@@ -73,6 +73,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary' 
 Plug 'tpope/vim-endwise'
 Plug 'mg979/vim-visual-multi'
+Plug 'mhinz/vim-mix-format'
 
 " Other
 Plug 'kassio/neoterm'
@@ -109,6 +110,9 @@ let g:airline#extensions#tabline#show_tab_type = 0
 " Plugin configs
 " vim-test
 let test#strategy = "neoterm"
+
+" vim-mix-format
+let g:mix_format_on_save = 1
 
 " neoterm
 let g:neoterm_default_mod='tab'
