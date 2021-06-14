@@ -63,6 +63,7 @@ Plug 'lambdalisue/fern.vim' |
                 \ Plug 'lambdalisue/fern-renderer-nerdfont.vim' |
                 \ Plug  'lambdalisue/glyph-palette.vim' |
                 \ Plug 'yuki-yano/fern-preview.vim'
+Plug 'tpope/vim-endwise'
 call plug#end()
 
 " Theming and styling
