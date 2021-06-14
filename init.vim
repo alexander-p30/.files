@@ -36,45 +36,63 @@ set completeopt=menuone,noinsert,noselect
 set signcolumn=yes
 set colorcolumn=120
 set nocursorline 
+set termguicolors
 
 syntax on
 
 " Plugin managing
 call plug#begin('~/.vim/plugged')
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'elixir-editors/vim-elixir'
-Plug 'APZelos/blamer.nvim'
-Plug 'airblade/vim-gitgutter' 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'joshdick/onedark.vim'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'vim-test/vim-test'
-Plug 'kassio/neoterm'
-Plug 'rstacruz/vim-closer'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-rails'
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-commentary' 
-Plug 'mg979/vim-visual-multi'
-Plug 'antoinemadec/FixCursorHold.nvim' 
-Plug 'lambdalisue/nerdfont.vim' 
+" File-related
 Plug 'lambdalisue/fern.vim' |
                 \ Plug  'lambdalisue/fern-hijack.vim' |
                 \ Plug 'lambdalisue/fern-git-status.vim' |
                 \ Plug 'lambdalisue/fern-renderer-nerdfont.vim' |
                 \ Plug  'lambdalisue/glyph-palette.vim' |
                 \ Plug 'yuki-yano/fern-preview.vim'
-Plug 'tpope/vim-endwise'
+Plug 'nvim-telescope/telescope.nvim' |
+                \ Plug 'nvim-lua/plenary.nvim' |
+                \ Plug 'nvim-lua/popup.nvim'
+
+" Fonts and assets
+Plug 'lambdalisue/nerdfont.vim' 
+
+" Git
 Plug 'kdheepak/lazygit.nvim'
+Plug 'APZelos/blamer.nvim'
+Plug 'airblade/vim-gitgutter' 
+
+" LS, syntax highlighting and programming utils
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'vim-test/vim-test'
+Plug 'elixir-editors/vim-elixir'
+Plug 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'rstacruz/vim-closer'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary' 
+Plug 'tpope/vim-endwise'
+Plug 'mg979/vim-visual-multi'
+
+" Other
+Plug 'kassio/neoterm'
+Plug 'antoinemadec/FixCursorHold.nvim' 
+
+" Themes / Visual
+"" Plug 'joshdick/onedark.vim'
+"" Plug 'nightsense/snow'
+"" Plug 'wadackel/vim-dogrun'
+"" Plug 'rakr/vim-one'
+Plug 'sainnhe/sonokai'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " Theming and styling
-colorscheme onedark
-let g:airline_theme = 'onedark'
+let g:sonokai_style = 'andromeda'
+colorscheme sonokai
+set background=dark
+let g:airline_theme = 'sonokai'
 let g:airline_powerline_fonts = 1
 
 " airline#tabline
@@ -109,14 +127,6 @@ let g:gitgutter_sign_modified_removed = '◁'
 
 " fern
 let g:fern#renderer = "nerdfont"
-
-"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
-if (has("nvim"))
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-endif
-if (has("termguicolors"))
-  set termguicolors
-endif
 
 " Keybindings
 let mapleader = " "
