@@ -24,6 +24,11 @@ set undodir=~/.vim/undodir
 set undofile
 set hidden
 
+
+" trigger `autoread` when files changes on disk
+set autoread
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+
 set title
 set incsearch
 set scrolloff=4
