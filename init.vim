@@ -63,6 +63,7 @@ Plug 'airblade/vim-gitgutter'
 
 " LS, syntax highlighting and programming utils
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'vim-test/vim-test'
 Plug 'elixir-editors/vim-elixir'
 Plug 'tpope/vim-rails'
