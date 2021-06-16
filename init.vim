@@ -84,28 +84,15 @@ Plug 'antoinemadec/FixCursorHold.nvim'
 "" Plug 'nightsense/snow'
 "" Plug 'wadackel/vim-dogrun'
 "" Plug 'rakr/vim-one'
+"" Plug 'vim-airline/vim-airline'
+"" Plug 'vim-airline/vim-airline-themes'
 Plug 'sainnhe/sonokai'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " Theming and styling
 let g:sonokai_style = 'andromeda'
 colorscheme sonokai
 set background=dark
-let g:airline_theme = 'sonokai'
-let g:airline_powerline_fonts = 1
-
-" airline#tabline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_close_button = 0
-let g:airline#extensions#tabline#tabs_label = ''
-let g:airline#extensions#tabline#buffers_label = ''
-let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline#extensions#tabline#show_buffers = 0
-let g:airline#extensions#tabline#show_splits = 0
-let g:airline#extensions#tabline#show_tab_nr = 0
-let g:airline#extensions#tabline#show_tab_type = 0
 
 " Plugin configs
 " vim-test
@@ -226,4 +213,6 @@ fun! DeleteFileAndCloseBuffer()
   let choice = confirm("Delete file and close buffer?", "&Do it!\n&Nonono", 1)
   if choice == 1 | call delete(expand('%:p')) | q! | endif
 endfun
+
+source $HOME/.config/nvim/modules/statusline.vim
 
