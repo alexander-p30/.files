@@ -74,6 +74,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'mg979/vim-visual-multi'
 Plug 'mhinz/vim-mix-format'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Other
 Plug 'kassio/neoterm'
@@ -213,3 +214,9 @@ endfun
 
 source $HOME/.config/nvim/modules/statusline.vim
 
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = {"elixir", "ruby"},
+  highlight = {enable = true}
+}
+EOF
