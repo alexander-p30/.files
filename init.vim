@@ -80,18 +80,15 @@ Plug 'kassio/neoterm'
 Plug 'antoinemadec/FixCursorHold.nvim' 
 
 " Themes / Visual
-"" Plug 'joshdick/onedark.vim'
+Plug 'joshdick/onedark.vim'
 "" Plug 'nightsense/snow'
 "" Plug 'wadackel/vim-dogrun'
 "" Plug 'rakr/vim-one'
-"" Plug 'vim-airline/vim-airline'
-"" Plug 'vim-airline/vim-airline-themes'
-Plug 'sainnhe/sonokai'
+"" Plug 'sainnhe/sonokai'
 call plug#end()
 
 " Theming and styling
-let g:sonokai_style = 'andromeda'
-colorscheme sonokai
+colorscheme onedark
 set background=dark
 
 " Plugin configs
