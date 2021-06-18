@@ -58,7 +58,6 @@ Plug 'lambdalisue/nerdfont.vim'
 
 " Git
 Plug 'kdheepak/lazygit.nvim'
-Plug 'APZelos/blamer.nvim'
 Plug 'airblade/vim-gitgutter' 
 
 " LS, syntax highlighting and programming utils
@@ -79,6 +78,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Other
 Plug 'kassio/neoterm'
 Plug 'antoinemadec/FixCursorHold.nvim' 
+Plug 'axelf4/vim-strip-trailing-whitespace' 
 
 " Themes / Visual
 Plug 'joshdick/onedark.vim'
@@ -101,10 +101,6 @@ let g:mix_format_on_save = 1
 
 " neoterm
 let g:neoterm_default_mod='tab'
-
-" blamer 
-let g:blamer_delay = 500
-let g:blamer_enabled = 1
 
 " gitgutter
 let g:gitgutter_sign_added = 'Δ'
@@ -216,7 +212,8 @@ source $HOME/.config/nvim/modules/statusline.vim
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = {"elixir", "ruby"},
+  ensure_installed = {"elixir", "ruby", "html", "javascript"},
   highlight = {enable = true}
 }
 EOF
+
