@@ -192,5 +192,5 @@ nnoremap <Leader>df :call DeleteFileAndCloseBuffer()<cr>
 source $HOME/.config/nvim/modules/statusline.vim
 source $HOME/.config/nvim/modules/treesitter.vim
 source $HOME/.config/nvim/modules/telescope.vim
-
+source $HOME/.config/nvim/modules/functions.vim
 
