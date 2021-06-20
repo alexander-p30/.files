@@ -24,7 +24,6 @@ Plug 'vim-test/vim-test'
 Plug 'elixir-editors/vim-elixir'
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'rstacruz/vim-closer'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
@@ -33,7 +32,6 @@ Plug 'mg979/vim-visual-multi'
 Plug 'mhinz/vim-mix-format'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
-Plug 'nvim-treesitter/playground'
 
 " Other
 Plug 'kassio/neoterm'
@@ -127,20 +125,6 @@ nnoremap <leader>tl :call OpenNeotermInNewTabAndFocus('tl')<cr>
 nnoremap <leader>tv :TestVisit<cr>
 nnoremap <leader>c :Tclose!<cr>
 
-fun! OpenNeotermInNewTabAndFocus(option)
-  if a:option == 'tn' 
-    TestNearest 
-  elseif a:option == 'tf' 
-    TestFile 
-  elseif a:option == 'ts' 
-    TestSuite
-  elseif a:option == 'tl' 
-    TestLast 
-  endif
-
-  tabnext
-endfun
-
 " Yanking and pasting clipboard
 vnoremap <C-y> "+y
 nnoremap <C-p> "+p
@@ -192,6 +176,10 @@ function! s:fern_settings() abort
   nmap <silent> <buffer> <C-u> <Plug>(fern-action-preview:scroll:up:half)
 endfunction
 
+" Profiling
+nnoremap <leader>profi :call ProfileSession()<cr>
+nnoremap <leader>profs :call EndSessionProfiling()<cr>
+
 augroup fern-settings
   autocmd!
   autocmd FileType fern call s:fern_settings()
@@ -200,11 +188,9 @@ augroup END
 " Delete current file
 nnoremap <Leader>df :call DeleteFileAndCloseBuffer()<cr>
 
-fun! DeleteFileAndCloseBuffer()
-  let choice = confirm("Delete file and close buffer?", "&Do it!\n&Nonono", 1)
-  if choice == 1 | call delete(expand('%:p')) | q! | endif
-endfun
 
 source $HOME/.config/nvim/modules/statusline.vim
 source $HOME/.config/nvim/modules/treesitter.vim
+source $HOME/.config/nvim/modules/telescope.vim
+
 
