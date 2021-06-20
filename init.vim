@@ -1,3 +1,53 @@
+" Plugin managing
+call plug#begin('~/.vim/plugged')
+" File-related
+Plug 'lambdalisue/fern.vim' |
+                \ Plug  'lambdalisue/fern-hijack.vim' |
+                \ Plug 'lambdalisue/fern-git-status.vim' |
+                \ Plug 'lambdalisue/fern-renderer-nerdfont.vim' |
+                \ Plug  'lambdalisue/glyph-palette.vim' |
+                \ Plug 'yuki-yano/fern-preview.vim'
+Plug 'nvim-telescope/telescope.nvim' |
+                \ Plug 'nvim-lua/plenary.nvim' |
+                \ Plug 'nvim-lua/popup.nvim'
+
+" Fonts and assets
+Plug 'lambdalisue/nerdfont.vim'
+
+" Git
+Plug 'kdheepak/lazygit.nvim'
+Plug 'airblade/vim-gitgutter'
+
+" LS, syntax highlighting and programming utils
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'vim-test/vim-test'
+Plug 'elixir-editors/vim-elixir'
+Plug 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'rstacruz/vim-closer'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'mg979/vim-visual-multi'
+Plug 'mhinz/vim-mix-format'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'p00f/nvim-ts-rainbow'
+Plug 'nvim-treesitter/playground'
+
+" Other
+Plug 'kassio/neoterm'
+Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'axelf4/vim-strip-trailing-whitespace'
+
+" Themes / Visual
+Plug 'joshdick/onedark.vim'
+call plug#end()
+
+" Theming and styling
+colorscheme onedark
+set background=dark
+
 " Indentation
 set tabstop=2 softtabstop=2
 set shiftwidth=2
@@ -24,7 +74,6 @@ set undodir=~/.vim/undodir
 set undofile
 set hidden
 
-
 " trigger `autoread` when files changes on disk
 set autoread
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
@@ -39,58 +88,6 @@ set nocursorline
 set termguicolors
 
 syntax on
-
-" Plugin managing
-call plug#begin('~/.vim/plugged')
-" File-related
-Plug 'lambdalisue/fern.vim' |
-                \ Plug  'lambdalisue/fern-hijack.vim' |
-                \ Plug 'lambdalisue/fern-git-status.vim' |
-                \ Plug 'lambdalisue/fern-renderer-nerdfont.vim' |
-                \ Plug  'lambdalisue/glyph-palette.vim' |
-                \ Plug 'yuki-yano/fern-preview.vim'
-Plug 'nvim-telescope/telescope.nvim' |
-                \ Plug 'nvim-lua/plenary.nvim' |
-                \ Plug 'nvim-lua/popup.nvim'
-
-" Fonts and assets
-Plug 'lambdalisue/nerdfont.vim' 
-
-" Git
-Plug 'kdheepak/lazygit.nvim'
-Plug 'airblade/vim-gitgutter' 
-
-" LS, syntax highlighting and programming utils
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'vim-test/vim-test'
-Plug 'elixir-editors/vim-elixir'
-Plug 'tpope/vim-rails'
-Plug 'vim-ruby/vim-ruby'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'rstacruz/vim-closer'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary' 
-Plug 'tpope/vim-endwise'
-Plug 'mg979/vim-visual-multi'
-Plug 'mhinz/vim-mix-format'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
-" Other
-Plug 'kassio/neoterm'
-Plug 'antoinemadec/FixCursorHold.nvim' 
-Plug 'axelf4/vim-strip-trailing-whitespace' 
-
-" Themes / Visual
-Plug 'joshdick/onedark.vim'
-"" Plug 'nightsense/snow'
-"" Plug 'wadackel/vim-dogrun'
-"" Plug 'rakr/vim-one'
-"" Plug 'sainnhe/sonokai'
-call plug#end()
-
-" Theming and styling
-colorscheme onedark
-set background=dark
 
 " Plugin configs
 " vim-test
@@ -209,11 +206,5 @@ fun! DeleteFileAndCloseBuffer()
 endfun
 
 source $HOME/.config/nvim/modules/statusline.vim
-
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = {"elixir", "ruby", "html", "javascript"},
-  highlight = {enable = true}
-}
-EOF
+source $HOME/.config/nvim/modules/treesitter.vim
 
