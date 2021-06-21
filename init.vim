@@ -32,6 +32,7 @@ Plug 'mg979/vim-visual-multi'
 Plug 'mhinz/vim-mix-format'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
+Plug 'nvim-treesitter/playground'
 
 " Other
 Plug 'kassio/neoterm'
@@ -40,6 +41,7 @@ Plug 'axelf4/vim-strip-trailing-whitespace'
 
 " Themes / Visual
 Plug 'joshdick/onedark.vim'
+Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
 
 " Theming and styling
@@ -193,4 +195,6 @@ source $HOME/.config/nvim/modules/statusline.vim
 source $HOME/.config/nvim/modules/treesitter.vim
 source $HOME/.config/nvim/modules/telescope.vim
 source $HOME/.config/nvim/modules/functions.vim
+
+lua require'colorizer'.setup()
 
