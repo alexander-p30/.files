@@ -10,7 +10,7 @@ require'nvim-treesitter.configs'.setup {
         "#c678dd",
         "#d19a66",
         "#56b6c2",
-        "#dd788f",
+        "#ff6bf3",
         "#666bd1",
         "#c27556",
     }
