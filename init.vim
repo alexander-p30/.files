@@ -170,7 +170,7 @@ nnoremap <silent> <backspace> :GitGutterPrevHunk<cr>
 nnoremap <silent> <leader>lg :LazyGit<CR>
 
 " Fern
-nnoremap <silent> <C-b> :Fern . -reveal=%<cr>
+nnoremap <silent> <C-b> :Fern . -drawer -width=50 -reveal=% -toggle<cr>
 function! s:fern_settings() abort
   nmap <silent> <buffer> p     <Plug>(fern-action-preview:toggle)
   nmap <silent> <buffer> <C-p> <Plug>(fern-action-preview:auto:toggle)
