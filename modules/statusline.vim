@@ -2,39 +2,51 @@ set laststatus=2
 set statusline=
 set statusline+=%2*
 set statusline+=%{StatuslineMode()}
+set statusline+=%#LGrn2LMag#
+set statusline+=
 set statusline+=%1*
-set statusline+=\
-set statusline+=<<
 set statusline+=\ 
 set statusline+=%f
 set statusline+=\ 
-set statusline+=>>
+set statusline+=%#LMag2Grey#
+set statusline+=
+set statusline+=%0*
 set statusline+=%=
 set statusline+=%m
 set statusline+=%h
 set statusline+=%r
 set statusline+=\ 
+set statusline+=%#LGrn2Grey#
+set statusline+=
 set statusline+=%3*
 set statusline+=%{b:gitbranch}
+set statusline+=%#LBlu2LGrn#
+set statusline+=
 set statusline+=%4*
 set statusline+=::
 set statusline+=%5*
 set statusline+=%l
 set statusline+=/
 set statusline+=%L
+set statusline+=%#LMag2LBlu#
+set statusline+=
 set statusline+=%1*
 set statusline+=|
 set statusline+=%y
-set statusline+=%1*
-set statusline+=%2*
-set statusline+=%3*
-set statusline+=%4*
-set statusline+=%5*
+
+" Transitions
+hi LMag2LBlu ctermbg=lightblue ctermfg=lightmagenta guibg=lightblue guifg=lightmagenta
+hi LGrn2LMag ctermbg=lightmagenta ctermfg=lightgreen guibg=lightmagenta guifg=lightgreen
+hi LMag2Grey ctermbg=240 ctermfg=lightmagenta guibg=#2c323c guifg=lightmagenta
+hi LGrn2Grey ctermbg=240 ctermfg=lightgreen guibg=#2c323c guifg=lightgreen
+hi LBlu2LGrn ctermbg=lightgreen ctermfg=lightblue guibg=lightgreen guifg=lightblue
+
+" Colors
+hi User1 ctermbg=lightmagenta ctermfg=black guibg=lightmagenta guifg=black
 hi User2 ctermbg=lightgreen ctermfg=black guibg=lightgreen guifg=black
-hi User1 ctermbg=black ctermfg=white guibg=black guifg=white
-hi User3 ctermbg=black ctermfg=lightblue guibg=black guifg=lightblue
-hi User4 ctermbg=black ctermfg=lightgreen guibg=black guifg=lightgreen
-hi User5 ctermbg=black ctermfg=magenta guibg=black guifg=magenta
+hi User3 ctermbg=lightgreen ctermfg=black guibg=lightgreen guifg=black
+hi User4 ctermbg=lightblue ctermfg=black guibg=lightblue guifg=black
+hi User5 ctermbg=lightblue ctermfg=darkmagenta guibg=lightblue guifg=darkmagenta
 
 function! StatuslineMode()
   let l:mode=mode()
