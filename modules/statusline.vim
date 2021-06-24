@@ -52,8 +52,12 @@ function! StatuslineMode()
   let l:mode=mode()
   if l:mode==#"n"
     return "NORMAL"
-  elseif l:mode==?"v"
+  elseif l:mode==#"v"
     return "VISUAL"
+  elseif l:mode==#"V"
+    return "VISUAL-L"
+  elseif l:mode==#"\<C-V>"
+    return "VISUAL-B"
   elseif l:mode==#"i"
     return "INSERT"
   elseif l:mode==#"R"
