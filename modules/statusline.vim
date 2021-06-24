@@ -1,38 +1,10 @@
 set laststatus=2
-set statusline=
-set statusline+=%2*
-set statusline+=%{StatuslineMode()}
-set statusline+=%#LGrn2LMag#
-set statusline+=
-set statusline+=%1*
-set statusline+=\ 
-set statusline+=%f
-set statusline+=\ 
-set statusline+=%#LMag2Grey#
-set statusline+=
-set statusline+=%0*
-set statusline+=%=
-set statusline+=%m
-set statusline+=%h
-set statusline+=%r
-set statusline+=\ 
-set statusline+=%#LGrn2Grey#
-set statusline+=
-set statusline+=%3*
-set statusline+=%{b:gitbranch}
-set statusline+=%#LBlu2LGrn#
-set statusline+=
-set statusline+=%4*
-set statusline+=::
-set statusline+=%5*
-set statusline+=%l
-set statusline+=/
-set statusline+=%L
-set statusline+=%#LMag2LBlu#
-set statusline+=
-set statusline+=%1*
-set statusline+=|
-set statusline+=%y
+set statusline=%2*%{StatuslineMode()}%#LGrn2LMag#
+set statusline+=%1*\%f\%#LMag2Grey#
+set statusline+=%0*%=%m%h%r
+set statusline+=%#LGrn2Grey#%3*%{b:gitbranch}
+set statusline+=%#LBlu2LGrn#%5*%l/%L
+set statusline+=%#LMag2LBlu#%1*%y
 
 " Transitions
 hi LMag2LBlu ctermbg=lightblue ctermfg=lightmagenta guibg=lightblue guifg=lightmagenta
@@ -80,7 +52,7 @@ function! StatuslineGitBranch()
       let l:dir=expand('%:p:h')
       let l:gitrevparse = system("git -C ".l:dir." rev-parse --abbrev-ref HEAD")
       if !v:shell_error
-        let b:gitbranch="(".substitute(l:gitrevparse, '\n', '', 'g').") "
+        let b:gitbranch="@".substitute(l:gitrevparse, '\n', '', 'g').""
       endif
     catch
     endtry
