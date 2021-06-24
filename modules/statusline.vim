@@ -37,8 +37,8 @@ set statusline+=%y
 " Transitions
 hi LMag2LBlu ctermbg=lightblue ctermfg=lightmagenta guibg=lightblue guifg=lightmagenta
 hi LGrn2LMag ctermbg=lightmagenta ctermfg=lightgreen guibg=lightmagenta guifg=lightgreen
-hi LMag2Grey ctermbg=240 ctermfg=lightmagenta guibg=#2c323c guifg=lightmagenta
-hi LGrn2Grey ctermbg=240 ctermfg=lightgreen guibg=#2c323c guifg=lightgreen
+hi LMag2Grey ctermbg=grey ctermfg=lightmagenta guibg=#2c323c guifg=lightmagenta
+hi LGrn2Grey ctermbg=grey ctermfg=lightgreen guibg=#2c323c guifg=lightgreen
 hi LBlu2LGrn ctermbg=lightgreen ctermfg=lightblue guibg=lightgreen guifg=lightblue
 
 " Colors
