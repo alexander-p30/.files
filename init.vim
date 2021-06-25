@@ -54,6 +54,7 @@ set shiftwidth=2
 set expandtab
 set smartindent
 
+set notimeout
 set updatetime=500
 " Cursor
 set guicursor=
