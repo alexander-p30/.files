@@ -6,6 +6,7 @@ alias cdnv="cd ~/.config/nvim"
 # Kitty
 alias cfgkt="nvim ~/.config/kitty/kitty.conf"
 alias cdkt="cd ~/.config/kitty"
+alias kdiff="kitty +kitten diff"
 
 # Lazygit
 alias lg="lazygit"
