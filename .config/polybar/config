@@ -31,9 +31,9 @@ underline2 = #fb4934
 underline3 = #b8bb26
 underline4 = #fabd2f
 underline5 = #83a598
-underline6 = #8ec07c
+underline6 = #fe8019
 underline7 = #ebdbb2
-underline8 = #fe8019
+underline8 = #8ec07c
 
 [bar/mybar]
 ;monitor = ${env:MONITOR:HDMI-1}
