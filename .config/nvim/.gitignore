@@ -1,0 +1,8 @@
+# Ignore all files
+*
+
+# Except these
+!*.vim
+!.gitignore
+!modules
+

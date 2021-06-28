@@ -1,0 +1,8 @@
+# Ignore all files
+*
+
+# Except these
+!kitty.conf
+!theme.conf
+!.gitignore
+

@@ -4,6 +4,9 @@
 
 # Except these
 !.bashrc
+!.config/kitty/
+!.config/nvim/
+!.config/polybar/
 !.extended/git-aliases
 !.extended/rails-aliases
 !.extended/soft-aliases
