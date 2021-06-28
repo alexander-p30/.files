@@ -46,6 +46,11 @@ Plug 'morhetz/gruvbox'
 Plug 'sainnhe/gruvbox-material'
 call plug#end()
 
+" Folding
+set nofoldenable
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+
 " Theming and styling
 let g:gruvbox_material_palette="mix"
 colorscheme gruvbox-material
