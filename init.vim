@@ -42,10 +42,13 @@ Plug 'axelf4/vim-strip-trailing-whitespace'
 " Themes / Visual
 Plug 'joshdick/onedark.vim'
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 call plug#end()
 
 " Theming and styling
-colorscheme onedark
+let g:gruvbox_material_palette="mix"
+colorscheme gruvbox-material
 set background=dark
 
 " Indentation

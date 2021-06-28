@@ -4,21 +4,22 @@ set statusline+=%1*\ \%f\ \%#LMag2Grey#
 set statusline+=%0*%=%m%h%r
 set statusline+=%#LGrn2Grey#%3*\ \%{b:gitbranch}\ \%3*
 set statusline+=%#LBlu2LGrn#%5*\ \%l/%L\ \%5*
-set statusline+=%#LMag2LBlu#%1*\ \%y\ \%1*
+set statusline+=%#LMag2LBlu#%6*\ \%y\ \%1*
 
 " Transitions
-hi LMag2LBlu ctermbg=lightblue ctermfg=lightmagenta guibg=#61afef guifg=#c678dd
-hi LGrn2LMag ctermbg=lightmagenta ctermfg=lightgreen guibg=#c678dd guifg=#98c379
-hi LMag2Grey ctermbg=grey ctermfg=lightmagenta guibg=#2c323c guifg=#c678dd
-hi LGrn2Grey ctermbg=grey ctermfg=lightgreen guibg=#2c323c guifg=#98c379
-hi LBlu2LGrn ctermbg=lightgreen ctermfg=lightblue guibg=#98c379 guifg=#61afef
+hi LMag2LBlu ctermbg=lightblue ctermfg=lightmagenta guibg=#80aa9e guifg=#d3869b
+hi LGrn2LMag ctermbg=lightmagenta ctermfg=lightgreen guibg=#f2594b guifg=#f28534
+hi LMag2Grey ctermbg=grey ctermfg=lightmagenta guibg=#2c323c guifg=#f2594b
+hi LGrn2Grey ctermbg=grey ctermfg=lightgreen guibg=#2c323c guifg=#b0b846
+hi LBlu2LGrn ctermbg=lightgreen ctermfg=lightblue guibg=#b0b846 guifg=#80aa9e
 
 " Colors
-hi User1 ctermbg=lightmagenta ctermfg=black guibg=#c678dd guifg=black
-hi User2 ctermbg=lightgreen ctermfg=black guibg=#98c379 guifg=black
-hi User3 ctermbg=lightgreen ctermfg=black guibg=#98c379 guifg=black
-hi User4 ctermbg=lightblue ctermfg=black guibg=#61afef guifg=black
-hi User5 ctermbg=lightblue ctermfg=black guibg=#61afef guifg=black
+hi User1 ctermbg=lightmagenta ctermfg=black guibg=#f2594b guifg=black
+hi User2 ctermbg=lightgreen ctermfg=black guibg=#f28534 guifg=black
+hi User3 ctermbg=lightgreen ctermfg=black guibg=#b0b846 guifg=black
+hi User4 ctermbg=lightblue ctermfg=black guibg=#80aa9e guifg=black
+hi User5 ctermbg=lightblue ctermfg=black guibg=#80aa9e guifg=black
+hi User6 ctermbg=lightmagenta ctermfg=black guibg=#d3869b guifg=black
 
 function! StatuslineMode()
   let l:mode=mode()
