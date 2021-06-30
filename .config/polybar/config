@@ -50,10 +50,13 @@ border-size = 4
 border-color = #00000000
 
 padding-left = 0
-padding-right = 2
+padding-right = ${env:POLYBAR_PADDING_RIGHT:2}
 
 module-margin-left = 1
 module-margin-right = 3
+
+tray-detached = ${env:POLYBAR_TRAY_DETACHED:false}
+tray-offset-x = ${env:POLYBAR_TRAY_OFFSET_X:0}
 
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
