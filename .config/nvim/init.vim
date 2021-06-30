@@ -44,7 +44,9 @@ Plug 'joshdick/onedark.vim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'morhetz/gruvbox'
 Plug 'sainnhe/gruvbox-material'
+Plug 'kyazdani42/nvim-web-devicons'
 call plug#end()
+
 
 " Folding
 set nofoldenable
@@ -199,5 +201,6 @@ source $HOME/.config/nvim/modules/treesitter.vim
 source $HOME/.config/nvim/modules/telescope.vim
 source $HOME/.config/nvim/modules/functions.vim
 
+lua require'nvim-web-devicons'.setup { default = true; }
 lua require'colorizer'.setup()
 

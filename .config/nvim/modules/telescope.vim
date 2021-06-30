@@ -7,7 +7,6 @@ local new_maker = function(filepath, bufnr, opts)
   opts = opts or {}
   if opts.use_ft_detect == nil then
     local ft = pfiletype.detect(filepath)
-    -- Here for example you can say: if ft == "xyz" then this_regex_highlighing else nothing end
     opts.use_ft_detect = false
     putils.regex_highlighter(bufnr, ft)
   end
@@ -17,7 +16,8 @@ end
 require('telescope').setup {
   defaults = {
     buffer_previewer_maker = new_maker,
-  }
+  },
+  color_devicons = true,
 }
 EOF
 
