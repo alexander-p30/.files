@@ -41,7 +41,7 @@ Plug 'axelf4/vim-strip-trailing-whitespace'
 
 " Themes / Visual
 Plug 'joshdick/onedark.vim'
-Plug 'norcalli/nvim-colorizer.lua'
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'morhetz/gruvbox'
 Plug 'sainnhe/gruvbox-material'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -196,11 +196,11 @@ augroup END
 nnoremap <Leader>df :call DeleteFileAndCloseBuffer()<cr>
 
 
+source $HOME/.config/nvim/modules/functions.vim
+source $HOME/.config/nvim/modules/hexokinase.vim
 source $HOME/.config/nvim/modules/statusline.vim
 source $HOME/.config/nvim/modules/treesitter.vim
 source $HOME/.config/nvim/modules/telescope.vim
-source $HOME/.config/nvim/modules/functions.vim
 
 lua require'nvim-web-devicons'.setup { default = true; }
-lua require'colorizer'.setup()
 
