@@ -18,6 +18,23 @@ require('telescope').setup {
     buffer_previewer_maker = new_maker,
   },
   color_devicons = true,
+  pickers = {
+    buffers = {
+      show_all_buffers = true,
+      sort_lastused = true,
+      theme = "dropdown",
+      previewer = false,
+      mappings = {
+        i = {
+          ["<c-e>"] = "delete_buffer",
+        },
+        n = {
+            ["d"] = "delete_buffer",
+            ["<c-e>"] = "delete_buffer",
+        }
+      }
+    }
+  }
 }
 EOF
 
