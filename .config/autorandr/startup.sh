@@ -1,0 +1,1 @@
+autorandr -l $(autorandr --detected)
