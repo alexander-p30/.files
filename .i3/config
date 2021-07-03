@@ -100,6 +100,10 @@ workspace_auto_back_and_forth yes
 bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
+# move worskpace between displays
+bindsym $mod+Mod1+h move workspace to output left
+bindsym $mod+Mod1+l move workspace to output right
+
 # split orientation
 # bindsym $mod+h split h;exec notify-send 'tile horizontally'
 bindsym $mod+Shift+v split h;exec notify-send 'tile horizontally'
@@ -229,7 +233,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+0 mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym l exec --no-startup-id i3lock -c 282828, mode "default"
     bindsym s exec --no-startup-id i3exit suspend, mode "default"
     bindsym u exec --no-startup-id i3exit switch_user, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
@@ -242,24 +246,25 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
-# Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
+        # Increase/decrease by 5
         bindsym h resize shrink width 5 px or 5 ppt
         bindsym k resize grow height 5 px or 5 ppt
         bindsym j resize shrink height 5 px or 5 ppt
         bindsym l resize grow width 5 px or 5 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        # Increase/decrease by 15
+        bindsym Shift+h resize shrink width 15 px or 15 ppt
+        bindsym Shift+k resize grow height 15 px or 15 ppt
+        bindsym Shift+j resize shrink height 15 px or 15 ppt
+        bindsym Shift+l resize grow width 15 px or 15 ppt
+
+        # Increase/decrease by 2
+        bindsym Ctrl+h resize shrink width 2 px or 2 ppt
+        bindsym Ctrl+k resize grow height 2 px or 2 ppt
+        bindsym Ctrl+j resize shrink height 2 px or 2 ppt
+        bindsym Ctrl+l resize grow width 2 px or 2 ppt
 
         # exit resize mode: Enter or Escape
         bindsym Return mode "default"
@@ -267,15 +272,14 @@ mode "resize" {
 }
 
 # Lock screen
-bindsym $mod+9 exec --no-startup-id blurlock
+bindsym $mod+9 exec --no-startup-id i3lock -c 282828
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; picom -C -b
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id xautolock -time 15 -locker blurlock
-exec xrandr --output DP-2 --mode 2560x1080 --rate 74.99
+exec --no-startup-id xautolock -time 15 -locker "i3lock -c 282828"
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
@@ -313,6 +317,8 @@ set_from_resource $term_color15    color15
 
 # Start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# Apply autorandr profile
+exec_always --no-startup-id $HOME/.config/autorandr/startup.sh
 
 # Gruvbox colors
 set $bg #282828
