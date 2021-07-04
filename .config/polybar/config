@@ -62,7 +62,7 @@ tray-offset-x = ${env:POLYBAR_TRAY_OFFSET_X:0}
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
-font-3 = "Droid Sans Fallback:style=Regular:pixelsize=11;1"
+font-3 = "Noto Sans CJK SC:style=Medium:pixelsize=11;1"
 font-4 = "MesloLGS NF:style=Regular:pixelsize=10;1"
 font-5 = "Fira Code:style=Bold:pixelsize=11;1"
 
@@ -94,7 +94,6 @@ label-layout-font = 6
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
-format-name-font = 3
 index-sort = true
 wrapping-scroll = false
 strip-wsnumbers = true
