@@ -124,6 +124,13 @@ let g:fern#renderer = "nerdfont"
 " Keybindings
 let mapleader = " "
 
+" Splits
+nnoremap <C-e> <C-w>
+nnoremap <A-h> <C-w><C-h>
+nnoremap <A-j> <C-w><C-j>
+nnoremap <A-k> <C-w><C-k>
+nnoremap <A-l> <C-w><C-l>
+
 " Test-related bindings
 nnoremap <leader>tn :call OpenNeotermInNewTabAndFocus('tn')<cr>
 nnoremap <leader>tf :call OpenNeotermInNewTabAndFocus('tf')<cr>
