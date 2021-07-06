@@ -108,7 +108,8 @@ let test#strategy = "neoterm"
 let g:mix_format_on_save = 1
 
 " neoterm
-let g:neoterm_default_mod='tab'
+let g:neoterm_default_mod='botright'
+let g:neoterm_size=''
 
 " gitgutter
 let g:gitgutter_sign_added = 'Δ'
