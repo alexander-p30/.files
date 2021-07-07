@@ -21,7 +21,6 @@ require('telescope').setup {
   pickers = {
     buffers = {
       show_all_buffers = true,
-      theme = "dropdown",
       previewer = false,
       mappings = {
         i = {
