@@ -38,6 +38,7 @@ Plug 'nvim-treesitter/playground'
 Plug 'kassio/neoterm'
 Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'axelf4/vim-strip-trailing-whitespace'
+Plug 'rmagatti/auto-session'
 
 " Themes / Visual
 Plug 'joshdick/onedark.vim'
