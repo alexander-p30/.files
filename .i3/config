@@ -272,8 +272,9 @@ exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/.config/autorandr/startup.sh
-exec_always --no-startup-id setxkbmap -layout us -variant intl
 exec_always echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode
+exec_always --no-startup-id key-mapper-control --command autoload
+exec_always --no-startup-id setxkbmap -layout us -variant intl -option caps:none
 
 # Gruvbox colors
 set $bg #282828
