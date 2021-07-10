@@ -270,8 +270,9 @@ exec --no-startup-id xfce4-power-manager
 exec --no-startup-id xautolock -time 15 -locker "i3lock -c 282828"
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/.config/autorandr/startup.sh
+exec_always --no-startup-id sleep 1; $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id sleep 1; nitrogen --restore
 exec_always echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode
 exec_always --no-startup-id key-mapper-control --command autoload
 exec_always --no-startup-id setxkbmap -layout us -variant intl -option caps:none
