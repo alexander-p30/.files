@@ -34,7 +34,7 @@ color7 = #ebdbb2
 color8 = #8ec07c
 
 [bar/mybar]
-monitor = ${env:MONITOR}
+monitor = ${env:MONITOR:}
 width = 100%
 dpi = ${env:POLYBAR_DPI:96}
 height = ${env:POLYBAR_HEIGHT:27}
