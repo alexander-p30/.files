@@ -1,4 +1,6 @@
-" Plugin managing
+" vim:foldmethod=marker
+
+" Plugin managing {{{
 call plug#begin('~/.vim/plugged')
 " File-related
 Plug 'lambdalisue/fern.vim' |
@@ -47,18 +49,21 @@ Plug 'morhetz/gruvbox'
 Plug 'sainnhe/gruvbox-material'
 Plug 'kyazdani42/nvim-web-devicons'
 call plug#end()
+" }}}
 
-
-" Folding
+" Folding {{{
 set nofoldenable
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
+" }}}
 
-" Theming and styling
+" Theming and styling {{{
 let g:gruvbox_material_palette="mix"
 colorscheme gruvbox-material
 set background=dark
+" }}}
 
+" General Sets and Cmds {{{
 " Indentation
 set tabstop=2 softtabstop=2
 set shiftwidth=2
@@ -100,8 +105,12 @@ set nocursorline
 set termguicolors
 
 syntax on
+" }}}
 
-" Plugin configs
+" Plugin configs {{{
+" nvim-web-devicons
+lua require'nvim-web-devicons'.setup { default = true; }
+
 " vim-test
 let test#strategy = "neoterm"
 
@@ -112,78 +121,74 @@ let g:mix_format_on_save = 1
 let g:neoterm_default_mod='botright'
 let g:neoterm_size=''
 
-" gitgutter
+" gitgutter {{{
 let g:gitgutter_sign_added = 'Δ'
 let g:gitgutter_sign_modified = '▷'
 let g:gitgutter_sign_removed = '∇'
 let g:gitgutter_sign_removed_first_line = '∅'
 let g:gitgutter_sign_removed_above_and_below = '⩫'
 let g:gitgutter_sign_modified_removed = '◁'
+" }}}
 
 " fern
 let g:fern#renderer = "nerdfont"
+" }}}
 
-" Keybindings
+" Keybindings {{{
 let mapleader = " "
 
-" Splits
+" Splits {{{
 nnoremap <C-e> <C-w>
 nnoremap <A-h> <C-w><C-h>
 nnoremap <A-j> <C-w><C-j>
 nnoremap <A-k> <C-w><C-k>
 nnoremap <A-l> <C-w><C-l>
+" }}}
 
-" Test-related bindings
+" Test-related bindings {{{
 nnoremap <leader>tn :call OpenNeotermInNewTabAndFocus('tn')<cr>
 nnoremap <leader>tf :call OpenNeotermInNewTabAndFocus('tf')<cr>
 nnoremap <leader>ts :call OpenNeotermInNewTabAndFocus('ts')<cr>
 nnoremap <leader>tl :call OpenNeotermInNewTabAndFocus('tl')<cr>
 nnoremap <leader>tv :TestVisit<cr>
 nnoremap <leader>c :Tclose!<cr>
+" }}}
 
-" Yanking and pasting clipboard
+" Yanking and pasting clipboard {{{
 vnoremap <C-y> "+y
 nnoremap <C-p> "+p
 vnoremap <C-p> "+p
+" }}}
 
-" Definition navigation
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gr <Plug>(coc-references)
-
-" Tab managing
+" Tab managing {{{
 nnoremap <C-t> :tabedit %<cr>
 nnoremap <C-w> :tabclose<cr>
 nnoremap <C-h> :tabprev<cr>
 nnoremap <C-j> :tabfirst<cr>
 nnoremap <C-l> :tabnext<cr>
 nnoremap <C-k> :tablast<cr>
+" }}}
 
-" Clear search highlighting
+" Closing {{{
 nnoremap <leader>w :w<cr>
 nnoremap <leader>qw :wq<cr>
 nnoremap <leader>qq :q<cr>
 nnoremap <leader>Q :q!<cr>
+" }}}
 
-" Clear search highlighting
-nnoremap <leader>h :noh<cr>
+" Coc {{{
+" Definition navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references)
 
-" Update configs
-nnoremap <C-s> :so ~/.config/nvim/init.vim<cr>
-
-" Coc floating window scroll
+" Floating window scroll
 nnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
 nnoremap <nowait><expr> <C-g> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 inoremap <nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
 inoremap <nowait><expr> <C-g> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+" }}}
 
-" gitgutter hunk navigation
-nnoremap <silent> <cr> :GitGutterNextHunk<cr>
-nnoremap <silent> <backspace> :GitGutterPrevHunk<cr>
-
-" LazyGit
-nnoremap <silent> <leader>lg :LazyGit<CR>
-
-" Fern
+" Fern {{{
 nnoremap <silent> <C-b> :Fern . -drawer -width=50 -reveal=% -toggle<cr>
 function! s:fern_settings() abort
   nmap <silent> <buffer> p     <Plug>(fern-action-preview:toggle)
@@ -192,24 +197,38 @@ function! s:fern_settings() abort
   nmap <silent> <buffer> <C-u> <Plug>(fern-action-preview:scroll:up:half)
 endfunction
 
-" Profiling
-nnoremap <leader>profi :call ProfileSession()<cr>
-nnoremap <leader>profs :call EndSessionProfiling()<cr>
-
 augroup fern-settings
   autocmd!
   autocmd FileType fern call s:fern_settings()
 augroup END
+" }}}
+
+" Clear search highlighting
+nnoremap <leader>h :noh<cr>
+
+" Update configs
+nnoremap <C-s> :so ~/.config/nvim/init.vim<cr>
+
+" gitgutter hunk navigation
+nnoremap <silent> <cr> :GitGutterNextHunk<cr>
+nnoremap <silent> <backspace> :GitGutterPrevHunk<cr>
+
+" LazyGit
+nnoremap <silent> <leader>lg :LazyGit<CR>
+
+" Profiling
+nnoremap <leader>profi :call ProfileSession()<cr>
+nnoremap <leader>profs :call EndSessionProfiling()<cr>
 
 " Delete current file
 nnoremap <Leader>df :call DeleteFileAndCloseBuffer()<cr>
+" }}}
 
-
+" External Files Sourcing {{{
 source $HOME/.config/nvim/modules/functions.vim
 source $HOME/.config/nvim/modules/hexokinase.vim
 source $HOME/.config/nvim/modules/statusline.vim
 source $HOME/.config/nvim/modules/treesitter.vim
 source $HOME/.config/nvim/modules/telescope.vim
-
-lua require'nvim-web-devicons'.setup { default = true; }
+" }}}
 
