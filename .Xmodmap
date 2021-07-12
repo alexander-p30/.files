@@ -3,8 +3,8 @@ keysym h = h H Left
 keysym l = l L Right
 keysym k = k K Up
 keysym j = j J Down
-keysym u = u U Home
-keysym i = i I End
-keysym o = o O Prior
-keysym p = p P Next
+keysym y = y Y Home
+keysym u = u U Prior
+keysym i = i I Next
+keysym o = o O End
 
