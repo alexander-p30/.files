@@ -47,10 +47,8 @@ source ~/.extended/.system-envs
 # }}}
 
 # Kitty {{{
-compinit
-
 # Completion for kitty
-# kitty + complete setup zsh | source /dev/stdin
+kitty + complete setup zsh | source /dev/stdin
 # }}}
 
 # Prompt {{{
