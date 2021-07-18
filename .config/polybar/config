@@ -38,7 +38,7 @@ monitor = ${env:MONITOR:}
 width = 100%
 dpi = ${env:POLYBAR_DPI:96}
 height = ${env:POLYBAR_HEIGHT:27}
-radius = 6.0
+radius = 0.0
 fixed-center = false
 
 background = ${colors.background}
@@ -47,7 +47,7 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 4
+border-size = 0
 border-color = #00000000
 
 padding-left = 0
@@ -68,10 +68,10 @@ font-5 = "Fira Code:style=Bold:pixelsize=11;1"
 
 modules-left = i3
 modules-center = xwindow
-modules-right = xbacklight pulseaudio xkeyboard memory cpu wlan eth battery date
+modules-right = xbacklight pulseaudio xkeyboard memory cpu battery date
 
 tray-position = right
-tray-padding = 2
+tray-padding = 0
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -79,17 +79,6 @@ cursor-scroll = ns-resize
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:50:...%
-
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-format-foreground = ${colors.color1}
-
-format-prefix = "語 "
-
-label-layout = %layout%
-label-layout-font = 6
 
 [module/i3]
 type = internal/i3
@@ -165,44 +154,6 @@ format-foreground = ${colors.color4}
 
 label = %gb_used%
 label-font = 6
-
-[module/wlan]
-type = internal/network
-interface = net1
-interval = 3.0
-
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = ${colors.color5}
-label-connected = %essid%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
-
-[module/eth]
-type = internal/network
-interface = eno1
-interval = 3.0
-
-format-connected-underline = ${colors.color5}
-; format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
 type = internal/date
