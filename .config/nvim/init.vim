@@ -19,6 +19,7 @@ Plug 'lambdalisue/nerdfont.vim'
 " Git
 Plug 'kdheepak/lazygit.nvim'
 Plug 'airblade/vim-gitgutter'
+Plug 'APZelos/blamer.nvim'
 
 " LS, syntax highlighting and programming utils
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -132,6 +133,12 @@ let g:gitgutter_sign_modified_removed = '◁'
 
 " fern
 let g:fern#renderer = "nerdfont"
+
+" git-blamer {{{
+let g:blamer_enabled = 1
+let g:blamer_show_in_visual_modes = 0
+let g:blamer_delay = 500
+" }}}
 " }}}
 
 " Keybindings {{{
