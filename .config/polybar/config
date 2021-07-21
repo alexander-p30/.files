@@ -51,41 +51,41 @@ border-size = 0
 border-color = #00000000
 
 padding-left = 0
-padding-right = ${env:POLYBAR_PADDING_RIGHT:2}
+padding-right = 1
 
 module-margin-left = 1
 module-margin-right = 3
 
-tray-detached = ${env:POLYBAR_TRAY_DETACHED:false}
-tray-offset-x = ${env:POLYBAR_TRAY_OFFSET_X:0}
+font-0 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-1 = "Noto Sans CJK SC:style=Medium:pixelsize=11;1"
+font-2 = "Fira Code:style=Bold:pixelsize=11;1"
+font-3 = "Fira Code Nerd Font:style=Bold:pixelsize=14;1"
 
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
-font-3 = "Noto Sans CJK SC:style=Medium:pixelsize=11;1"
-font-4 = "MesloLGS NF:style=Regular:pixelsize=10;1"
-font-5 = "Fira Code:style=Bold:pixelsize=11;1"
-
-modules-left = i3
-modules-center = xwindow
+modules-left = i3 xwindow
+modules-center =
 modules-right = xbacklight pulseaudio xkeyboard memory cpu battery date
 
 tray-position = right
 tray-padding = 0
+tray-maxsize = 16
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:50:...%
+format-maring = 0
+label =:: %title:0:100:...%
+label-font = 3
 
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
+format-font = 3
 index-sort = true
 wrapping-scroll = false
 strip-wsnumbers = true
+format-margin = 0
 
 label-mode-padding = 2
 label-mode-foreground = #000
@@ -93,7 +93,7 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %name%
-label-focused-background = ${colors.background-alt}
+label-focused-background = ${colors.background}
 label-focused-underline= ${colors.color2}
 label-focused-padding = 2
 
@@ -110,7 +110,7 @@ label-visible-padding = ${self.label-focused-padding}
 ; urgent = Workspace with urgency hint set
 label-urgent = %name%
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 3
 
 ; Separator in between workspaces
 ; label-separator = |
@@ -124,12 +124,12 @@ label = 光
 bar-width = 10
 bar-indicator = |
 bar-indicator-foreground = ${colors.foreground}
-bar-indicator-font = 2
+bar-indicator-font = 1
 bar-fill = ─
-bar-fill-font = 2
+bar-fill-font = 1
 bar-fill-foreground = #9f78e1
 bar-empty = ─
-bar-empty-font = 2
+bar-empty-font = 1
 bar-empty-foreground = ${colors.background-alt}
 
 [module/cpu]
@@ -137,7 +137,7 @@ type = internal/cpu
 
 format = <label>
 label = %percentage:1%%
-label-font = 6
+label-font = 3
 
 interval = 1
 
@@ -153,7 +153,7 @@ format-prefix = "䍨 "
 format-foreground = ${colors.color4}
 
 label = %gb_used%
-label-font = 6
+label-font = 3
 
 [module/date]
 type = internal/date
@@ -169,7 +169,7 @@ format-prefix = "今 "
 format-foreground = ${colors.color6}
 
 label = %date% %time%
-label-font = 6
+label-font = 3
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -180,7 +180,7 @@ label-volume-foreground = ${root.foreground}
 
 label-muted = "muted"
 label-muted-foreground = ${colors.primary}
-label-muted-font = 6
+label-muted-font = 3
 
 bar-volume-width = 10
 bar-volume-foreground-0 = ${colors.primary}
@@ -192,11 +192,11 @@ bar-volume-foreground-5 = ${colors.primary}
 bar-volume-foreground-6 = ${colors.alert}
 bar-volume-gradient = false
 bar-volume-indicator = |
-bar-volume-indicator-font = 2
+bar-volume-indicator-font = 1
 bar-volume-fill = ─
-bar-volume-fill-font = 2
+bar-volume-fill-font = 1
 bar-volume-empty = ─
-bar-volume-empty-font = 2
+bar-volume-empty-font = 1
 bar-volume-empty-foreground = ${colors.background-alt}
 
 [module/battery]
@@ -207,10 +207,10 @@ full-at = 98
 
 format-foreground = ${colors.color7}
 
-label-charging-font = 6
+label-charging-font = 3
 format-charging = <animation-charging> <label-charging>
 
-label-discharging-font = 6
+label-discharging-font = 3
 format-discharging = <ramp-capacity> <label-discharging>
 
 format-full-prefix = " "
