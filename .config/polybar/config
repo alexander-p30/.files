@@ -60,7 +60,8 @@ font-0 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-1 = "Noto Sans CJK SC:style=Medium:pixelsize=11;1"
 font-2 = "Fira Code:style=Bold:pixelsize=11;1"
 font-3 = "Fira Code Nerd Font:style=Bold:pixelsize=14;1"
-font-4 = "Font Awesome 5 Free Solid:style=Solid"
+font-4 = "Font Awesome 5 Free Solid:style=Solid:pixelsize=12;1"
+font-5 = "Fira Code Nerd Font:style=Bold:pixelsize=12;1"
 
 modules-left = i3 xwindow
 modules-center =
@@ -136,7 +137,7 @@ label-font = 3
 
 interval = 1
 
-format-prefix = "  "
+format-prefix = "  "
 format-foreground = ${colors.color3}
 
 [module/memory]
@@ -144,7 +145,8 @@ type = internal/memory
 
 interval = 1
 
-format-prefix = "   "
+format-prefix = " "
+format-prefix-font = 6
 format-foreground = ${colors.color4}
 
 label = %gb_used%
