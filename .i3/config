@@ -193,10 +193,9 @@ bindsym $mod+Mod1+l move workspace to output right
 
 # Applications {{{
 # Open applications on specific workspaces
-# assign [class="Thunderbird"] $ws1
-# assign [class="Pale moon"] $ws2
-# assign [class="Pcmanfm"] $ws3
-# assign [class="Skype"] $ws5
+assign [class="firefox"] $ws2
+assign [class="Google-chrome"] $ws3
+for_window [class="Spotify"] move to workspace $ws4
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
