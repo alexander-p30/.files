@@ -102,7 +102,7 @@ set scrolloff=4
 set completeopt=menuone,noinsert,noselect
 set signcolumn=yes
 set colorcolumn=120
-set nocursorline 
+set cursorline
 set termguicolors
 
 syntax on
