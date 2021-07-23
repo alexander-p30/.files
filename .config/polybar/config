@@ -60,6 +60,7 @@ font-0 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-1 = "Noto Sans CJK SC:style=Medium:pixelsize=11;1"
 font-2 = "Fira Code:style=Bold:pixelsize=11;1"
 font-3 = "Fira Code Nerd Font:style=Bold:pixelsize=14;1"
+font-4 = "Font Awesome 5 Free Solid:style=Solid"
 
 modules-left = i3 xwindow
 modules-center =
@@ -118,19 +119,13 @@ label-urgent-padding = 3
 [module/xbacklight]
 type = internal/xbacklight
 
-format = <label> <bar>
-label = 光
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = ${colors.foreground}
-bar-indicator-font = 1
-bar-fill = ─
-bar-fill-font = 1
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 1
-bar-empty-foreground = ${colors.background-alt}
+format = <ramp> <label>
+format-font = 3
+format-foreground = #9f78e1
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
 
 [module/cpu]
 type = internal/cpu
@@ -141,7 +136,7 @@ label-font = 3
 
 interval = 1
 
-format-prefix = "脳 "
+format-prefix = "  "
 format-foreground = ${colors.color3}
 
 [module/memory]
@@ -149,7 +144,7 @@ type = internal/memory
 
 interval = 1
 
-format-prefix = "䍨 "
+format-prefix = "   "
 format-foreground = ${colors.color4}
 
 label = %gb_used%
@@ -159,13 +154,14 @@ label-font = 3
 type = internal/date
 interval = 5
 
-date = %d.%m
+date = " %d.%m"
 date-alt = " %Y-%m-%d"
 
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = "今 "
+format-prefix = ""
+format-prefix-font = 5
 format-foreground = ${colors.color6}
 
 label = %date% %time%
@@ -174,13 +170,20 @@ label-font = 3
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
-label-volume = レベル
-label-volume-foreground = ${root.foreground}
+format-volume = <ramp-volume> <label-volume>
+label-volume-foreground = ${colors.primary}
+label-volume =  %percentage%%
+label-volume-font = 3
 
-label-muted = "muted"
+label-muted = " muted"
 label-muted-foreground = ${colors.primary}
 label-muted-font = 3
+
+ramp-volume-font = 4
+ramp-volume-0 = ""
+ramp-volume-1 = ""
+ramp-volume-2 = " "
+ramp-volume-foreground = ${colors.primary}
 
 bar-volume-width = 10
 bar-volume-foreground-0 = ${colors.primary}
@@ -208,7 +211,7 @@ full-at = 98
 format-foreground = ${colors.color7}
 
 label-charging-font = 3
-format-charging = <animation-charging> <label-charging>
+format-charging =  <label-charging>
 
 label-discharging-font = 3
 format-discharging = <ramp-capacity> <label-discharging>
@@ -229,11 +232,8 @@ ramp-capacity-8 = " "
 ramp-capacity-9 = " "
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = " "
-animation-charging-1 = " "
-animation-charging-2 = " "
+animation-charging-0 = ""
 animation-charging-foreground = ${colors.foreground-alt}
-animation-charging-framerate = 750
 
 [settings]
 screenchange-reload = true
