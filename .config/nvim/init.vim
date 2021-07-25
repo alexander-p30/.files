@@ -167,16 +167,7 @@ nnoremap <C-p> "+p
 vnoremap <C-p> "+p
 " }}}
 
-" Tab managing {{{
-nnoremap <C-t> :tabedit %<cr>
-nnoremap <C-w> :tabclose<cr>
-nnoremap <C-h> :tabprev<cr>
-nnoremap <C-j> :tabfirst<cr>
-nnoremap <C-l> :tabnext<cr>
-nnoremap <C-k> :tablast<cr>
-" }}}
-
-" Closing {{{
+" Writing and Closing {{{
 nnoremap <leader>w :w<cr>
 nnoremap <leader>qw :wq<cr>
 nnoremap <leader>qq :q<cr>

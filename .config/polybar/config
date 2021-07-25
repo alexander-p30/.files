@@ -208,7 +208,7 @@ bar-volume-empty-foreground = ${colors.background-alt}
 type = internal/battery
 battery = BAT1
 adapter = ADP1
-full-at = 98
+full-at = 99
 
 format-foreground = ${colors.color7}
 
