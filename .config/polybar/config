@@ -65,7 +65,7 @@ font-5 = "Fira Code Nerd Font:style=Bold:pixelsize=12;1"
 
 modules-left = i3 xwindow
 modules-center =
-modules-right = xbacklight pulseaudio xkeyboard memory cpu battery date
+modules-right = xbacklight pulseaudio memory cpu battery date
 
 tray-position = right
 tray-padding = 0
@@ -122,7 +122,7 @@ type = internal/xbacklight
 
 format = <ramp> <label>
 format-font = 3
-format-foreground = #9f78e1
+format-foreground = ${colors.color1}
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
@@ -164,7 +164,7 @@ time-alt = %H:%M:%S
 
 format-prefix = ""
 format-prefix-font = 5
-format-foreground = ${colors.color6}
+format-foreground = ${colors.color7}
 
 label = %date% %time%
 label-font = 3
@@ -210,16 +210,18 @@ battery = BAT1
 adapter = ADP1
 full-at = 99
 
-format-foreground = ${colors.color7}
 
 label-charging-font = 3
+format-charging-foreground = ${colors.color1}
 format-charging =  <label-charging>
 
 label-discharging-font = 3
+format-discharging-foreground = ${colors.color1}
 format-discharging = <ramp-capacity> <label-discharging>
 
 label-full-font = 3
 format-full-prefix = " "
+format-full-foreground = ${colors.color5}
 format-full = <label-full>
 
 ramp-capacity-0 = " "
@@ -232,10 +234,7 @@ ramp-capacity-6 = " "
 ramp-capacity-7 = " "
 ramp-capacity-8 = " "
 ramp-capacity-9 = " "
-ramp-capacity-foreground = ${colors.foreground-alt}
-
-animation-charging-0 = ""
-animation-charging-foreground = ${colors.foreground-alt}
+ramp-capacity-foreground = ${colors.color1}
 
 [settings]
 screenchange-reload = true
