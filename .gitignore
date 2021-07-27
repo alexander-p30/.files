@@ -1,20 +1,23 @@
-# Ignore all files
-*
+# Ignore all files and folders
+/*
+.config/*
 .extended/*
 
 # Except these
 !.bashrc
+!.config/
 !.config/autorandr/
+!.config/autorandr/startup.sh
 !.config/dunst/
 !.config/kitty/
 !.config/nvim/
 !.config/picom.conf
 !.config/polybar/
+!.config/rofi/
 !.config/xfce4/
 !.extended/git-aliases
 !.extended/rails-aliases
 !.extended/soft-aliases
-!.fzf/
 !.fzf.zsh
 !.gitignore
 !.oh-my-zsh/

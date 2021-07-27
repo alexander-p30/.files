@@ -3,6 +3,4 @@
 
 # Except these
 !.gitignore
-!*.vim
-!modules/
-
+!startup.sh
