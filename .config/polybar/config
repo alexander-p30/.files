@@ -19,19 +19,25 @@
 [colors]
 background = #282828
 background-alt = #504945
-foreground = #ebdbb2
+foreground = #e2cca9
 foreground-alt = #fbf1c7
-primary = #fe8019
-secondary = #b8bb26
-alert = #fb4934
-color1 = #b16286
-color2 = #fb4934
-color3 = #b8bb26
-color4 = #fabd2f
-color5 = #83a598
-color6 = #fe8019
+primary = #f28534
+secondary = #b0b846
+alert = #f2594b
+color1 = #d3869b
+color2 = #f2594b
+color3 = #b0b846
+color4 = #e9b143
+color5 = #80aa9e
+color6 = #f28534
 color7 = #ebdbb2
-color8 = #8ec07c
+backlight = ${colors.color1}
+volume = ${colors.primary}
+memory = ${colors.color3}
+cpu = ${colors.color2}
+battery = ${colors.color4}
+battery-charging = ${colors.color4}
+date = ${colors.color5}
 
 [bar/mybar]
 monitor = ${env:MONITOR:}
@@ -120,14 +126,26 @@ label-urgent-padding = 3
 
 [module/xbacklight]
 type = internal/xbacklight
+output = eDP1
 
 format = <ramp> <label>
 format-font = 3
-format-foreground = ${colors.color1}
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-3 = 
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+ramp-5 = 
+ramp-6 = 
+ramp-7 = 
+ramp-8 = 
+ramp-9 = 
+ramp-10 = 
+ramp-11 = 
+ramp-12 = 
+ramp-13 = 
+ramp-foreground = ${colors.backlight}
 
 [module/cpu]
 type = internal/cpu
@@ -139,7 +157,7 @@ label-font = 3
 interval = 1
 
 format-prefix = "  "
-format-foreground = ${colors.color3}
+format-prefix-foreground = ${colors.cpu}
 
 [module/memory]
 type = internal/memory
@@ -148,7 +166,7 @@ interval = 1
 
 format-prefix = " "
 format-prefix-font = 6
-format-foreground = ${colors.color4}
+format-prefix-foreground = ${colors.memory}
 
 label = %gb_used%
 label-font = 3
@@ -165,7 +183,7 @@ time-alt = %H:%M:%S
 
 format-prefix = ""
 format-prefix-font = 5
-format-foreground = ${colors.color7}
+format-prefix-foreground = ${colors.date}
 
 label = %date% %time%
 label-font = 3
@@ -174,36 +192,19 @@ label-font = 3
 type = internal/pulseaudio
 
 format-volume = <ramp-volume> <label-volume>
-label-volume-foreground = ${colors.primary}
 label-volume =  %percentage%%
 label-volume-font = 3
 
-label-muted = " muted"
-label-muted-foreground = ${colors.primary}
+label-muted = " muted"
+label-muted-prefix = ""
+label-muted-prefix-foreground = ${colors.volume}
 label-muted-font = 3
 
 ramp-volume-font = 4
 ramp-volume-0 = ""
 ramp-volume-1 = ""
 ramp-volume-2 = " "
-ramp-volume-foreground = ${colors.primary}
-
-bar-volume-width = 10
-bar-volume-foreground-0 = ${colors.primary}
-bar-volume-foreground-1 = ${colors.primary}
-bar-volume-foreground-2 = ${colors.primary}
-bar-volume-foreground-3 = ${colors.primary}
-bar-volume-foreground-4 = ${colors.primary}
-bar-volume-foreground-5 = ${colors.primary}
-bar-volume-foreground-6 = ${colors.alert}
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 1
-bar-volume-fill = ─
-bar-volume-fill-font = 1
-bar-volume-empty = ─
-bar-volume-empty-font = 1
-bar-volume-empty-foreground = ${colors.background-alt}
+ramp-volume-foreground = ${colors.volume}
 
 [module/battery]
 type = internal/battery
@@ -213,16 +214,16 @@ full-at = 99
 
 
 label-charging-font = 3
-format-charging-foreground = ${colors.color1}
+format-charging-prefix-foreground = ${colors.battery-charging}
 format-charging =  <label-charging>
 
 label-discharging-font = 3
-format-discharging-foreground = ${colors.color1}
+format-discharging-prefix-foreground = ${colors.battery}
 format-discharging = <ramp-capacity> <label-discharging>
 
 label-full-font = 3
 format-full-prefix = " "
-format-full-foreground = ${colors.color5}
+format-full-prefix-foreground = ${colors.battery}
 format-full = <label-full>
 
 ramp-capacity-0 = " "
