@@ -36,6 +36,7 @@ Plug 'mhinz/vim-mix-format'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'nvim-treesitter/playground'
+Plug 'mboughaba/i3config.vim'
 
 " Other
 Plug 'kassio/neoterm'
@@ -139,6 +140,9 @@ let g:blamer_enabled = 1
 let g:blamer_show_in_visual_modes = 0
 let g:blamer_delay = 500
 " }}}
+
+" coc
+let g:coc_node_path = '/home/alexander/.asdf/shims/node'
 " }}}
 
 " Keybindings {{{
