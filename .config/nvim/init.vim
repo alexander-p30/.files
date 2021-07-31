@@ -149,7 +149,6 @@ let g:coc_node_path = '/home/alexander/.asdf/shims/node'
 let mapleader = " "
 
 " Splits {{{
-nnoremap <C-e> <C-w>
 nnoremap <A-h> <C-w><C-h>
 nnoremap <A-j> <C-w><C-j>
 nnoremap <A-k> <C-w><C-k>
@@ -204,6 +203,9 @@ augroup fern-settings
   autocmd FileType fern call s:fern_settings()
 augroup END
 " }}}
+
+" Copy until end of line
+nnoremap Y y$
 
 " Clear search highlighting
 nnoremap <leader>h :noh<cr>
