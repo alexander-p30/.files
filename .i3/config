@@ -1,12 +1,11 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguideshtml for a complete reference!
-# vim:fileencoding=utf-8:ft=conf:foldmethod=marker
+# vim:fileencoding=utf-8:ft=i3config:foldmethod=marker
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
+# Font for window titles
 font xft:URWGothic-Book 11
 
 # Borders {{{
@@ -16,11 +15,6 @@ default_floating_border normal
 
 # Hide borders
 hide_edge_borders none
-
-# change borders
-bindsym $mod+u border none
-bindsym $mod+y border pixel 1
-bindsym $mod+n border normal
 # }}}
 
 # Sound {{{
@@ -52,6 +46,7 @@ bindsym $mod+Ctrl+t exec --no-startup-id picom -C -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec flameshot gui
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+bindsym $mod+n exec kitty --class note-editor ~/.scripts/notetaker.sh
 
 # dmenu
 bindsym $mod+d exec --no-startup-id rofi -show drun
@@ -210,6 +205,8 @@ for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
 for_window [class="(?i)System-config-printer.py"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [class="note-editor"] floating enable
+for_window [class="note-editor"] resize set 800 px 600 px
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
