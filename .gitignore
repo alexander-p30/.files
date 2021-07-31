@@ -22,6 +22,7 @@
 !.gitignore
 !.oh-my-zsh/
 !.p10k.zsh
+!.scripts/
 !.zshrc
 !.i3/
 !.Xmodmap
