@@ -198,29 +198,18 @@ for_window [class="Spotify"] move to workspace $ws4
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
-for_window [class="calamares"] floating enable border normal
-for_window [class="Clipgrab"] floating enable
-for_window [title="File Transfer*"] floating enable
-for_window [class="fpakman"] floating enable
-for_window [class="Galculator"] floating enable border pixel 1
+for_window [class="Blueman-manager"] floating enable
 for_window [class="GParted"] floating enable border normal
 for_window [class="Lightdm-settings"] floating enable
 for_window [class="Lxappearance"] floating enable sticky enable border normal
-for_window [class="Manjaro-hello"] floating enable
-for_window [class="Manjaro Settings Manager"] floating enable border normal
-for_window [title="MuseScore: Play Panel"] floating enable
 for_window [class="Nitrogen"] floating enable sticky enable border normal
-for_window [class="Oblogout"] fullscreen enable
-for_window [class="octopi"] floating enable
 for_window [class="Pamac-manager"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="qt5ct"] floating enable sticky enable border normal
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
-for_window [class="Simple-scan"] floating enable border normal
 for_window [class="(?i)System-config-printer.py"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
-for_window [class="Xfburn"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -290,19 +279,20 @@ exec_always --no-startup-id sleep 1; nitrogen --restore
 # Theming {{{
 # Gruvbox colors
 set $bg #282828
-set $red #cc241d
-set $green #98971a
-set $yellow #d79921
-set $blue #458588
-set $purple #b16286
-set $aqua #689d68
-set $gray #a89984
+set $red #f2594b
+set $green #b0b846
+set $yellow #e9b143
+set $orange #f28534
+set $blue #80aa9e
+set $purple #d3869b
+set $aqua #80aa9e
+set $gray #504945
 set $darkgray #1d2021
 
 # Theme colors
 # Default
 # class                   border  backgr. text    indic.   child_border
-client.focused          $yellow $yellow $aqua $darkgray
+client.focused          $orange $orange $aqua $darkgray
 client.focused_inactive $darkgray $darkgray $yellow $gray
 client.unfocused        $darkgray $darkgray $yellow $gray
 client.urgent           $red $red $aqua $blue
