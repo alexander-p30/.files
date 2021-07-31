@@ -195,9 +195,9 @@ format-volume = <ramp-volume> <label-volume>
 label-volume =  %percentage%%
 label-volume-font = 3
 
+format-muted-prefix = " "
+format-muted-prefix-foreground = ${colors.volume}
 label-muted = " muted"
-label-muted-prefix = ""
-label-muted-prefix-foreground = ${colors.volume}
 label-muted-font = 3
 
 ramp-volume-font = 4
