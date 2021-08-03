@@ -182,16 +182,16 @@
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#282828"
-    foreground = "#fe8019"
+    foreground = "#f28534"
     timeout = 4
 
 [urgency_normal]
-    background = "#fe8019"
     foreground = "#282828"
+    background = "#f28534"
     timeout = 6
 
 [urgency_critical]
-    background = "#fb4934"
+    background = "#f2594b"
     foreground = "#fbf1c7"
     timeout = 0
 
@@ -228,49 +228,23 @@
 #    summary = "foobar"
 #    format = ""
 
-#[signed_on]
-#    appname = Pidgin
-#    summary = "*signed on*"
-#    urgency = low
-#
 #[signed_off]
 #    appname = Pidgin
 #    summary = *signed off*
 #    urgency = low
-#
-#[says]
-#    appname = Pidgin
-#    summary = *says*
-#    urgency = critical
-#
-#[twitter]
-#    appname = Pidgin
-#    summary = *twitter.com*
-#    urgency = normal
-#
+
 #[Claws Mail]
 #    appname = claws-mail
 #    category = email.arrived
 #    urgency = normal
 #    background = "#2F899E"
 #    foreground = "#FFA247"
-#
-#[mute.sh]
-#     appname = mute
-#     category = mute.sound
-#     script = mute.sh
-#
-#[JDownloader]
-#    appname = JDownloader
-#    category = JD
-#    background = "#FFA247"
-#    foreground = "#FFFFFF"
-#
+
 #[newsbeuter]
 #    summary = *Feeds*
 #    background = "#A8EB41"
 #    foreground = "#FFFFFF"
-#
+
 #[CMUS]
 #    appname = CMUS
 #    category = cmus
@@ -280,5 +254,5 @@
 #
 #     background = "#30AB70"
 #     foreground = "#F67245"
-#
+
 # vim: ft=cfg
