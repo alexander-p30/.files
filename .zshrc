@@ -20,8 +20,9 @@ export ZSH="/home/alexander/.oh-my-zsh"
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(
-	git
 	asdf
+  docker-compose
+	git
 	zsh-syntax-highlighting
 	zsh-autosuggestions	
 )
