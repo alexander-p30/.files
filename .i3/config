@@ -289,7 +289,7 @@ set $darkgray #1d2021
 # Theme colors
 # Default
 # class                   border  backgr. text    indic.   child_border
-client.focused          $orange $orange $aqua $darkgray
+client.focused          $orange $orange $darkgray $darkgray
 client.focused_inactive $darkgray $darkgray $yellow $gray
 client.unfocused        $darkgray $darkgray $yellow $gray
 client.urgent           $red $red $aqua $blue
