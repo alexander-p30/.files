@@ -105,7 +105,11 @@ set signcolumn=yes
 set colorcolumn=120
 set cursorline
 set termguicolors
-set noea
+
+" Split behaviour
+set noequalalways
+set splitbelow
+set splitright
 
 syntax on
 " }}}
@@ -182,6 +186,8 @@ nnoremap <leader>Q :q!<cr>
 " Definition navigation
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> <C-w>gs :call CocAction('jumpDefinition', 'split')<CR>
+nmap <silent> <C-w>gv :call CocAction('jumpDefinition', 'vsplit')<CR>
 
 " Floating window scroll
 nnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
