@@ -105,6 +105,7 @@ set signcolumn=yes
 set colorcolumn=120
 set cursorline
 set termguicolors
+set noea
 
 syntax on
 " }}}
