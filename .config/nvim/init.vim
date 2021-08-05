@@ -166,7 +166,7 @@ nnoremap <leader>tf :call OpenNeotermInNewTabAndFocus('tf')<cr>
 nnoremap <leader>ts :call OpenNeotermInNewTabAndFocus('ts')<cr>
 nnoremap <leader>tl :call OpenNeotermInNewTabAndFocus('tl')<cr>
 nnoremap <leader>tv :TestVisit<cr>
-nnoremap <leader>c :Tclose!<cr>
+nnoremap <leader>tc :Tclose!<cr>
 " }}}
 
 " Yanking and pasting clipboard {{{
@@ -213,6 +213,9 @@ augroup END
 
 " Copy until end of line
 nnoremap Y y$
+
+" Copy current filepath
+nmap <leader>cp :let @" = expand("%")<cr>
 
 " Clear search highlighting
 nnoremap <leader>h :noh<cr>
