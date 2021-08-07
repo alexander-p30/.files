@@ -3,7 +3,7 @@ set statusline=%2*\ \%{StatuslineMode()}\ \%#LGrn2LMag#
 set statusline+=%1*\ \%f\ \%#LMag2Grey#
 set statusline+=%0*%=%m%h%r
 set statusline+=%#LGrn2Grey#%3*\ \%{b:gitbranch}\ \%3*
-set statusline+=%#LBlu2LGrn#%5*\ \%l/%L\ \%5*
+set statusline+=%#LBlu2LGrn#%5*\ \%l/%L::%c\ \%5*
 set statusline+=%#LMag2LBlu#%6*\ \%y\ \%1*
 
 " Transitions
