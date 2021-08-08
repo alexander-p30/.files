@@ -264,7 +264,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; picom -C -b
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id xautolock -time 15 -locker "i3lock -c 282828"
+exec --no-startup-id xautolock -time 15 -locker "i3lock -c 282828" -notify 30 -corners --++
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id $HOME/.config/autorandr/startup.sh
