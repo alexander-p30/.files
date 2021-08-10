@@ -37,6 +37,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'nvim-treesitter/playground'
 Plug 'mboughaba/i3config.vim'
+Plug 'neovimhaskell/haskell-vim'
 
 " Other
 Plug 'kassio/neoterm'

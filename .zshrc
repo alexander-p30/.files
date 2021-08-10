@@ -56,3 +56,5 @@ kitty + complete setup zsh | source /dev/stdin
 eval "$(starship init zsh)"
 # }}}
 # }}}
+
+[ -f "/home/alexander/.ghcup/env" ] && source "/home/alexander/.ghcup/env" # ghcup-env
