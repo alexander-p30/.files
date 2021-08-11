@@ -188,6 +188,7 @@ bindsym $mod+Mod1+l move workspace to output right
 # Applications {{{
 # Open applications on specific workspaces
 assign [class="firefox"] $ws2
+assign [class="Brave-browser"] $ws2
 assign [class="Google-chrome"] $ws3
 for_window [class="Spotify"] move to workspace $ws4
 
