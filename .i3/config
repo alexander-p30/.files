@@ -54,6 +54,9 @@ bindsym $mod+d exec --no-startup-id rofi -show drun
 # Terminal
 bindsym $mod+Return exec kitty
 
+# Reset keyboard config
+bindsym $mod+Ctrl+k exec "setxkbmap -layout us -variant intl -option caps:none && xmodmap ~/.Xmodmap && exec notify-send 'Keyboard config reset'"
+
 # }}}
 
 # i3 Binds {{{
