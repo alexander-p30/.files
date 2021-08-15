@@ -71,7 +71,7 @@ font-5 = "Fira Code Nerd Font:style=Bold:pixelsize=12;1"
 
 modules-left = i3 xwindow
 modules-center =
-modules-right = xbacklight pulseaudio memory cpu battery date
+modules-right = xbacklight pulseaudio memory cpu battery popup-calendar
 
 tray-position = right
 tray-padding = 0
@@ -171,23 +171,6 @@ format-prefix-foreground = ${colors.memory}
 label = %gb_used%
 label-font = 3
 
-[module/date]
-type = internal/date
-interval = 5
-
-date = " %d.%m"
-date-alt = " %Y-%m-%d"
-
-time = %H:%M
-time-alt = %H:%M:%S
-
-format-prefix = ""
-format-prefix-font = 5
-format-prefix-foreground = ${colors.date}
-
-label = %date% %time%
-label-font = 3
-
 [module/pulseaudio]
 type = internal/pulseaudio
 
@@ -237,6 +220,18 @@ ramp-capacity-8 = " "
 ramp-capacity-9 = " "
 ramp-capacity-foreground = ${colors.battery}
 
+[module/popup-calendar]
+type = custom/script
+exec = ~/.scripts/calendar.sh
+interval = 5
+click-left = ~/.scripts/calendar.sh --popup &
+
+format-prefix = ""
+format-prefix-font = 5
+format-prefix-foreground = ${colors.date}
+
+label-font = 3
+
 [settings]
 screenchange-reload = true
 ;compositing-background = xor
@@ -248,5 +243,4 @@ screenchange-reload = true
 [global/wm]
 margin-top = 5
 margin-bottom = 0
-
 ; vim:ft=dosini
