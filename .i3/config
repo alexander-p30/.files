@@ -41,14 +41,12 @@ bindsym XF86MonBrightnessDown exec "xbacklight -dec 5; notify-send 'brightness d
 bindsym $mod+Ctrl+b exec blueman-manager
 bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec pcmanfm
-bindsym $mod+t exec --no-startup-id pkill picom
-bindsym $mod+Ctrl+t exec --no-startup-id picom -C -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec flameshot gui
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 bindsym $mod+n exec kitty --class note-editor ~/.scripts/notetaker.sh
 
-# dmenu
+# rofi
 bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # Terminal
@@ -56,6 +54,8 @@ bindsym $mod+Return exec kitty
 
 # Reset keyboard config
 bindsym $mod+Ctrl+k exec "setxkbmap -layout us -variant intl -option caps:none && xmodmap ~/.Xmodmap && exec notify-send 'Keyboard config reset'"
+
+bindsym $mod+Shift+p exec "$HOME/.config/polybar/launch.sh && nitrogen --restore && exec notify-send 'Polybar and nitrogen restarted'"
 
 # }}}
 
@@ -169,6 +169,12 @@ set $ws6 6:VI
 set $ws7 7:VII
 set $ws8 8:VIII
 
+workspace "$ws1" output HDMI1
+workspace "$ws2" output HDMI1
+workspace "$ws3" output HDMI1
+workspace "$ws4" output HDMI1
+workspace "$ws5" output HDMI1
+
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -183,7 +189,7 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
 
-# move worskpace between displays
+# move workspace between displays
 bindsym $mod+Mod1+h move workspace to output left
 bindsym $mod+Mod1+l move workspace to output right
 # }}}
