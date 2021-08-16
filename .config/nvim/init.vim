@@ -20,6 +20,7 @@ Plug 'lambdalisue/nerdfont.vim'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'APZelos/blamer.nvim'
+Plug 'tpope/vim-fugitive'
 
 " LS, syntax highlighting and programming utils
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
