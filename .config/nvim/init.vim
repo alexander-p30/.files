@@ -62,9 +62,10 @@ set foldexpr=nvim_treesitter#foldexpr()
 " }}}
 
 " Theming and styling {{{
-let g:gruvbox_material_palette="mix"
 colorscheme gruvbox-material
 set background=dark
+let g:gruvbox_material_background='medium'
+let g:gruvbox_material_palette="original"
 " }}}
 
 " General Sets and Cmds {{{
