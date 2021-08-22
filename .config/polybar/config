@@ -42,36 +42,34 @@ date = ${colors.color5}
 [bar/mybar]
 monitor = ${env:MONITOR:}
 width = 100%
-dpi = ${env:POLYBAR_DPI:96}
-height = ${env:POLYBAR_HEIGHT:27}
+dpi = 96
+height = 32
 radius = 0.0
 fixed-center = false
 
+# background = ${colors.background}
 background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 3
-line-color = #f00
-
-border-size = 0
-border-color = #00000000
+line-color = ${colors.background}
 
 padding-left = 0
-padding-right = 1
+padding-right = 0
 
-module-margin-left = 1
-module-margin-right = 3
+module-margin-left = 0
+module-margin-right = 0
 
-font-0 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-1 = "Noto Sans CJK SC:style=Medium:pixelsize=11;1"
-font-2 = "Fira Code:style=Bold:pixelsize=11;1"
-font-3 = "Fira Code Nerd Font:style=Bold:pixelsize=14;1"
-font-4 = "Font Awesome 5 Free Solid:style=Solid:pixelsize=12;1"
-font-5 = "Fira Code Nerd Font:style=Bold:pixelsize=12;1"
+font-0 = "MesloLGS:antialias=true:size=10.5;2"
+font-1 = "MesloLGS NF:antialias=true:size=14.8;4"
+font-2 = "Iosevka Nerd Font Mono:antialias=true:size=13;2"
+font-3 = "Iosevka Nerd Font Mono:antialias=true:size=18;4"
+font-4 = "Iosevka Nerd Font Mono:antialias=true:size=20;4"
+font-5 = "Font Awesome 5 Free Solid:style=Solid:antialias=false:pixelsize=12;2"
 
-modules-left = i3 xwindow
+modules-left = i3 xwindow-left xwindow xwindow-right
 modules-center =
-modules-right = xbacklight pulseaudio memory cpu battery popup-calendar
+modules-right = xbacklight-left xbacklight xbacklight-right pulseaudio-left pulseaudio pulseaudio-right memory-left memory memory-right cpu-left cpu cpu-right battery-left battery battery-right popup-calendar-left popup-calendar popup-calendar-right
 
 tray-position = right
 tray-padding = 0
@@ -82,44 +80,50 @@ cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-format-maring = 0
-label =::  %title:0:80:...%
-label-font = 3
+
+format-prefix = " "
+format-suffix = " "
+format-underline = ${colors.background}
+format-overline = ${colors.background}
+format-foreground = ${colors.foreground}
+format-background = ${colors.background-alt}
+
+label = %title:0:80:...%
+label-empty = -
 
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
-format-font = 2
 index-sort = true
 wrapping-scroll = false
 strip-wsnumbers = true
 format-margin = 0
 pin-workspaces = true
 
-label-mode-padding = 3
+label-mode-padding = 1
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %name%
-label-focused-background = ${colors.background}
-label-focused-underline= ${colors.color2}
-label-focused-padding = 3
+label-focused = %{T5}%name%%{T-}
+label-focused-background = ${colors.foreground-alt}
+label-focused-foreground = ${colors.background-alt}
+label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %name%
-label-unfocused-padding = 3
+label-unfocused = %{T5}%name%%{T-}
+label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %name%
+label-visible = %{T5}%name%%{T-}
+label-visible-foreground = ${self.label-focused-foreground}
 label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %name%
+label-urgent = %{T5}%name%%{T-}
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 3
+label-urgent-padding = 2
 
 ; Separator in between workspaces
 ; label-separator = |
@@ -128,8 +132,13 @@ label-urgent-padding = 3
 type = internal/xbacklight
 output = eDP1
 
-format = <ramp> <label>
-format-font = 3
+format = "%{T4}<ramp>%{T-} <label>"
+format-prefix = " "
+format-suffix = " "
+format-background = ${colors.backlight}
+format-foreground = ${colors.background}
+format-overline = ${colors.background}
+format-underline = ${colors.background}
 
 ramp-0 = 
 ramp-1 = 
@@ -145,18 +154,21 @@ ramp-10 = 
 ramp-11 = 
 ramp-12 = 
 ramp-13 = 
-ramp-foreground = ${colors.backlight}
 
 [module/cpu]
 type = internal/cpu
 
 format = <label>
-label = %percentage:1%%
-label-font = 3
+format-prefix = " "
+format-suffix = " "
+format-underline = ${colors.background}
+format-overline = ${colors.background}
+format-foreground = ${colors.background}
+format-background = ${colors.cpu}
+label = "%{T5}%{T-} %percentage:1%%"
 
 interval = 1
 
-format-prefix = "  "
 format-prefix-foreground = ${colors.cpu}
 
 [module/memory]
@@ -164,30 +176,35 @@ type = internal/memory
 
 interval = 1
 
-format-prefix = " "
-format-prefix-font = 6
-format-prefix-foreground = ${colors.memory}
-
-label = %gb_used%
-label-font = 3
+format-prefix = " "
+format-suffix = " "
+format-underline = ${colors.background}
+format-overline = ${colors.background}
+format-background = ${colors.memory}
+format-foreground = ${colors.background}
+label = "%{T4}%{T-} %gb_used%"
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <ramp-volume> <label-volume>
-label-volume =  %percentage%%
-label-volume-font = 3
+format-volume-prefix = " "
+format-volume-suffix = " "
+format-volume = "%{T5}<ramp-volume>%{T-} <label-volume>"
+format-volume-background = ${colors.volume}
+format-volume-foreground = ${colors.background}
+label-volume = %percentage%%
+format-volume-underline = ${colors.background}
+format-volume-overline = ${colors.background}
 
-format-muted-prefix = " "
-format-muted-prefix-foreground = ${colors.volume}
-label-muted = " muted"
-label-muted-font = 3
+format-muted-background = ${colors.volume}
+format-muted-foreground = ${colors.background}
+label-muted = "%{T4}%{T-} muted"
+format-muted-underline = ${colors.background}
+format-muted-overline = ${colors.background}
 
-ramp-volume-font = 4
 ramp-volume-0 = ""
 ramp-volume-1 = ""
-ramp-volume-2 = " "
-ramp-volume-foreground = ${colors.volume}
+ramp-volume-2 = ""
 
 [module/battery]
 type = internal/battery
@@ -195,30 +212,39 @@ battery = BAT1
 adapter = ADP1
 full-at = 99
 
-label-full-font = 3
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.battery}
-format-full = <label-full>
+format-full-prefix = " "
+format-full-suffix = " "
+format-full-underline = ${colors.background}
+format-full-overline = ${colors.background}
+format-full-foreground = ${colors.background}
+format-full-background = ${colors.battery-charging}
+format-full = "%{T3}%{T-} <label-full>"
 
-label-charging-font = 3
-format-charging-prefix = " "
-format-charging-prefix-foreground = ${colors.battery-charging}
-format-charging = <label-charging>
+format-charging-prefix = " "
+format-charging-suffix = " "
+format-charging-underline = ${colors.background}
+format-charging-overline = ${colors.background}
+format-charging-foreground = ${colors.background}
+format-charging-background = ${colors.battery-charging}
+format-charging = "%{T3}%{T-} <label-charging>"
 
-label-discharging-font = 3
-format-discharging-prefix-foreground = ${colors.battery}
-format-discharging = <ramp-capacity> <label-discharging>
-ramp-capacity-0 = " "
-ramp-capacity-1 = " "
-ramp-capacity-2 = " "
-ramp-capacity-3 = " "
-ramp-capacity-4 = " "
-ramp-capacity-5 = " "
-ramp-capacity-6 = " "
-ramp-capacity-7 = " "
-ramp-capacity-8 = " "
-ramp-capacity-9 = " "
-ramp-capacity-foreground = ${colors.battery}
+format-discharging-prefix = " "
+format-discharging-suffix = " "
+format-discharging-underline = ${colors.background}
+format-discharging-overline = ${colors.background}
+format-discharging-foreground = ${colors.background}
+format-discharging-background = ${colors.battery-charging}
+format-discharging = "%{T3}<ramp-capacity>%{T-} <label-discharging>"
+ramp-capacity-0 = ""
+ramp-capacity-1 = ""
+ramp-capacity-2 = ""
+ramp-capacity-3 = ""
+ramp-capacity-4 = ""
+ramp-capacity-5 = ""
+ramp-capacity-6 = ""
+ramp-capacity-7 = ""
+ramp-capacity-8 = ""
+ramp-capacity-9 = ""
 
 [module/popup-calendar]
 type = custom/script
@@ -226,19 +252,84 @@ exec = ~/.scripts/calendar.sh
 interval = 5
 click-left = ~/.scripts/calendar.sh --popup &
 
-format-prefix = ""
-format-prefix-font = 5
-format-prefix-foreground = ${colors.date}
+format-prefix = " %{T6}%{T-}"
+format-suffix = " "
+format-prefix-underline = ${colors.background}
+format-prefix-overline = ${colors.background}
+format-prefix-foreground = ${colors.background}
+format-prefix-background = ${colors.date}
 
-label-font = 3
+format-underline = ${colors.background}
+format-overline = ${colors.background}
+format-foreground = ${colors.background}
+format-background = ${colors.date}
+
+[module/left-limit]
+type = custom/text
+content = "  %{T2}%{T-}"
+
+[module/right-limit]
+type = custom/text
+content = "%{T2}%{T-} "
+
+[module/xwindow-left]
+inherit = module/left-limit
+content-foreground = ${colors.background-alt}
+
+[module/xwindow-right]
+inherit = module/right-limit
+content-foreground = ${colors.background-alt}
+
+[module/xbacklight-left]
+inherit = module/left-limit
+content-foreground = ${colors.backlight}
+
+[module/xbacklight-right]
+inherit = module/right-limit
+content-foreground = ${colors.backlight}
+
+[module/pulseaudio-left]
+inherit = module/left-limit
+content-foreground = ${colors.volume}
+
+[module/pulseaudio-right]
+inherit = module/right-limit
+content-foreground = ${colors.volume}
+
+[module/memory-left]
+inherit = module/left-limit
+content-foreground = ${colors.memory}
+
+[module/memory-right]
+inherit = module/right-limit
+content-foreground = ${colors.memory}
+
+[module/cpu-left]
+inherit = module/left-limit
+content-foreground = ${colors.cpu}
+
+[module/cpu-right]
+inherit = module/right-limit
+content-foreground = ${colors.cpu}
+
+[module/battery-left]
+inherit = module/left-limit
+content-foreground = ${colors.battery}
+
+[module/battery-right]
+inherit = module/right-limit
+content-foreground = ${colors.battery}
+
+[module/popup-calendar-left]
+inherit = module/left-limit
+content-foreground = ${colors.date}
+
+[module/popup-calendar-right]
+inherit = module/right-limit
+content-foreground = ${colors.date}
 
 [settings]
 screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
-;pseudo-transparency = false
 
 [global/wm]
 margin-top = 5
