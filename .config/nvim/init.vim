@@ -4,7 +4,7 @@
 " Automatically install new plugins
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \|   PlugInstall --sync | q
+  \|   PlugInstall --sync | q | so ~/.config/nvim/init.vim
   \| endif
 
 call plug#begin('~/.vim/plugged')
@@ -59,6 +59,7 @@ Plug 'morhetz/gruvbox'
 Plug 'sainnhe/gruvbox-material'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'datwaft/bubbly.nvim'
+Plug 'romgrk/doom-one.vim'
 call plug#end()
 " }}}
 
@@ -252,7 +253,6 @@ nnoremap <Leader>df :call DeleteFileAndCloseBuffer()<cr>
 " External Files Sourcing {{{
 source $HOME/.config/nvim/modules/functions.vim
 source $HOME/.config/nvim/modules/hexokinase.vim
-source $HOME/.config/nvim/modules/statusline.vim
 source $HOME/.config/nvim/modules/treesitter.vim
 source $HOME/.config/nvim/modules/telescope.vim
 source $HOME/.config/nvim/modules/bubbly.vim
