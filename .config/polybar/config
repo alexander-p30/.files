@@ -69,7 +69,7 @@ font-5 = "Font Awesome 5 Free Solid:style=Solid:antialias=false:pixelsize=12;2"
 
 modules-left = i3 xwindow-left xwindow xwindow-right
 modules-center =
-modules-right = xbacklight-left xbacklight xbacklight-right pulseaudio-left pulseaudio pulseaudio-right memory-left memory memory-right cpu-left cpu cpu-right battery-left battery battery-right popup-calendar-left popup-calendar popup-calendar-right
+modules-right = ${env:MODULES_RIGHT:xbacklight-left xbacklight xbacklight-right pulseaudio-left pulseaudio pulseaudio-right memory-left memory memory-right cpu-left cpu cpu-right battery-left battery battery-right popup-calendar-left popup-calendar popup-calendar-right}
 
 tray-position = right
 tray-padding = 0
@@ -108,6 +108,8 @@ label-mode-background = ${colors.primary}
 label-focused = %{T5}%name%%{T-}
 label-focused-background = ${colors.foreground-alt}
 label-focused-foreground = ${colors.background-alt}
+; label-focused-background = ${colors.background-alt}
+; label-focused-foreground = ${colors.foreground-alt}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
