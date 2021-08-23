@@ -52,6 +52,7 @@ Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'morhetz/gruvbox'
 Plug 'sainnhe/gruvbox-material'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'datwaft/bubbly.nvim'
 call plug#end()
 " }}}
 
@@ -248,5 +249,6 @@ source $HOME/.config/nvim/modules/hexokinase.vim
 source $HOME/.config/nvim/modules/statusline.vim
 source $HOME/.config/nvim/modules/treesitter.vim
 source $HOME/.config/nvim/modules/telescope.vim
+source $HOME/.config/nvim/modules/bubbly.vim
 " }}}
 
