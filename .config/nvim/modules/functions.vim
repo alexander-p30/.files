@@ -1,4 +1,4 @@
-fun! OpenNeotermInNewTabAndFocus(option)
+fun! OpenNeoterm(option)
   if a:option == 'tn'
     TestNearest
   elseif a:option == 'tf'

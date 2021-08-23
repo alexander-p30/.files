@@ -132,12 +132,13 @@ let g:neoterm_default_mod='botright'
 let g:neoterm_size=''
 
 " gitgutter {{{
-let g:gitgutter_sign_added = 'Δ'
-let g:gitgutter_sign_modified = '▷'
-let g:gitgutter_sign_removed = '∇'
-let g:gitgutter_sign_removed_first_line = '∅'
-let g:gitgutter_sign_removed_above_and_below = '⩫'
-let g:gitgutter_sign_modified_removed = '◁'
+let gitgutter_character = "▎"
+let g:gitgutter_sign_added = gitgutter_character
+let g:gitgutter_sign_modified = gitgutter_character
+let g:gitgutter_sign_removed = gitgutter_character
+let g:gitgutter_sign_removed_first_line = gitgutter_character
+let g:gitgutter_sign_removed_above_and_below = gitgutter_character
+let g:gitgutter_sign_modified_removed = gitgutter_character
 " }}}
 
 " fern
@@ -164,10 +165,10 @@ nnoremap <A-l> <C-w><C-l>
 " }}}
 
 " Test-related bindings {{{
-nnoremap <leader>tn :call OpenNeotermInNewTabAndFocus('tn')<cr>
-nnoremap <leader>tf :call OpenNeotermInNewTabAndFocus('tf')<cr>
-nnoremap <leader>ts :call OpenNeotermInNewTabAndFocus('ts')<cr>
-nnoremap <leader>tl :call OpenNeotermInNewTabAndFocus('tl')<cr>
+nnoremap <leader>tn :call OpenNeoterm('tn')<cr>
+nnoremap <leader>tf :call OpenNeoterm('tf')<cr>
+nnoremap <leader>ts :call OpenNeoterm('ts')<cr>
+nnoremap <leader>tl :call OpenNeoterm('tl')<cr>
 nnoremap <leader>tv :TestVisit<cr>
 nnoremap <leader>tc :Tclose!<cr>
 " }}}
