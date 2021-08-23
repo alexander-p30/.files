@@ -1,6 +1,12 @@
 " vim:foldmethod=marker
 
 " Plugin managing {{{
+" Automatically install new plugins
+autocmd VimEnter *
+  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall --sync | q
+  \| endif
+
 call plug#begin('~/.vim/plugged')
 " File-related
 Plug 'lambdalisue/fern.vim' |
