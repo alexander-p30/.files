@@ -1,0 +1,130 @@
+/*
+ * ROFI Doom One
+ *
+ * Based on doom-one.nvim (https://github.com/NTBBloodbath/doom-one.nvim)
+ *
+ * Author: NTBBloodbath
+ * GitHub: @NTBBloodbath
+ *
+ */
+
+* {
+  black:      #282828;
+  red:        #f2594b;
+  green:      #b0b846;
+  yellow:     #e9b143;
+  blue:       #51afef;
+  mangenta:   #d3869b;
+  cyan:       #80aa9e;
+  emphasis:   #f28534;
+  text:       #e2cca9;
+  text-alt:   #fbf1c7;
+  fg:         #e2cca9;
+  bg:         #282828dd;
+  bgsolid:    #504945;
+
+  background-color: transparent;
+  highlight: bold #b0b846;
+}
+
+window {
+  transparency: "real";
+  background-color: @bg;
+  text-color: @text;
+  border: 0px;
+  border-color: @red;
+  border-radius: 0px;
+}
+
+mainbox {
+  padding: 2% 1%;
+  children: [inputbar, listview, mode-switcher];
+}
+
+inputbar {
+  margin: 0px 0px 10px 0px;
+  padding: 0.5%;
+  expand: false;
+  border: 0% 0% 0% 0%;
+  border-radius: 5px;
+  background-color: @bgsolid;
+  children: [prompt, textbox-prompt-colon, entry, case-indicator];
+}
+
+prompt {
+  enabled: true;
+  text-color: @red;
+  border: 0 1px 0 0;
+  padding: 0% 0% 0% 1%;
+}
+
+textbox-prompt-colon {
+  expand: false;
+  str: ":";
+  text-color: @text-alt;
+}
+
+entry {
+  margin: 0px 10px;
+  horizontal-align: 0;
+  text-color: @text;
+  placeholder: "Search";
+  placeholder-color: @text-alt;
+  blink: true;
+}
+
+listview {
+  spacing: 5px;
+  dynamic: true;
+  layout: vertical;
+  scrollbar: false;
+}
+
+element {
+  padding: 5px;
+  text-color: @text-alt;
+  border-radius: 5px;
+  orientation: horizontal;
+}
+
+element selected {
+  /* background-color: @emphasis; */
+  background-color: @bgsolid;
+  text-color: @text;
+}
+
+element urgent, element selected urgent {
+  text-color: @red;
+}
+
+element active, element selected active {
+  text-color: @purple;
+}
+
+/* Increase icons size */
+element-icon {
+  size: 2.5ch;
+}
+
+message {
+  padding: 5px;
+  border-radius: 3px;
+  background-color: @emphasis;
+  border: 1px;
+  border-color: @cyan;
+}
+
+button {
+  text-color: @text;
+  border-radius: 5px;
+}
+
+button selected {
+  background-color: @bgsolid;
+}
+
+mode-switcher {
+  /* text-color: @text; */
+  /* background-color: @bgsolid; */
+}
+

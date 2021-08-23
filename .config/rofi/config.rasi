@@ -1,4 +1,16 @@
 configuration {
-	theme: "~/.config/rofi/themes/gruvbox/gruvbox-dark-soft.rasi";
+	theme: "~/.config/rofi/themes/gruvbox/groovy.rasi";
+  terminal: "kitty";
+  modi: "window,drun";
+  /* combi-modi: "drun,window"; */
+  font: "Noto Sans Bold 10";
   show-icons: true;
+  /* combi-hide-mode-prefix: true; */
+  drun-show-actions: true;
+  drun-display-format: "{name}";
+  disable-history: false;
+  fullscreen: false;
+  hide-scrollbar: true;
+  sidebar-mode: false;
+  auto-select: false;
 }

@@ -48,6 +48,7 @@ bindsym $mod+n exec kitty --class note-editor ~/.scripts/notetaker.sh
 
 # rofi
 bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+w exec --no-startup-id rofi -show window
 
 # Terminal
 bindsym $mod+Return exec kitty
@@ -103,7 +104,6 @@ bindsym $mod+q split toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 # }}}
 
