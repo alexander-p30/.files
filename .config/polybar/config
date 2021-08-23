@@ -9,11 +9,6 @@
 ;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
 ;
 ;
-;   To learn more about how to configure Polybar
-;   go to https://github.com/polybar/polybar
-;
-;   The README contains a lot of information
-;
 ;==========================================================
 
 [colors]
@@ -60,11 +55,11 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = "MesloLGS:antialias=true:size=10.5;2"
-font-1 = "MesloLGS NF:antialias=true:size=14.8;4"
-font-2 = "Iosevka Nerd Font Mono:antialias=true:size=13;2"
-font-3 = "Iosevka Nerd Font Mono:antialias=true:size=18;4"
-font-4 = "Iosevka Nerd Font Mono:antialias=true:size=20;4"
+font-0 = "MesloLGS:antialias=false:size=10.5;2"
+font-1 = "MesloLGS NF:antialias=false:size=14.7;4"
+font-2 = "Iosevka Nerd Font Mono:antialias=false:size=13;2"
+font-3 = "Iosevka Nerd Font Mono:antialias=false:size=18;4"
+font-4 = "Iosevka Nerd Font Mono:antialias=false:size=24;5"
 font-5 = "Font Awesome 5 Free Solid:style=Solid:antialias=false:pixelsize=12;2"
 
 modules-left = i3 xwindow-left xwindow xwindow-right
@@ -200,7 +195,7 @@ format-volume-overline = ${colors.background}
 
 format-muted-background = ${colors.volume}
 format-muted-foreground = ${colors.background}
-label-muted = "%{T4}%{T-} muted"
+label-muted = "%{T5}%{T-} muted"
 format-muted-underline = ${colors.background}
 format-muted-overline = ${colors.background}
 
