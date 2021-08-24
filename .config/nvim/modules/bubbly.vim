@@ -24,6 +24,7 @@ vim.g.bubbly_palette = {
 }
 
 vim.g.bubbly_colors = {
+  path = { modified = { background = 'red', foreground = 'black' } },
   progress = {
     rowandcol = { background = 'yellow', foreground = 'black' },
   }
