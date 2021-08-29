@@ -12,27 +12,28 @@
 ;==========================================================
 
 [colors]
-background = #282828
-background-alt = #504945
-foreground = #e2cca9
-foreground-alt = #fbf1c7
-primary = #f28534
-secondary = #b0b846
-alert = #f2594b
-color1 = #d3869b
-color2 = #f2594b
-color3 = #b0b846
-color4 = #e9b143
-color5 = #80aa9e
-color6 = #f28534
-color7 = #ebdbb2
-backlight = ${colors.color1}
+background = ${xrdb:background:#282828}
+background-alt = ${xrdb:background-alt:#504945}
+foreground = ${xrdb:foreground:#e2cca9}
+foreground-alt = ${xrdb:foreground-alt:#fbf1c7}
+primary = ${xrdb:primary:#f28534}
+secondary = ${xrdb:secondary:#b0b846}
+alert = ${xrdb:alert:#f2594b}
+magenta = ${xrdb:magenta:#d3869b}
+red = ${xrdb:red:#f2594b}
+green = ${xrdb:green:#b0b846}
+yellow = ${xrdb:yellow:#e9b143}
+blue = ${xrdb:blue:#80aa9e}
+cyan = ${xrdb:cyan:#8bba7f}
+white = ${xrdb:white:#ebdbb2}
+orange = ${xrdb:orange:#f28534}
+backlight = ${colors.magenta}
 volume = ${colors.primary}
-memory = ${colors.color3}
-cpu = ${colors.color2}
-battery = ${colors.color4}
-battery-charging = ${colors.color4}
-date = ${colors.color5}
+memory = ${colors.green}
+cpu = ${colors.red}
+battery = ${colors.yellow}
+battery-charging = ${colors.yellow}
+date = ${colors.blue}
 
 [bar/mybar]
 monitor = ${env:MONITOR:}
@@ -64,7 +65,7 @@ font-5 = "Font Awesome 5 Free Solid:style=Solid:antialias=true:pixelsize=12;2"
 
 modules-left = i3 xwindow-left xwindow xwindow-right
 modules-center = popup-calendar-left popup-calendar popup-calendar-right
-modules-right = ${env:MODULES_RIGHT:xbacklight-left xbacklight xbacklight-right pulseaudio-left pulseaudio pulseaudio-right memory-left memory memory-right cpu-left cpu cpu-right battery-left battery battery-right}
+modules-right = ${env:MODULES_RIGHT:backlight-left backlight backlight-right pulseaudio-left pulseaudio pulseaudio-right memory-left memory memory-right cpu-left cpu cpu-right battery-left battery battery-right}
 
 tray-position = right
 tray-padding = 0
@@ -125,9 +126,11 @@ label-urgent-padding = 2
 ; Separator in between workspaces
 ; label-separator = |
 
-[module/xbacklight]
-type = internal/xbacklight
-output = eDP1
+[module/backlight]
+type = internal/backlight
+output = ${env:LAPTOP_SCREEN:}
+card = intel_backlight
+enable-scroll = true
 
 format = "%{T4}<ramp>%{T-} <label>"
 format-prefix = " "
@@ -277,11 +280,11 @@ content-foreground = ${colors.background-alt}
 inherit = module/right-limit
 content-foreground = ${colors.background-alt}
 
-[module/xbacklight-left]
+[module/backlight-left]
 inherit = module/left-limit
 content-foreground = ${colors.backlight}
 
-[module/xbacklight-right]
+[module/backlight-right]
 inherit = module/right-limit
 content-foreground = ${colors.backlight}
 
