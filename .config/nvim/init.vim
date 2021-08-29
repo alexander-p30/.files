@@ -31,20 +31,20 @@ Plug 'tpope/vim-fugitive'
 " LS, syntax highlighting and programming utils
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-test/vim-test'
-Plug 'elixir-editors/vim-elixir'
-Plug 'tpope/vim-rails'
-Plug 'vim-ruby/vim-ruby'
+Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'rstacruz/vim-closer'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-endwise', { 'for': ['ruby', 'elixir'] }
 Plug 'mg979/vim-visual-multi'
-Plug 'mhinz/vim-mix-format'
+Plug 'mhinz/vim-mix-format', { 'for': 'elixir' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
-Plug 'nvim-treesitter/playground'
-Plug 'mboughaba/i3config.vim'
-Plug 'neovimhaskell/haskell-vim'
+Plug 'nvim-treesitter/playground', { 'on': 'TSPlaygroundToggle' }
+Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
+Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 
 " Other
 Plug 'kassio/neoterm'
