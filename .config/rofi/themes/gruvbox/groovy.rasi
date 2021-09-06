@@ -8,6 +8,9 @@
  *
  */
 
+configuration {
+}
+
 * {
   black:      #282828;
   red:        #f2594b;
@@ -18,13 +21,15 @@
   cyan:       #80aa9e;
   emphasis:   #f28534;
   text:       #e2cca9;
-  text-alt:   #fbf1c7;
+  text-alt:   #1d202199;
   fg:         #e2cca9;
   bg:         #282828dd;
   bgsolid:    #504945;
 
   background-color: transparent;
   highlight: bold #b0b846;
+
+  text-color: #fbf1c7;
 }
 
 window {
@@ -32,7 +37,6 @@ window {
   background-color: @bg;
   text-color: @text;
   border: 0px;
-  border-color: @red;
   border-radius: 0px;
 }
 
