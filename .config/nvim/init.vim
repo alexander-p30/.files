@@ -43,8 +43,9 @@ Plug 'mhinz/vim-mix-format', { 'for': 'elixir' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'nvim-treesitter/playground', { 'on': 'TSPlaygroundToggle' }
-Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
+Plug 'fladson/vim-kitty'
 
 " Other
 Plug 'kassio/neoterm'
