@@ -208,6 +208,8 @@ assign [class="Google-chrome"] $ws3
 for_window [class="Spotify"] move to workspace $ws4
 
 # Open specific applications in floating mode
+for_window [class="SpeedCrunch"] floating enable
+for_window [class="SpeedCrunch"] resize set 900 px 900 px
 for_window [class="Yad" title="yad-calendar"] floating enable
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="Blueman-manager"] floating enable
