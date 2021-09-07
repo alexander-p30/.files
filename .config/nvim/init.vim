@@ -249,6 +249,9 @@ nnoremap <leader>profs :call EndSessionProfiling()<cr>
 
 " Delete current file
 nnoremap <Leader>df :call DeleteFileAndCloseBuffer()<cr>
+
+" Increment number under the cursor
+nnoremap <C-S-X> <C-a>
 " }}}
 
 " External Files Sourcing {{{
