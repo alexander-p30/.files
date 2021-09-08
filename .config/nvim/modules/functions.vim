@@ -8,8 +8,6 @@ fun! OpenNeoterm(option)
   elseif a:option == 'tl'
     TestLast
   endif
-
-  tabnext
 endfun
 
 fun! DeleteFileAndCloseBuffer()

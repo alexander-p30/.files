@@ -57,7 +57,7 @@ Plug 'rmagatti/auto-session'
 Plug 'joshdick/onedark.vim'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'morhetz/gruvbox'
-Plug 'sainnhe/gruvbox-material'
+Plug 'alexander-p30/gruvbox-material'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'datwaft/bubbly.nvim'
 Plug 'romgrk/doom-one.vim'
@@ -74,7 +74,7 @@ set foldexpr=nvim_treesitter#foldexpr()
 colorscheme gruvbox-material
 set background=dark
 let g:gruvbox_material_background='medium'
-let g:gruvbox_material_palette="original"
+let g:gruvbox_material_palette='original'
 " }}}
 
 " General Sets and Cmds {{{
