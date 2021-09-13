@@ -46,6 +46,7 @@ Plug 'nvim-treesitter/playground', { 'on': 'TSPlaygroundToggle' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
 Plug 'fladson/vim-kitty'
+Plug 'RRethy/vim-illuminate'
 
 " Other
 Plug 'kassio/neoterm'
