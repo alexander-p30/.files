@@ -208,7 +208,7 @@ ramp-volume-2 = ""
 
 [module/battery]
 type = internal/battery
-battery = BAT1
+battery = ${env:BATTERY_ADAPTER:BAT1}
 adapter = ADP1
 full-at = 99
 
