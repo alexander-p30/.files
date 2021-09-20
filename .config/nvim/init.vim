@@ -168,10 +168,10 @@ let g:coc_node_path = '/home/alexander/.asdf/shims/node'
 let mapleader = " "
 
 " Splits {{{
-nnoremap <C-h> <C-w><C-h>
-nnoremap <C-j> <C-w><C-j>
-nnoremap <C-k> <C-w><C-k>
-nnoremap <C-l> <C-w><C-l>
+nnoremap <A-h> <C-w><C-h>
+nnoremap <A-j> <C-w><C-j>
+nnoremap <A-k> <C-w><C-k>
+nnoremap <A-l> <C-w><C-l>
 " }}}
 
 " Test-related bindings {{{

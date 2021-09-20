@@ -58,3 +58,5 @@ eval "$(starship init zsh)"
 # }}}
 
 [ -f "/home/alexander/.ghcup/env" ] && source "/home/alexander/.ghcup/env" # ghcup-env
+eval "$RUN" # run arbitrary commands ```RUN='echo "it works"' zsh```
+RUN=
