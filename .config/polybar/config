@@ -27,19 +27,19 @@ blue = ${xrdb:blue:#80aa9e}
 cyan = ${xrdb:cyan:#8bba7f}
 white = ${xrdb:white:#ebdbb2}
 orange = ${xrdb:orange:#f28534}
-backlight = ${colors.magenta}
+backlight = ${colors.cyan}
 volume = ${colors.primary}
 memory = ${colors.green}
 cpu = ${colors.red}
 battery = ${colors.yellow}
 battery-charging = ${colors.yellow}
-date = ${colors.blue}
+date = ${colors.magenta}
 
 [bar/mybar]
 monitor = ${env:MONITOR:}
 width = 100%
 dpi = 96
-height = 32
+height = 36
 radius = 0.0
 fixed-center = true
 
@@ -57,7 +57,7 @@ module-margin-left = 0
 module-margin-right = 0
 
 font-0 = "MesloLGS:antialias=true:size=10.5;2"
-font-1 = "MesloLGS NF:antialias=true:size=14.7;4"
+font-1 = "MesloLGS NF:antialias=true:size=17;4"
 font-2 = "Iosevka Nerd Font Mono:antialias=true:size=13;2"
 font-3 = "Iosevka Nerd Font Mono:antialias=true:size=18;4"
 font-4 = "Iosevka Nerd Font Mono:antialias=true:size=24;5"
@@ -84,7 +84,7 @@ format-overline = ${colors.background}
 format-foreground = ${colors.foreground}
 format-background = ${colors.background-alt}
 
-label = %title:0:80:...%
+label = %title:0:49:...%
 label-empty = -
 
 [module/i3]
@@ -135,10 +135,8 @@ enable-scroll = true
 format = "%{T4}<ramp>%{T-} <label>"
 format-prefix = " "
 format-suffix = " "
-format-background = ${colors.backlight}
-format-foreground = ${colors.background}
-format-overline = ${colors.background}
-format-underline = ${colors.background}
+format-foreground = ${colors.backlight}
+format-background = ${colors.background}
 
 ramp-0 = 
 ramp-1 = 
@@ -190,17 +188,13 @@ type = internal/pulseaudio
 format-volume-prefix = " "
 format-volume-suffix = " "
 format-volume = "%{T5}<ramp-volume>%{T-} <label-volume>"
-format-volume-background = ${colors.volume}
-format-volume-foreground = ${colors.background}
+format-volume-foreground = ${colors.volume}
+format-volume-background = ${colors.background}
 label-volume = %percentage%%
-format-volume-underline = ${colors.background}
-format-volume-overline = ${colors.background}
 
-format-muted-background = ${colors.volume}
-format-muted-foreground = ${colors.background}
+format-muted-foreground = ${colors.volume}
+format-muted-background = ${colors.background}
 label-muted = "%{T5}%{T-} muted"
-format-muted-underline = ${colors.background}
-format-muted-overline = ${colors.background}
 
 ramp-volume-0 = ""
 ramp-volume-1 = ""
@@ -254,15 +248,13 @@ click-left = ~/.scripts/calendar.sh --popup &
 
 format-prefix = " %{T6}%{T-}"
 format-suffix = " "
-format-prefix-underline = ${colors.background}
-format-prefix-overline = ${colors.background}
-format-prefix-foreground = ${colors.background}
-format-prefix-background = ${colors.date}
+format-prefix-foreground = ${colors.date}
+format-prefix-background = ${colors.background}
 
 format-underline = ${colors.background}
 format-overline = ${colors.background}
-format-foreground = ${colors.background}
-format-background = ${colors.date}
+format-foreground = ${colors.date}
+format-background = ${colors.background}
 
 [module/left-limit]
 type = custom/text
@@ -281,20 +273,20 @@ inherit = module/right-limit
 content-foreground = ${colors.background-alt}
 
 [module/backlight-left]
-inherit = module/left-limit
-content-foreground = ${colors.backlight}
+type = custom/text
+content = " "
 
 [module/backlight-right]
-inherit = module/right-limit
-content-foreground = ${colors.backlight}
+type = custom/text
+content = " "
 
 [module/pulseaudio-left]
-inherit = module/left-limit
-content-foreground = ${colors.volume}
+type = custom/text
+content = " "
 
 [module/pulseaudio-right]
-inherit = module/right-limit
-content-foreground = ${colors.volume}
+type = custom/text
+content = " "
 
 [module/memory-left]
 inherit = module/left-limit
@@ -321,12 +313,12 @@ inherit = module/right-limit
 content-foreground = ${colors.battery}
 
 [module/popup-calendar-left]
-inherit = module/left-limit
-content-foreground = ${colors.date}
+type = custom/text
+content = " "
 
 [module/popup-calendar-right]
-inherit = module/right-limit
-content-foreground = ${colors.date}
+type = custom/text
+content = " "
 
 [settings]
 screenchange-reload = true
