@@ -29,17 +29,19 @@ Plug 'APZelos/blamer.nvim'
 Plug 'tpope/vim-fugitive'
 
 " LS, syntax highlighting and programming utils
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'L3MON4D3/LuaSnip'
 Plug 'vim-test/vim-test'
 Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
-Plug 'tpope/vim-rails', { 'for': 'ruby' }
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'rstacruz/vim-closer'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise', { 'for': ['ruby', 'elixir'] }
 Plug 'mg979/vim-visual-multi'
-Plug 'mhinz/vim-mix-format', { 'for': 'elixir' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'nvim-treesitter/playground', { 'on': 'TSPlaygroundToggle' }
@@ -134,9 +136,6 @@ lua require'nvim-web-devicons'.setup { default = true; }
 " vim-test
 let test#strategy = "neoterm"
 
-" vim-mix-format
-let g:mix_format_on_save = 1
-
 " neoterm
 let g:neoterm_default_mod='botright'
 let g:neoterm_size=''
@@ -158,10 +157,6 @@ let g:fern#renderer = "nerdfont"
 let g:blamer_enabled = 1
 let g:blamer_show_in_visual_modes = 0
 let g:blamer_delay = 500
-" }}}
-
-" coc
-let g:coc_node_path = '/home/alexander/.asdf/shims/node'
 " }}}
 
 " Keybindings {{{
@@ -194,20 +189,6 @@ nnoremap <leader>w :w<cr>
 nnoremap <leader>qw :wq<cr>
 nnoremap <leader>qq :q<cr>
 nnoremap <leader>Q :q!<cr>
-" }}}
-
-" Coc {{{
-" Definition navigation
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> <C-w>gs :call CocAction('jumpDefinition', 'split')<CR>
-nmap <silent> <C-w>gv :call CocAction('jumpDefinition', 'vsplit')<CR>
-
-" Floating window scroll
-nnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-nnoremap <nowait><expr> <C-g> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-inoremap <nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-inoremap <nowait><expr> <C-g> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
 " }}}
 
 " Fern {{{
@@ -273,5 +254,7 @@ source $HOME/.config/nvim/modules/hexokinase.vim
 source $HOME/.config/nvim/modules/treesitter.vim
 source $HOME/.config/nvim/modules/telescope.vim
 source $HOME/.config/nvim/modules/bubbly.vim
+source $HOME/.config/nvim/modules/nvim_lsp.lua
+source $HOME/.config/nvim/modules/cmp.lua
 " }}}
 
