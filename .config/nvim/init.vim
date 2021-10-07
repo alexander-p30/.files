@@ -229,7 +229,7 @@ augroup END
 nnoremap Y y$
 
 " Copy current filepath
-nmap <leader>cp :let @" = expand("%")<cr>
+nmap <leader>yfp :let @" = expand("%")<cr>
 
 " Clear search highlighting
 nnoremap <leader>h :noh<cr>
@@ -242,7 +242,7 @@ nnoremap <silent> <cr> :GitGutterNextHunk<cr>
 nnoremap <silent> <backspace> :GitGutterPrevHunk<cr>
 
 " LazyGit
-nnoremap <silent> <leader>lg :LazyGit<CR>
+nnoremap <silent> <leader>g :LazyGit<CR>
 
 " Profiling
 nnoremap <leader>profi :call ProfileSession()<cr>
@@ -253,6 +253,18 @@ nnoremap <Leader>df :call DeleteFileAndCloseBuffer()<cr>
 
 " Increment number under the cursor
 nnoremap <C-S-X> <C-a>
+
+" Quickfix list navigation
+nnoremap <leader>cn :cnext <cr>
+nnoremap <leader>cp :cprev <cr>
+nnoremap <leader>co :copen <cr>
+nnoremap <leader>cc :cclose <cr>
+
+" Location list navigation
+nnoremap <leader>ln :lnext <cr>
+nnoremap <leader>lp :lprev <cr>
+nnoremap <leader>lo :lopen <cr>
+nnoremap <leader>lc :lclose <cr>
 " }}}
 
 " External Files Sourcing {{{
