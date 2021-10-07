@@ -10,14 +10,14 @@ autocmd VimEnter *
 call plug#begin('~/.vim/plugged')
 " File-related
 Plug 'lambdalisue/fern.vim' |
-                \ Plug  'lambdalisue/fern-hijack.vim' |
-                \ Plug 'lambdalisue/fern-git-status.vim' |
-                \ Plug 'lambdalisue/fern-renderer-nerdfont.vim' |
-                \ Plug  'lambdalisue/glyph-palette.vim' |
-                \ Plug 'yuki-yano/fern-preview.vim'
+      \ Plug  'lambdalisue/fern-hijack.vim' |
+      \ Plug 'lambdalisue/fern-git-status.vim' |
+      \ Plug 'lambdalisue/fern-renderer-nerdfont.vim' |
+      \ Plug  'lambdalisue/glyph-palette.vim' |
+      \ Plug 'yuki-yano/fern-preview.vim'
 Plug 'nvim-telescope/telescope.nvim' |
-                \ Plug 'nvim-lua/plenary.nvim' |
-                \ Plug 'nvim-lua/popup.nvim'
+      \ Plug 'nvim-lua/plenary.nvim' |
+      \ Plug 'nvim-lua/popup.nvim'
 
 " Fonts and assets
 Plug 'lambdalisue/nerdfont.vim'
@@ -29,13 +29,13 @@ Plug 'APZelos/blamer.nvim'
 Plug 'tpope/vim-fugitive'
 
 " LS, syntax highlighting and programming utils
-Plug 'neovim/nvim-lspconfig'
-Plug 'williamboman/nvim-lsp-installer'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'saadparwaiz1/cmp_luasnip'
-Plug 'L3MON4D3/LuaSnip'
+Plug 'neovim/nvim-lspconfig' |
+      \ Plug 'williamboman/nvim-lsp-installer'
+Plug 'hrsh7th/cmp-nvim-lsp' |
+      \ Plug 'hrsh7th/cmp-buffer' |
+      \ Plug 'hrsh7th/nvim-cmp' |
+      \ Plug 'saadparwaiz1/cmp_luasnip' |
+      \ Plug 'L3MON4D3/LuaSnip'
 Plug 'vim-test/vim-test'
 Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
 Plug 'rstacruz/vim-closer'
@@ -43,9 +43,9 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise', { 'for': ['ruby', 'elixir'] }
 Plug 'mg979/vim-visual-multi'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'p00f/nvim-ts-rainbow'
-Plug 'nvim-treesitter/playground', { 'on': 'TSPlaygroundToggle' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} |
+      \ Plug 'p00f/nvim-ts-rainbow' |
+      \ Plug 'nvim-treesitter/playground', { 'on': 'TSPlaygroundToggle' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
 Plug 'fladson/vim-kitty'
@@ -65,6 +65,7 @@ Plug 'alexander-p30/gruvbox-material'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'datwaft/bubbly.nvim'
 Plug 'romgrk/doom-one.vim'
+Plug 'lukas-reineke/indent-blankline.nvim'
 call plug#end()
 " }}}
 
@@ -257,5 +258,6 @@ source $HOME/.config/nvim/modules/telescope.vim
 source $HOME/.config/nvim/modules/bubbly.vim
 source $HOME/.config/nvim/modules/nvim_lsp.lua
 source $HOME/.config/nvim/modules/cmp.lua
+source $HOME/.config/nvim/modules/indent_blankline.lua
 " }}}
 
