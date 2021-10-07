@@ -30,6 +30,7 @@ Plug 'tpope/vim-fugitive'
 
 " LS, syntax highlighting and programming utils
 Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'

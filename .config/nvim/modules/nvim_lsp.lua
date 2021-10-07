@@ -28,14 +28,14 @@ end
 
 nvim_lsp.elixirls.setup{
   capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
-  cmd = { vim.fn.getenv("HOME") .. "/.local/bin/elixir-ls/language_server.sh" },
+  cmd = { vim.fn.stdpath("data") .. "/lsp_servers/elixir/elixir-ls/language_server.sh" },
   on_attach = on_attach,
 }
 
 nvim_lsp.efm.setup({
   capabilities = capabilities,
   on_attach = on_attach,
-  filetypes = {"elixir"}
+  filetypes = {"elixir"},
 })
 
 vim.api.nvim_command('autocmd BufWritePre *.ex lua vim.lsp.buf.formatting_sync(nil, 100)')
