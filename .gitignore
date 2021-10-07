@@ -7,7 +7,7 @@
 !.bashrc
 !.config/
 !.config/autorandr/
-!.config/autorandr/startup.sh
+!.config/efm-langserver/
 !.config/dunst/
 !.config/kitty/
 !.config/nvim/
