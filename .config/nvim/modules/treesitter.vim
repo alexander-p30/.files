@@ -5,7 +5,7 @@ require'nvim-treesitter.configs'.setup {
   rainbow = {
     enable = true,
     extended_mode = true,
-    max_file_lines = 1000,
+    max_file_lines = 2000,
     colors = {
       '#f2594b',
       '#e9b143',
