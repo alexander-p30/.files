@@ -43,7 +43,6 @@ height = 36
 radius = 0.0
 fixed-center = true
 
-# background = ${colors.background}
 background = ${colors.background}
 foreground = ${colors.foreground}
 
@@ -85,7 +84,7 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background-alt}
 
 label = %title:0:49:...%
-label-empty = -
+label-empty = λ
 
 [module/i3]
 type = internal/i3
