@@ -10,25 +10,24 @@
 (defsrc
   esc
 
-             y u i o  
+             y u i o
   caps           h j k l
 )
 
 (defalias
-  esc-or-hmrw (tap-hold 200 esc (layer-toggle hmrw))
+  esc-or-hmrw (tap-next esc (layer-toggle homerow-utils))
 )
 
 (deflayer improvecaps
-  caps 
+  caps
 
-             y u i o  
+             y u i o
   @esc-or-hmrw           h j k l
 )
 
-(deflayer hmrw
+(deflayer homerow-utils
   caps
-  
-             home pgdn pgup end  
+
+             home pgup pgdn end
   @esc-or-hmrw           left down up right
 )
-
