@@ -50,6 +50,7 @@ Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
 Plug 'fladson/vim-kitty'
 Plug 'RRethy/vim-illuminate'
+Plug 'kmonad/kmonad-vim'
 
 " Other
 Plug 'kassio/neoterm'

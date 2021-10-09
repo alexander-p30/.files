@@ -58,7 +58,7 @@ bindsym $mod+w exec --no-startup-id rofi -show window
 bindsym $mod+Return exec kitty
 
 # Reset keyboard config
-bindsym $mod+Ctrl+k exec "setxkbmap -layout us -variant intl -option caps:none && xmodmap ~/.Xmodmap && exec notify-send 'Keyboard config reset'"
+bindsym $mod+Ctrl+k exec "$HOME/.scripts/keebs.sh"
 
 bindsym $mod+Shift+p exec "$HOME/.config/polybar/launch.sh && nitrogen --restore && exec notify-send 'Polybar and nitrogen restarted'"
 
@@ -280,15 +280,14 @@ mode "resize" {
 # Autostart applications and scripts {{{
 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; picom -C -b
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id xautolock -time 15 -locker "i3lock -c 282828" -notify 30 -corners --++
+exec --no-startup-id /home/alexander/.scripts/keebs.sh
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id $HOME/.config/autorandr/startup.sh
 exec_always --no-startup-id sleep 1; $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id sleep 1; nitrogen --restore
 
 # }}}
 
