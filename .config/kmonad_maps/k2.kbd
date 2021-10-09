@@ -1,0 +1,34 @@
+(defcfg
+  ;; For Linux
+  input  (device-file "/dev/input/by-id/usb-Keychron_Keychron_K2-event-kbd")
+  output (uinput-sink "My KMonad output")
+
+  ;; This option tells KMonad to let non-configured keys act normal
+  fallthrough true
+)
+
+(defsrc
+  esc
+
+             y u i o
+  caps           h j k l
+)
+
+(defalias
+  esc-or-hmrw (tap-next esc (layer-toggle homerow-utils))
+)
+
+(deflayer improvecaps
+  caps
+
+             y u i o
+  @esc-or-hmrw           h j k l
+)
+
+(deflayer homerow-utils
+  caps
+  
+             home pgup pgdn end
+  @esc-or-hmrw           left down up right
+)
+

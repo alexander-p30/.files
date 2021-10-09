@@ -10,7 +10,7 @@
 !.config/efm-langserver/
 !.config/dunst/
 !.config/kitty/
-!.config/kmonad/
+!.config/kmonad_maps/
 !.config/nvim/
 !.config/picom.conf
 !.config/polybar/
