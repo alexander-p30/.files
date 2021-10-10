@@ -216,7 +216,7 @@ nnoremap Y y$
 nmap <leader>yfp :let @" = expand("%")<cr>
 
 " Clear search highlighting
-nnoremap <leader>h :noh<cr>
+nnoremap <C-h> :noh<cr>
 
 " Update configs
 nnoremap <C-s> :so ~/.config/nvim/init.vim<cr>
