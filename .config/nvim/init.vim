@@ -57,6 +57,7 @@ Plug 'kassio/neoterm'
 Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'axelf4/vim-strip-trailing-whitespace'
 Plug 'rmagatti/auto-session'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 " Themes / Visual
 Plug 'joshdick/onedark.vim'
@@ -255,7 +256,7 @@ nnoremap <leader>lc :lclose <cr>
 source $HOME/.config/nvim/modules/functions.vim
 source $HOME/.config/nvim/modules/hexokinase.vim
 source $HOME/.config/nvim/modules/treesitter.vim
-source $HOME/.config/nvim/modules/telescope.vim
+source $HOME/.config/nvim/modules/telescope.lua
 source $HOME/.config/nvim/modules/bubbly.vim
 source $HOME/.config/nvim/modules/nvim_lsp.lua
 source $HOME/.config/nvim/modules/cmp.lua
