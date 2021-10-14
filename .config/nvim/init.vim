@@ -44,8 +44,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise', { 'for': ['ruby', 'elixir'] }
 Plug 'mg979/vim-visual-multi'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} |
-      \ Plug 'p00f/nvim-ts-rainbow' |
-      \ Plug 'nvim-treesitter/playground', { 'on': 'TSPlaygroundToggle' }
+      \ Plug 'nvim-treesitter/playground', { 'on': 'TSPlaygroundToggle' } |
+      \ Plug 'p00f/nvim-ts-rainbow'
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
 Plug 'fladson/vim-kitty'
@@ -78,10 +78,6 @@ set foldexpr=nvim_treesitter#foldexpr()
 " }}}
 
 " Theming and styling {{{
-" colorscheme gruvbox-material
-" set background=dark
-" let g:gruvbox_material_background='medium'
-" let g:gruvbox_material_palette='original'
 lua require('onedark').setup()
 " }}}
 
@@ -227,8 +223,9 @@ nnoremap <C-s> :so ~/.config/nvim/init.vim<cr>
 nnoremap <silent> <cr> :GitGutterNextHunk<cr>
 nnoremap <silent> <backspace> :GitGutterPrevHunk<cr>
 
-" LazyGit
+" Git
 nnoremap <silent> <leader>g :Git<CR>
+nnoremap <silent> <leader>lg :Git<CR>
 
 " Profiling
 nnoremap <leader>profi :call ProfileSession()<cr>
@@ -256,7 +253,7 @@ nnoremap <leader>lc :lclose <cr>
 " External Files Sourcing {{{
 source $HOME/.config/nvim/modules/functions.vim
 source $HOME/.config/nvim/modules/hexokinase.vim
-source $HOME/.config/nvim/modules/treesitter.vim
+source $HOME/.config/nvim/modules/treesitter.lua
 source $HOME/.config/nvim/modules/telescope.lua
 source $HOME/.config/nvim/modules/bubbly.lua
 source $HOME/.config/nvim/modules/nvim_lsp.lua
