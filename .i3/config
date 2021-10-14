@@ -293,21 +293,22 @@ exec_always --no-startup-id sleep 1; $HOME/.config/polybar/launch.sh
 
 # Theming {{{
 # Gruvbox colors
-set $bg #282828
-set $red #f2594b
-set $green #b0b846
-set $yellow #e9b143
-set $orange #f28534
-set $blue #80aa9e
-set $purple #d3869b
-set $aqua #80aa9e
-set $gray #504945
+set $bg #282C34
+set $red #E06C75
+set $green #98C379
+set $yellow #E5C07B
+set $orange #BE5046
+set $blue #61AFEF
+set $purple #C678DD
+set $aqua #56B6C2
+set $gray #5C6370
 set $darkgray #1d2021
+set $white: #ABB2BF
 
 # Theme colors
 # Default
 # class                   border  backgr. text    indic.   child_border
-client.focused          $orange $orange $darkgray $darkgray
+client.focused          $white $white $darkgray $darkgray
 client.focused_inactive $darkgray $darkgray $yellow $gray
 client.unfocused        $darkgray $darkgray $yellow $gray
 client.urgent           $red $red $aqua $blue
