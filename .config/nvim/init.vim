@@ -65,7 +65,7 @@ Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'morhetz/gruvbox'
 Plug 'alexander-p30/gruvbox-material'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'datwaft/bubbly.nvim'
+Plug 'hoob3rt/lualine.nvim'
 Plug 'romgrk/doom-one.vim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 call plug#end()
@@ -255,7 +255,7 @@ source $HOME/.config/nvim/modules/functions.vim
 source $HOME/.config/nvim/modules/hexokinase.vim
 source $HOME/.config/nvim/modules/treesitter.lua
 source $HOME/.config/nvim/modules/telescope.lua
-source $HOME/.config/nvim/modules/bubbly.lua
+source $HOME/.config/nvim/modules/lualine.lua
 source $HOME/.config/nvim/modules/nvim_lsp.lua
 source $HOME/.config/nvim/modules/cmp.lua
 source $HOME/.config/nvim/modules/indent_blankline.lua
