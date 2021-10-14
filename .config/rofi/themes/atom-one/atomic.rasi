@@ -1,0 +1,134 @@
+/*
+ * ROFI Doom One
+ *
+ * Based on doom-one.nvim (https://github.com/NTBBloodbath/doom-one.nvim)
+ *
+ * Author: NTBBloodbath
+ * GitHub: @NTBBloodbath
+ *
+ */
+
+configuration {
+}
+
+* {
+  black:      #1B2229;
+  red:        #E06C75;
+  green:      #98C379;
+  yellow:     #E5C07B;
+  blue:       #61AFEF;
+  magenta:   #C678DD;
+  cyan:       #56B6C2;
+  emphasis:   #2257A0;
+  text:       #ABB2BF;
+  text-alt:   #5C6370;
+  fg:         #ABB2BF;
+  bg:         #282c34dd;
+  bgsolid:    #282C34;
+
+  background-color: transparent;
+  highlight: bold #61AFEF;
+
+  text-color: #FFFFFF;
+}
+
+window {
+  transparency: "real";
+  background-color: @bg;
+  text-color: @text;
+  border: 0px;
+  border-radius: 0px;
+}
+
+mainbox {
+  padding: 2% 1%;
+  children: [inputbar, listview, mode-switcher];
+}
+
+inputbar {
+  margin: 0px 0px 10px 0px;
+  padding: 0.5%;
+  expand: false;
+  border: 0% 0% 0% 0%;
+  border-radius: 5px;
+  background-color: @bgsolid;
+  children: [prompt, textbox-prompt-colon, entry, case-indicator];
+}
+
+prompt {
+  enabled: true;
+  text-color: @magenta;
+  border: 0 1px 0 0;
+  padding: 0% 0% 0% 1%;
+}
+
+textbox-prompt-colon {
+  expand: false;
+  str: ":";
+  text-color: @text-alt;
+}
+
+entry {
+  margin: 0px 10px;
+  horizontal-align: 0;
+  text-color: @text;
+  placeholder: "Search";
+  placeholder-color: @text-alt;
+  blink: true;
+}
+
+listview {
+  spacing: 5px;
+  dynamic: true;
+  layout: vertical;
+  scrollbar: false;
+}
+
+element {
+  padding: 5px;
+  text-color: @text-alt;
+  border-radius: 5px;
+  orientation: horizontal;
+}
+
+element selected {
+  /* background-color: @emphasis; */
+  background-color: @bgsolid;
+  text-color: @text;
+}
+
+element urgent, element selected urgent {
+  text-color: @red;
+}
+
+element active, element selected active {
+  text-color: @purple;
+}
+
+/* Increase icons size */
+element-icon {
+  size: 2.5ch;
+}
+
+message {
+  padding: 5px;
+  border-radius: 3px;
+  background-color: @emphasis;
+  border: 1px;
+  border-color: @cyan;
+}
+
+button {
+  text-color: @text;
+  border-radius: 5px;
+}
+
+button selected {
+  background-color: @bgsolid;
+}
+
+mode-switcher {
+  /* text-color: @text; */
+  /* background-color: @bgsolid; */
+}
+

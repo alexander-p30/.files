@@ -60,7 +60,7 @@ Plug 'rmagatti/auto-session'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 " Themes / Visual
-Plug 'joshdick/onedark.vim'
+Plug 'monsonjeremy/onedark.nvim'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'morhetz/gruvbox'
 Plug 'alexander-p30/gruvbox-material'
@@ -78,10 +78,11 @@ set foldexpr=nvim_treesitter#foldexpr()
 " }}}
 
 " Theming and styling {{{
-colorscheme gruvbox-material
-set background=dark
-let g:gruvbox_material_background='medium'
-let g:gruvbox_material_palette='original'
+" colorscheme gruvbox-material
+" set background=dark
+" let g:gruvbox_material_background='medium'
+" let g:gruvbox_material_palette='original'
+lua require('onedark').setup()
 " }}}
 
 " General Sets and Cmds {{{
@@ -227,7 +228,7 @@ nnoremap <silent> <cr> :GitGutterNextHunk<cr>
 nnoremap <silent> <backspace> :GitGutterPrevHunk<cr>
 
 " LazyGit
-nnoremap <silent> <leader>g :LazyGit<CR>
+nnoremap <silent> <leader>g :Git<CR>
 
 " Profiling
 nnoremap <leader>profi :call ProfileSession()<cr>
@@ -257,7 +258,7 @@ source $HOME/.config/nvim/modules/functions.vim
 source $HOME/.config/nvim/modules/hexokinase.vim
 source $HOME/.config/nvim/modules/treesitter.vim
 source $HOME/.config/nvim/modules/telescope.lua
-source $HOME/.config/nvim/modules/bubbly.vim
+source $HOME/.config/nvim/modules/bubbly.lua
 source $HOME/.config/nvim/modules/nvim_lsp.lua
 source $HOME/.config/nvim/modules/cmp.lua
 source $HOME/.config/nvim/modules/indent_blankline.lua

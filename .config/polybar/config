@@ -12,21 +12,21 @@
 ;==========================================================
 
 [colors]
-background = ${xrdb:background:#282828}
-background-alt = ${xrdb:background-alt:#504945}
-foreground = ${xrdb:foreground:#e2cca9}
-foreground-alt = ${xrdb:foreground-alt:#fbf1c7}
-primary = ${xrdb:primary:#f28534}
-secondary = ${xrdb:secondary:#b0b846}
-alert = ${xrdb:alert:#f2594b}
-magenta = ${xrdb:magenta:#d3869b}
-red = ${xrdb:red:#f2594b}
-green = ${xrdb:green:#b0b846}
-yellow = ${xrdb:yellow:#e9b143}
-blue = ${xrdb:blue:#80aa9e}
-cyan = ${xrdb:cyan:#8bba7f}
-white = ${xrdb:white:#ebdbb2}
-orange = ${xrdb:orange:#f28534}
+background = ${xrdb:background:#282C34}
+background-alt = ${xrdb:background-alt:#5c6370}
+foreground = ${xrdb:foreground:#ABB2BF}
+foreground-alt = ${xrdb:foreground-alt:#ABB2BF}
+primary = ${xrdb:primary:#61AFEF}
+secondary = ${xrdb:secondary:#98C379}
+alert = ${xrdb:alert:#E06C75}
+magenta = ${xrdb:magenta:#C678DD}
+red = ${xrdb:red:#E06C75}
+green = ${xrdb:green:#98C379}
+yellow = ${xrdb:yellow:#E5C07B}
+blue = ${xrdb:blue:#61AFEF}
+cyan = ${xrdb:cyan:#56B6C2}
+white = ${xrdb:white:#ABB2BF}
+orange = ${xrdb:orange:#BE5046}
 backlight = ${colors.cyan}
 volume = ${colors.primary}
 memory = ${colors.green}
@@ -81,7 +81,7 @@ format-suffix = " "
 format-underline = ${colors.background}
 format-overline = ${colors.background}
 format-foreground = ${colors.foreground}
-format-background = ${colors.background-alt}
+format-background = ${colors.background}
 
 label = %title:0:49:...%
 label-empty = λ
@@ -101,8 +101,8 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %{T5}%name%%{T-}
-label-focused-background = ${colors.foreground-alt}
-label-focused-foreground = ${colors.background-alt}
+label-focused-background = ${colors.background-alt}
+label-focused-foreground = ${colors.yellow}
 ; label-focused-background = ${colors.background-alt}
 ; label-focused-foreground = ${colors.foreground-alt}
 label-focused-padding = 2
@@ -160,8 +160,8 @@ format-prefix = " "
 format-suffix = " "
 format-underline = ${colors.background}
 format-overline = ${colors.background}
-format-foreground = ${colors.background}
-format-background = ${colors.cpu}
+format-foreground = ${colors.cpu}
+format-background = ${colors.background}
 label = "%{T5}%{T-} %percentage:1%%"
 
 interval = 1
@@ -177,8 +177,8 @@ format-prefix = " "
 format-suffix = " "
 format-underline = ${colors.background}
 format-overline = ${colors.background}
-format-background = ${colors.memory}
-format-foreground = ${colors.background}
+format-background = ${colors.background}
+format-foreground = ${colors.memory}
 label = "%{T4}%{T-} %gb_used%"
 
 [module/pulseaudio]
@@ -209,24 +209,24 @@ format-full-prefix = " "
 format-full-suffix = " "
 format-full-underline = ${colors.background}
 format-full-overline = ${colors.background}
-format-full-foreground = ${colors.background}
-format-full-background = ${colors.battery-charging}
+format-full-foreground = ${colors.battery-charging}
+format-full-background = ${colors.background}
 format-full = "%{T3}%{T-} <label-full>"
 
 format-charging-prefix = " "
 format-charging-suffix = " "
 format-charging-underline = ${colors.background}
 format-charging-overline = ${colors.background}
-format-charging-foreground = ${colors.background}
-format-charging-background = ${colors.battery-charging}
+format-charging-foreground = ${colors.battery-charging}
+format-charging-background = ${colors.background}
 format-charging = "%{T3}%{T-} <label-charging>"
 
 format-discharging-prefix = " "
 format-discharging-suffix = " "
 format-discharging-underline = ${colors.background}
 format-discharging-overline = ${colors.background}
-format-discharging-foreground = ${colors.background}
-format-discharging-background = ${colors.battery-charging}
+format-discharging-foreground = ${colors.battery-charging}
+format-discharging-background = ${colors.background}
 format-discharging = "%{T3}<ramp-capacity>%{T-} <label-discharging>"
 ramp-capacity-0 = ""
 ramp-capacity-1 = ""
@@ -257,11 +257,11 @@ format-background = ${colors.background}
 
 [module/left-limit]
 type = custom/text
-content = "  %{T2}%{T-}"
+content = "  %{T2}[%{T-}"
 
 [module/right-limit]
 type = custom/text
-content = "%{T2}%{T-} "
+content = "%{T2}]%{T-} "
 
 [module/xwindow-left]
 inherit = module/left-limit

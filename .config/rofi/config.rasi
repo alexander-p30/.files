@@ -1,5 +1,5 @@
 configuration {
-	theme: "~/.config/rofi/themes/gruvbox/groovy.rasi";
+	theme: "~/.config/rofi/themes/atom-one/atomic.rasi";
   terminal: "kitty";
   modi: "window,drun";
   /* combi-modi: "drun,window"; */
