@@ -101,8 +101,8 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %{T5}%name%%{T-}
-label-focused-background = ${colors.background-alt}
-label-focused-foreground = ${colors.yellow}
+label-focused-background = ${colors.background}
+label-focused-foreground = ${colors.magenta}
 ; label-focused-background = ${colors.background-alt}
 ; label-focused-foreground = ${colors.foreground-alt}
 label-focused-padding = 2
@@ -265,11 +265,11 @@ content = "%{T2}]%{T-} "
 
 [module/xwindow-left]
 inherit = module/left-limit
-content-foreground = ${colors.background-alt}
+content-foreground = ${colors.yellow}
 
 [module/xwindow-right]
 inherit = module/right-limit
-content-foreground = ${colors.background-alt}
+content-foreground = ${colors.yellow}
 
 [module/backlight-left]
 type = custom/text
