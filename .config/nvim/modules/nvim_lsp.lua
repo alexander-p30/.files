@@ -34,6 +34,7 @@ nvim_lsp.efm.setup({
   capabilities = capabilities,
   on_attach = on_attach,
   filetypes = {"elixir"},
+  cmd = { vim.fn.stdpath("data") .. "/lsp_servers/efm/efm-langserver" }
 })
 
 -- Auto-format on save
