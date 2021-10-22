@@ -1,3 +1,5 @@
+#!/bin/bash
+
 DETECTED=$(autorandr --detected)
 CURRENT=$(autorandr --current)
 

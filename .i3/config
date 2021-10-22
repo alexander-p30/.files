@@ -283,7 +283,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id xautolock -time 15 -locker "i3lock -c 282C34" -notify 30 -corners --++
-exec --no-startup-id /home/alexander/.scripts/keebs.sh
+exec --no-startup-id $HOME/.scripts/keebs.sh
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id $HOME/.config/autorandr/startup.sh
@@ -303,7 +303,7 @@ set $purple #C678DD
 set $aqua #56B6C2
 set $gray #5C6370
 set $darkgray #1d2021
-set $white: #ABB2BF
+set $white #ABB2BF
 
 # Theme colors
 # Default
