@@ -36,6 +36,7 @@ Plug 'hrsh7th/cmp-nvim-lsp' |
       \ Plug 'hrsh7th/nvim-cmp' |
       \ Plug 'saadparwaiz1/cmp_luasnip' |
       \ Plug 'L3MON4D3/LuaSnip'
+Plug 'ray-x/lsp_signature.nvim'
 Plug 'vim-test/vim-test'
 Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
 Plug 'rstacruz/vim-closer'
@@ -51,6 +52,7 @@ Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
 Plug 'fladson/vim-kitty'
 Plug 'RRethy/vim-illuminate'
 Plug 'kmonad/kmonad-vim'
+Plug 'tversteeg/registers.nvim', { 'branch': 'main' }
 
 " Other
 Plug 'kassio/neoterm'
@@ -60,12 +62,12 @@ Plug 'rmagatti/auto-session'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 " Themes / Visual
-Plug 'monsonjeremy/onedark.nvim'
+Plug 'alexander-p30/onedark.nvim'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'morhetz/gruvbox'
 Plug 'alexander-p30/gruvbox-material'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'hoob3rt/lualine.nvim'
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'romgrk/doom-one.vim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 call plug#end()
@@ -248,6 +250,9 @@ nnoremap <leader>ln :lnext <cr>
 nnoremap <leader>lp :lprev <cr>
 nnoremap <leader>lo :lopen <cr>
 nnoremap <leader>lc :lclose <cr>
+
+" Tab in normal mode to enter command mode
+nnoremap <TAB> :
 " }}}
 
 " External Files Sourcing {{{

@@ -37,6 +37,13 @@ nvim_lsp.efm.setup({
   cmd = { vim.fn.stdpath("data") .. "/lsp_servers/efm/efm-langserver" }
 })
 
+ require "lsp_signature".setup({
+    bind = true,
+    handler_opts = {
+      border = "single"
+    }
+  })
+
 -- Auto-format on save
 vim.api.nvim_command('autocmd BufWritePre *.ex lua vim.lsp.buf.formatting_sync(nil, 100)')
 vim.api.nvim_command('autocmd BufWritePre *.exs lua vim.lsp.buf.formatting_sync(nil, 100)')

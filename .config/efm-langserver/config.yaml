@@ -1,4 +1,5 @@
 version: 2
+lint-debounce: 1s
 
 tools:
   mix_credo: &mix_credo
