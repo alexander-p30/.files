@@ -17,13 +17,13 @@ Plug 'lambdalisue/fern.vim' |
       \ Plug 'yuki-yano/fern-preview.vim'
 Plug 'nvim-telescope/telescope.nvim' |
       \ Plug 'nvim-lua/plenary.nvim' |
-      \ Plug 'nvim-lua/popup.nvim'
+      \ Plug 'nvim-lua/popup.nvim'   |
+      \ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 " Fonts and assets
 Plug 'lambdalisue/nerdfont.vim'
 
 " Git
-Plug 'kdheepak/lazygit.nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'APZelos/blamer.nvim'
 Plug 'tpope/vim-fugitive'
@@ -59,13 +59,10 @@ Plug 'kassio/neoterm'
 Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'axelf4/vim-strip-trailing-whitespace'
 Plug 'rmagatti/auto-session'
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 " Themes / Visual
 Plug 'alexander-p30/onedark.nvim'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
-Plug 'morhetz/gruvbox'
-Plug 'alexander-p30/gruvbox-material'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'romgrk/doom-one.vim'
@@ -227,7 +224,6 @@ nnoremap <silent> <backspace> :GitGutterPrevHunk<cr>
 
 " Git
 nnoremap <silent> <leader>g :Git<CR>
-nnoremap <silent> <leader>lg :Git<CR>
 
 " Profiling
 nnoremap <leader>profi :call ProfileSession()<cr>
@@ -252,7 +248,7 @@ nnoremap <leader>lo :lopen <cr>
 nnoremap <leader>lc :lclose <cr>
 
 " Tab in normal mode to enter command mode
-nnoremap <TAB> :
+nmap ; :
 " }}}
 
 " External Files Sourcing {{{
