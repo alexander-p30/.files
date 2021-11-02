@@ -61,7 +61,7 @@ Plug 'axelf4/vim-strip-trailing-whitespace'
 Plug 'rmagatti/auto-session'
 
 " Themes / Visual
-Plug 'alexander-p30/onedark.nvim'
+Plug 'navarasu/onedark.nvim'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lualine/lualine.nvim'
@@ -77,7 +77,7 @@ set foldexpr=nvim_treesitter#foldexpr()
 " }}}
 
 " Theming and styling {{{
-lua require('onedark').setup()
+colorscheme onedark
 " }}}
 
 " General Sets and Cmds {{{
@@ -246,9 +246,6 @@ nnoremap <leader>ln :lnext <cr>
 nnoremap <leader>lp :lprev <cr>
 nnoremap <leader>lo :lopen <cr>
 nnoremap <leader>lc :lclose <cr>
-
-" Tab in normal mode to enter command mode
-nmap ; :
 " }}}
 
 " External Files Sourcing {{{
