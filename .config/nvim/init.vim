@@ -178,6 +178,10 @@ nnoremap <leader>tv :TestVisit<cr>
 nnoremap <leader>tc :Tclose!<cr>
 " }}}
 
+" Linting {{{
+nnoremap <leader>cq :T mix format && mix credo --strict && mix dialyzer<cr>
+" }}}
+
 " Yanking and pasting clipboard {{{
 vnoremap <C-y> "+y
 nnoremap <C-p> "+p
