@@ -16,8 +16,6 @@
 !.config/polybar/
 !.config/rofi/
 !.config/xfce4/
-!.emacs.d/
-!.emacs.d/init.el
 !.extended/git-aliases
 !.extended/rails-aliases
 !.extended/soft-aliases
