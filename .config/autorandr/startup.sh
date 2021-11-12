@@ -8,3 +8,5 @@ if [[ $DETECTED != $CURRENT ]]; then
 fi
 
 nitrogen --restore
+
+if command -v nvidia-settings; then nvidia-settings --load-config-only; fi
