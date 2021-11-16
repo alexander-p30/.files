@@ -61,7 +61,7 @@ Plug 'axelf4/vim-strip-trailing-whitespace'
 Plug 'rmagatti/auto-session'
 
 " Themes / Visual
-Plug 'navarasu/onedark.nvim'
+Plug 'navarasu/onedark.nvim', { 'commit': 'b0d8713' }
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lualine/lualine.nvim'

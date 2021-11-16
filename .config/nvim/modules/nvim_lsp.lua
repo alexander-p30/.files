@@ -37,6 +37,11 @@ nvim_lsp.efm.setup({
   cmd = { vim.fn.stdpath("data") .. "/lsp_servers/efm/efm-langserver" }
 })
 
+nvim_lsp.gopls.setup{
+  cmd = { vim.fn.stdpath("data") .. "/lsp_servers/go/gopls" },
+  on_attach = on_attach,
+}
+
  require "lsp_signature".setup({
     bind = true,
     handler_opts = {
