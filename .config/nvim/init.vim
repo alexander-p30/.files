@@ -157,17 +157,11 @@ let g:fern#renderer = "nerdfont"
 let g:blamer_enabled = 1
 let g:blamer_show_in_visual_modes = 0
 let g:blamer_delay = 500
+let g:blamer_prefix = ' 🤡 '
 " }}}
 
 " Keybindings {{{
 let mapleader = " "
-
-" Splits {{{
-nnoremap <A-h> <C-w><C-h>
-nnoremap <A-j> <C-w><C-j>
-nnoremap <A-k> <C-w><C-k>
-nnoremap <A-l> <C-w><C-l>
-" }}}
 
 " Test-related bindings {{{
 nnoremap <leader>tn :call OpenNeoterm('tn')<cr>
