@@ -14,6 +14,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  buf_set_keymap('i', '<C-q>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
   buf_set_keymap('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
   buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   buf_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
@@ -38,6 +39,7 @@ nvim_lsp.efm.setup({
 })
 
 nvim_lsp.gopls.setup{
+  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
   cmd = { vim.fn.stdpath("data") .. "/lsp_servers/go/gopls" },
   on_attach = on_attach,
 }
@@ -50,5 +52,6 @@ nvim_lsp.gopls.setup{
   })
 
 -- Auto-format on save
-vim.api.nvim_command('autocmd BufWritePre *.ex lua vim.lsp.buf.formatting_sync(nil, 100)')
-vim.api.nvim_command('autocmd BufWritePre *.exs lua vim.lsp.buf.formatting_sync(nil, 100)')
+vim.api.nvim_command('autocmd BufWritePre *.ex lua vim.lsp.buf.formatting_sync(nil, 300)')
+vim.api.nvim_command('autocmd BufWritePre *.exs lua vim.lsp.buf.formatting_sync(nil, 300)')
+vim.api.nvim_command('autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 300)')

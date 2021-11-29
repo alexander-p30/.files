@@ -13,8 +13,7 @@ Plug 'lambdalisue/fern.vim' |
       \ Plug  'lambdalisue/fern-hijack.vim' |
       \ Plug 'lambdalisue/fern-git-status.vim' |
       \ Plug 'lambdalisue/fern-renderer-nerdfont.vim' |
-      \ Plug  'lambdalisue/glyph-palette.vim' |
-      \ Plug 'yuki-yano/fern-preview.vim'
+      \ Plug  'lambdalisue/glyph-palette.vim'
 Plug 'nvim-telescope/telescope.nvim' |
       \ Plug 'nvim-lua/plenary.nvim' |
       \ Plug 'nvim-lua/popup.nvim'   |
@@ -57,7 +56,6 @@ Plug 'tversteeg/registers.nvim', { 'branch': 'main' }
 " Other
 Plug 'kassio/neoterm'
 Plug 'antoinemadec/FixCursorHold.nvim'
-Plug 'axelf4/vim-strip-trailing-whitespace'
 Plug 'rmagatti/auto-session'
 
 " Themes / Visual
@@ -137,8 +135,9 @@ lua require'nvim-web-devicons'.setup { default = true; }
 let test#strategy = "neoterm"
 
 " neoterm
-let g:neoterm_default_mod='botright'
-let g:neoterm_size=''
+let g:neoterm_default_mod = 'botright'
+let g:neoterm_size = ''
+let g:neoterm_autoscroll = 1
 
 " gitgutter {{{
 let gitgutter_character = "▎"
