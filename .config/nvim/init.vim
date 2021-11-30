@@ -53,18 +53,24 @@ Plug 'RRethy/vim-illuminate'
 Plug 'kmonad/kmonad-vim'
 Plug 'tversteeg/registers.nvim', { 'branch': 'main' }
 
+" Projectionist
+Plug 'tpope/vim-projectionist'
+Plug 'c-brenn/fuzzy-projectionist.vim'
+Plug 'andyl/vim-projectionist-elixir'
+
 " Other
 Plug 'kassio/neoterm'
 Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'rmagatti/auto-session'
 
 " Themes / Visual
-Plug 'navarasu/onedark.nvim', { 'commit': 'b0d8713' }
+Plug 'navarasu/onedark.nvim'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'romgrk/doom-one.vim'
 Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'folke/which-key.nvim' 
 call plug#end()
 " }}}
 
@@ -85,7 +91,7 @@ set shiftwidth=2
 set expandtab
 set smartindent
 
-set notimeout
+set timeoutlen=500
 set updatetime=500
 " Cursor
 set guicursor=
@@ -138,6 +144,7 @@ let test#strategy = "neoterm"
 let g:neoterm_default_mod = 'botright'
 let g:neoterm_size = ''
 let g:neoterm_autoscroll = 1
+let g:neoterm_automap_keys = ''
 
 " gitgutter {{{
 let gitgutter_character = "▎"
@@ -162,17 +169,20 @@ let g:blamer_prefix = ' 🤡 '
 " Keybindings {{{
 let mapleader = " "
 
-" Test-related bindings {{{
-nnoremap <leader>tn :call OpenNeoterm('tn')<cr>
-nnoremap <leader>tf :call OpenNeoterm('tf')<cr>
-nnoremap <leader>ts :call OpenNeoterm('ts')<cr>
-nnoremap <leader>tl :call OpenNeoterm('tl')<cr>
-nnoremap <leader>tv :TestVisit<cr>
-nnoremap <leader>tc :Tclose!<cr>
+" Terminal/Test-related bindings {{{
+nnoremap <leader>tt :Ttoggle<CR>
+
+nnoremap <leader>tn :call OpenNeoterm('tn')<CR>
+nnoremap <leader>tf :call OpenNeoterm('tf')<CR>
+nnoremap <leader>ts :call OpenNeoterm('ts')<CR>
+nnoremap <leader>tl :call OpenNeoterm('tl')<CR>
+
+nnoremap <leader>tv :TestVisit<CR>
+nnoremap <leader>tc :Tclose!<CR>
 " }}}
 
 " Linting {{{
-nnoremap <leader>cq :T mix format && mix credo --strict && mix dialyzer<cr>
+nnoremap <leader>cq :T mix format && mix credo --strict && mix dialyzer<CR>
 " }}}
 
 " Yanking and pasting clipboard {{{
@@ -182,14 +192,16 @@ vnoremap <C-p> "+p
 " }}}
 
 " Writing and Closing {{{
-nnoremap <leader>w :w<cr>
-nnoremap <leader>qw :wq<cr>
-nnoremap <leader>qq :q<cr>
-nnoremap <leader>Q :q!<cr>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>qw :wq<CR>
+nnoremap <leader>qq :q<CR>
+nnoremap <leader>qall :qall<CR>
+nnoremap <leader>qal! :qall!<CR>
+nnoremap <leader>Q :q!<CR>
 " }}}
 
 " Fern {{{
-nnoremap <silent> <C-b> :Fern . -drawer -width=50 -reveal=% -toggle<cr>
+nnoremap <silent> <C-b> :Fern . -drawer -width=50 -reveal=% -toggle<CR>
 function! s:fern_settings() abort
   nmap <silent> <buffer> p     <Plug>(fern-action-preview:toggle)
   nmap <silent> <buffer> <C-p> <Plug>(fern-action-preview:auto:toggle)
@@ -207,42 +219,49 @@ augroup END
 nnoremap Y y$
 
 " Copy current filepath
-nmap <leader>yfp :let @" = expand("%")<cr>
+nmap <leader>yfp :let @" = expand("%")<CR>
 
 " Clear search highlighting
-nnoremap <C-h> :noh<cr>
+nnoremap <silent> <C-h> :noh<CR>
 
 " Update configs
-nnoremap <C-s> :so ~/.config/nvim/init.vim<cr>
+nnoremap <C-s> :so ~/.config/nvim/init.vim<CR>
 
 " gitgutter hunk navigation
-nnoremap <silent> <cr> :GitGutterNextHunk<cr>
-nnoremap <silent> <backspace> :GitGutterPrevHunk<cr>
+nnoremap <silent> <CR> :GitGutterNextHunk<CR>
+nnoremap <silent> <backspace> :GitGutterPrevHunk<CR>
 
 " Git
-nnoremap <silent> <leader>g :Git<CR>
+nnoremap <silent> <leader>gg :Git<CR>
+nnoremap <leader>gP :Git push<CR>
+nnoremap <leader>gsP :call SetBranchUpstream()<CR>
+nnoremap <leader>gp :Git pull<CR>
+nnoremap <leader>gcb :Git checkout -b 
 
 " Profiling
-nnoremap <leader>profi :call ProfileSession()<cr>
-nnoremap <leader>profs :call EndSessionProfiling()<cr>
+nnoremap <leader>profi :call ProfileSession()<CR>
+nnoremap <leader>profs :call EndSessionProfiling()<CR>
 
 " Delete current file
-nnoremap <Leader>df :call DeleteFileAndCloseBuffer()<cr>
+nnoremap <Leader>df :call DeleteFileAndCloseBuffer()<CR>
+
+" Delete all buffers
+nnoremap <Leader>db :bufdo bd!
 
 " Increment number under the cursor
 nnoremap <C-S-X> <C-a>
 
 " Quickfix list navigation
-nnoremap <leader>cn :cnext <cr>
-nnoremap <leader>cp :cprev <cr>
-nnoremap <leader>co :copen <cr>
-nnoremap <leader>cc :cclose <cr>
+nnoremap <leader>cn :cnext <CR>
+nnoremap <leader>cp :cprev <CR>
+nnoremap <silent> <leader>co :copen <CR>
+nnoremap <silent> <leader>cc :cclose <CR>
 
 " Location list navigation
-nnoremap <leader>ln :lnext <cr>
-nnoremap <leader>lp :lprev <cr>
-nnoremap <leader>lo :lopen <cr>
-nnoremap <leader>lc :lclose <cr>
+nnoremap <leader>ln :lnext <CR>
+nnoremap <leader>lp :lprev <CR>
+nnoremap <silent> <leader>lo :lopen <CR>
+nnoremap <silent> <leader>lc :lclose <CR>
 " }}}
 
 " External Files Sourcing {{{
@@ -254,5 +273,6 @@ source $HOME/.config/nvim/modules/lualine.lua
 source $HOME/.config/nvim/modules/nvim_lsp.lua
 source $HOME/.config/nvim/modules/cmp.lua
 source $HOME/.config/nvim/modules/indent_blankline.lua
+source $HOME/.config/nvim/modules/which_key.lua
 " }}}
 

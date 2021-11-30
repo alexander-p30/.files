@@ -25,3 +25,8 @@ fun! EndSessionProfiling()
   profile pause
   noautocmd qall!
 endfun
+
+fun! SetBranchUpstream()
+  let setUpstreamCmd = ":Git push --set-upstream origin " . system("git rev-parse --abbrev-ref HEAD")
+  execute feedkeys(setUpstreamCmd)
+endfun
