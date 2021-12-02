@@ -270,7 +270,7 @@ source $HOME/.config/nvim/modules/hexokinase.vim
 source $HOME/.config/nvim/modules/treesitter.lua
 source $HOME/.config/nvim/modules/telescope.lua
 source $HOME/.config/nvim/modules/lualine.lua
-source $HOME/.config/nvim/modules/nvim_lsp.lua
+source $HOME/.config/nvim/modules/lsp.lua
 source $HOME/.config/nvim/modules/cmp.lua
 source $HOME/.config/nvim/modules/indent_blankline.lua
 source $HOME/.config/nvim/modules/which_key.lua
