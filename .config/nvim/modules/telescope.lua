@@ -44,10 +44,10 @@ require('telescope').setup {
 
 require('telescope').load_extension('fzf')
 
-vim.api.nvim_set_keymap('n', '<leader><space>', '<cmd>Telescope find_files<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader><space>', '<cmd>Telescope find_files theme=dropdown<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>Telescope live_grep<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>b', '<cmd>Telescope buffers<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>gco', '<cmd>Telescope git_branches<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>gcc', '<cmd>Telescope git_commits<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>sh', '<cmd>Telescope help_tags<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>b', '<cmd>Telescope buffers theme=dropdown<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>gco', '<cmd>Telescope git_branches theme=ivy<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>gcc', '<cmd>Telescope git_commits theme=ivy<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>sh', '<cmd>Telescope help_tags theme=ivy<CR>', { noremap = true, silent = true })
 
