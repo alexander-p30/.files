@@ -251,6 +251,12 @@ nnoremap <Leader>db :bufdo bd!
 " Increment number under the cursor
 nnoremap <C-S-X> <C-a>
 
+" Sort selection
+vnoremap <silent> <leader>so :'<,'>sort<CR>
+
+vnoremap <Up> :m '<-2<CR>gv=gv
+vnoremap <Down> :m '>+1<CR>gv=gv
+
 " Quickfix list navigation
 nnoremap <leader>cn :cnext <CR>
 nnoremap <leader>cp :cprev <CR>
