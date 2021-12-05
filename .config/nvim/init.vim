@@ -52,6 +52,7 @@ Plug 'fladson/vim-kitty'
 Plug 'RRethy/vim-illuminate'
 Plug 'kmonad/kmonad-vim'
 Plug 'tversteeg/registers.nvim', { 'branch': 'main' }
+Plug 'Olical/conjure', { 'for': 'clojure' }
 
 " Projectionist
 Plug 'tpope/vim-projectionist'
@@ -121,7 +122,7 @@ set incsearch
 set scrolloff=4
 set completeopt=menuone,noinsert,noselect
 set signcolumn=yes
-set colorcolumn=120
+set colorcolumn=100,120
 set cursorline
 set termguicolors
 
@@ -194,10 +195,10 @@ vnoremap <C-p> "+p
 " Writing and Closing {{{
 nnoremap <leader>w :w<CR>
 nnoremap <leader>qw :wq<CR>
-nnoremap <leader>qq :q<CR>
+nnoremap <silent> <leader>qq :q<CR>
 nnoremap <leader>qall :qall<CR>
 nnoremap <leader>qal! :qall!<CR>
-nnoremap <leader>Q :q!<CR>
+nnoremap <silent> <leader>Q :q!<CR>
 " }}}
 
 " Fern {{{
@@ -237,6 +238,7 @@ nnoremap <leader>gP :Git push<CR>
 nnoremap <leader>gsP :call SetBranchUpstream()<CR>
 nnoremap <leader>gp :Git pull<CR>
 nnoremap <leader>gcb :Git checkout -b 
+nnoremap <leader>gbD :Git branch -D 
 
 " Profiling
 nnoremap <leader>profi :call ProfileSession()<CR>
@@ -271,14 +273,14 @@ nnoremap <silent> <leader>lc :lclose <CR>
 " }}}
 
 " External Files Sourcing {{{
+source $HOME/.config/nvim/modules/cmp.lua
 source $HOME/.config/nvim/modules/functions.vim
 source $HOME/.config/nvim/modules/hexokinase.vim
-source $HOME/.config/nvim/modules/treesitter.lua
-source $HOME/.config/nvim/modules/telescope.lua
-source $HOME/.config/nvim/modules/lualine.lua
-source $HOME/.config/nvim/modules/lsp.lua
-source $HOME/.config/nvim/modules/cmp.lua
 source $HOME/.config/nvim/modules/indent_blankline.lua
+source $HOME/.config/nvim/modules/lsp.lua
+source $HOME/.config/nvim/modules/lualine.lua
+source $HOME/.config/nvim/modules/telescope.lua
+source $HOME/.config/nvim/modules/treesitter.lua
 source $HOME/.config/nvim/modules/which_key.lua
 " }}}
 

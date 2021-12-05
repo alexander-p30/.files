@@ -1,10 +1,10 @@
 # Neovim
 alias nv="nvim"
-alias cfgnv="nvim ~/.config/nvim/init.vim"
+alias cfgnv="zsh -c 'cd ~/.config/nvim && nvim init.vim'"
 alias cdnv="cd ~/.config/nvim"
 
 # Kitty
-alias cfgkt="nvim ~/.config/kitty/kitty.conf"
+alias cfgkt="zsh -c 'cd ~/.config/kitty && nvim kitty.conf'"
 alias cdkt="cd ~/.config/kitty"
 alias kdiff="kitty +kitten diff"
 alias ktsh="kittysh && exit"
