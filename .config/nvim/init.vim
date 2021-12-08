@@ -170,8 +170,9 @@ let g:blamer_prefix = ' 🤡 '
 " Keybindings {{{
 let mapleader = " "
 
-" Terminal/Test-related bindings {{{
+" Terminal/test-related bindings {{{
 nnoremap <leader>tt :Ttoggle<CR>
+nnoremap <leader>alt :A<CR>
 
 nnoremap <leader>tn :call OpenNeoterm('tn')<CR>
 nnoremap <leader>tf :call OpenNeoterm('tf')<CR>
