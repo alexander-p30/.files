@@ -83,6 +83,7 @@ set foldexpr=nvim_treesitter#foldexpr()
 
 " Theming and styling {{{
 colorscheme onedark
+let g:onedark_style = 'warmer'
 " }}}
 
 " General Sets and Cmds {{{
