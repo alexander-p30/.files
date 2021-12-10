@@ -27,31 +27,30 @@ end
 
 nvim_lsp.elixirls.setup{
   capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
-  cmd = { vim.fn.stdpath("data") .. "/lsp_servers/elixir/elixir-ls/language_server.sh" },
   on_attach = on_attach,
+  cmd = { vim.fn.stdpath("data") .. "/lsp_servers/elixir/elixir-ls/language_server.sh" },
 }
 
 nvim_lsp.efm.setup({
   capabilities = capabilities,
-  on_attach = on_attach,
-  filetypes = {"elixir"},
+  filetypes = { "elixir" },
   cmd = { vim.fn.stdpath("data") .. "/lsp_servers/efm/efm-langserver" }
 })
 
 nvim_lsp.gopls.setup{
   capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
-  cmd = { vim.fn.stdpath("data") .. "/lsp_servers/go/gopls" },
   on_attach = on_attach,
+  cmd = { vim.fn.stdpath("data") .. "/lsp_servers/go/gopls" },
 }
 
- require "lsp_signature".setup({
-    bind = true,
-    handler_opts = {
-      border = "single"
-    }
-  })
+require "lsp_signature".setup({
+  bind = true,
+  handler_opts = {
+    border = "single"
+  }
+})
 
 -- Auto-format on save
-vim.api.nvim_command('autocmd BufWritePre *.ex lua vim.lsp.buf.formatting_sync(nil, 300)')
-vim.api.nvim_command('autocmd BufWritePre *.exs lua vim.lsp.buf.formatting_sync(nil, 300)')
-vim.api.nvim_command('autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 300)')
+vim.api.nvim_command('autocmd BufWritePre *.ex lua vim.lsp.buf.formatting_sync(nil, 500)')
+vim.api.nvim_command('autocmd BufWritePre *.exs lua vim.lsp.buf.formatting_sync(nil, 500)')
+vim.api.nvim_command('autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 500)')

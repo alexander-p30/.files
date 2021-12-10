@@ -1,4 +1,4 @@
-fun! OpenNeoterm(option)
+fun! TestInNeoterm(option)
   if a:option == 'tn'
     TestNearest
   elseif a:option == 'tf'
@@ -8,6 +8,12 @@ fun! OpenNeoterm(option)
   elseif a:option == 'tl'
     TestLast
   endif
+  Topen
+endfun
+
+fun! LintInNeoterm()
+  T mix format && mix credo --strict && mix dialyzer
+  Topen
 endfun
 
 fun! DeleteFileAndCloseBuffer()

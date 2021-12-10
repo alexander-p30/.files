@@ -14,7 +14,7 @@ Plug 'lambdalisue/fern.vim' |
       \ Plug 'lambdalisue/fern-git-status.vim' |
       \ Plug 'lambdalisue/fern-renderer-nerdfont.vim' |
       \ Plug  'lambdalisue/glyph-palette.vim'
-Plug 'nvim-telescope/telescope.nvim' |
+Plug 'nvim-telescope/telescope.nvim', { 'commit': '914da77' } |
       \ Plug 'nvim-lua/plenary.nvim' |
       \ Plug 'nvim-lua/popup.nvim'   |
       \ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
@@ -44,7 +44,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise', { 'for': ['ruby', 'elixir'] }
 Plug 'mg979/vim-visual-multi'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} |
-      \ Plug 'nvim-treesitter/playground', { 'on': 'TSPlaygroundToggle' } |
+      \ Plug 'nvim-treesitter/playground', { 'on': ['TSPlaygroundToggle', 'TSHighlightCapturesUnderCursor'] } |
       \ Plug 'p00f/nvim-ts-rainbow'
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
@@ -69,7 +69,7 @@ Plug 'navarasu/onedark.nvim'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lualine/lualine.nvim'
-Plug 'romgrk/doom-one.vim'
+Plug 'NTBBloodbath/doom-one.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'folke/which-key.nvim' 
 call plug#end()
@@ -82,8 +82,7 @@ set foldexpr=nvim_treesitter#foldexpr()
 " }}}
 
 " Theming and styling {{{
-colorscheme onedark
-let g:onedark_style = 'warmer'
+source $HOME/.config/nvim/modules/doom_one.lua
 " }}}
 
 " General Sets and Cmds {{{
@@ -131,9 +130,9 @@ set termguicolors
 set noequalalways
 set splitbelow
 set splitright
-
-syntax on
 " }}}
+
+syntax enable
 
 " Plugin configs {{{
 " nvim-web-devicons
@@ -171,21 +170,46 @@ let g:blamer_prefix = ' 🤡 '
 " Keybindings {{{
 let mapleader = " "
 
+" Add {count}k and {count}j to jumplist
+nnoremap <expr> k (v:count > 1 ? "m'" . v:count : '') . 'k'
+nnoremap <expr> j (v:count > 1 ? "m'" . v:count : '') . 'j'
+
 " Terminal/test-related bindings {{{
-nnoremap <leader>tt :Ttoggle<CR>
+nnoremap <silent> <leader>tt :Ttoggle<CR>
 nnoremap <leader>alt :A<CR>
 
-nnoremap <leader>tn :call OpenNeoterm('tn')<CR>
-nnoremap <leader>tf :call OpenNeoterm('tf')<CR>
-nnoremap <leader>ts :call OpenNeoterm('ts')<CR>
-nnoremap <leader>tl :call OpenNeoterm('tl')<CR>
+nnoremap <leader>tn :call TestInNeoterm('tn')<CR>
+nnoremap <leader>tf :call TestInNeoterm('tf')<CR>
+nnoremap <leader>ts :call TestInNeoterm('ts')<CR>
+nnoremap <leader>tl :call TestInNeoterm('tl')<CR>
+nnoremap <leader>twf :T find test lib \| entr -cr mix test %<CR>
+nnoremap <leader>tws :T find test lib \| entr -cr mix test %:<C-r>=line('.')<CR><CR>
 
 nnoremap <leader>tv :TestVisit<CR>
 nnoremap <leader>tc :Tclose!<CR>
 " }}}
 
+" Tabs {{{
+nnoremap <silent> <leader>tan :tabedit %<CR> 
+nnoremap <silent> <leader>taN :tabnew<CR> 
+nnoremap <silent> <leader>taO :tabonly<CR> 
+nnoremap <silent> <leader>tac :tabclose<CR> 
+nnoremap <silent> <leader>tal :tabnext<CR> 
+nnoremap <silent> <leader>tah :tabprevious<CR> 
+
+nnoremap <silent> <leader>ta1 1gt
+nnoremap <silent> <leader>ta2 2gt
+nnoremap <silent> <leader>ta3 3gt
+nnoremap <silent> <leader>ta4 4gt
+nnoremap <silent> <leader>ta5 5gt
+nnoremap <silent> <leader>ta6 6gt
+nnoremap <silent> <leader>ta7 7gt
+nnoremap <silent> <leader>ta8 8gt
+nnoremap <silent> <leader>ta9 9gt
+" }}}
+
 " Linting {{{
-nnoremap <leader>cq :T mix format && mix credo --strict && mix dialyzer<CR>
+nnoremap <leader>cq :call LintInNeoterm()<CR>
 " }}}
 
 " Yanking and pasting clipboard {{{
@@ -230,6 +254,9 @@ nnoremap <silent> <C-h> :noh<CR>
 " Update configs
 nnoremap <C-s> :so ~/.config/nvim/init.vim<CR>
 
+" Reparse buffers
+nnoremap <silent> <leader>rt :write \| edit \| TSBufEnable highlight<CR>
+
 " gitgutter hunk navigation
 nnoremap <silent> <CR> :GitGutterNextHunk<CR>
 nnoremap <silent> <backspace> :GitGutterPrevHunk<CR>
@@ -265,13 +292,15 @@ vnoremap <Down> :m '>+1<CR>gv=gv
 nnoremap <leader>cn :cnext <CR>
 nnoremap <leader>cp :cprev <CR>
 nnoremap <silent> <leader>co :copen <CR>
-nnoremap <silent> <leader>cc :cclose <CR>
+nnoremap <silent> <leader>cc :cc <CR>
+nnoremap <silent> <leader>cC :cclose <CR>
 
 " Location list navigation
 nnoremap <leader>ln :lnext <CR>
 nnoremap <leader>lp :lprev <CR>
 nnoremap <silent> <leader>lo :lopen <CR>
-nnoremap <silent> <leader>lc :lclose <CR>
+nnoremap <silent> <leader>lc :lc <CR>
+nnoremap <silent> <leader>lC :lclose <CR>
 " }}}
 
 " External Files Sourcing {{{
@@ -285,4 +314,3 @@ source $HOME/.config/nvim/modules/telescope.lua
 source $HOME/.config/nvim/modules/treesitter.lua
 source $HOME/.config/nvim/modules/which_key.lua
 " }}}
-

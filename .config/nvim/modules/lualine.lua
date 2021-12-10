@@ -147,7 +147,7 @@ ins_left {
 
 ins_left {
   'filename',
-  path = 1,
+  path = 0,
   cond = conditions.buffer_not_empty,
   color = { fg = colors.magenta, gui = 'bold' },
 }
@@ -230,11 +230,9 @@ ins_right {
 -- Add components to inactive buffer
 
 ins_left_inactive {
-  function()
-    return '▊'
-  end,
-  color = { fg = colors.fg }, -- Sets highlighting of component
-  padding = { right = 1 }, -- We don't need space before this
+  -- filesize component
+  'filesize',
+  cond = conditions.buffer_not_empty,
 }
 
 ins_left_inactive {
@@ -269,22 +267,27 @@ ins_right_inactive {
   color = { fg = colors.magenta },
 }
 
-ins_right_inactive {
-  function()
-    return '▊'
-  end,
-  color = { fg = colors.fg },
-  padding = { left = 1 },
-}
-
 -- Add components to tab's left sections
 
 ins_tab_left { 
   'tabs', 
-  mode = 1, 
+  mode = 2,
   tabs_color = {
     active = { fg = colors.red, bg = colors.bg, gui = 'bold' },
   },
+}
+
+ins_tab_left {
+  function()
+    return '%='
+  end,
+}
+
+ins_tab_left {
+  'filename',
+  path = 1,
+  cond = conditions.buffer_not_empty,
+  color = { fg = colors.magenta, gui = 'bold' },
 }
 
 -- Add components to tab's right sections
