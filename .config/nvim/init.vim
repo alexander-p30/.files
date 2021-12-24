@@ -53,6 +53,7 @@ Plug 'RRethy/vim-illuminate'
 Plug 'kmonad/kmonad-vim'
 Plug 'tversteeg/registers.nvim', { 'branch': 'main' }
 Plug 'Olical/conjure', { 'for': 'clojure' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " Projectionist
 Plug 'tpope/vim-projectionist'

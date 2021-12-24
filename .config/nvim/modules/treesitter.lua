@@ -1,5 +1,5 @@
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = {"elixir", "ruby", "html", "javascript", "c"},
+  ensure_installed = {"elixir", "ruby", "html", "javascript", "c", "go"},
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = true,

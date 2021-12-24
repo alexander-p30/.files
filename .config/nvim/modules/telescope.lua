@@ -16,7 +16,7 @@ require('telescope').setup {
   extensions = {
     fzf = { fuzzy = true, override_generic_sorter = true, override_file_sorter = true, case_mode = "smart_case" },
   },
-  defaults = { buffer_previewer_maker = new_maker, winblend = 15, file_ignore_patterns = { "^.git/" } },
+  defaults = { buffer_previewer_maker = new_maker, winblend = 15, file_ignore_patterns = { "%.git/" } },
   color_devicons = true,
   pickers = {
     buffers = {

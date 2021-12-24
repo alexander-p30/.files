@@ -1,5 +1,4 @@
 configuration {
-	theme: "~/.config/rofi/themes/atom-one/atomic.rasi";
   terminal: "kitty";
   modi: "window,drun";
   /* combi-modi: "drun,window"; */
@@ -14,3 +13,5 @@ configuration {
   sidebar-mode: false;
   auto-select: false;
 }
+
+@theme "~/.config/rofi/themes/atom-one/atomic.rasi"
