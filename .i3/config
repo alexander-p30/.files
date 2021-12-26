@@ -60,6 +60,8 @@ bindsym $mod+Return exec kitty
 # Reset keyboard config
 bindsym $mod+Ctrl+k exec "$HOME/.scripts/keebs.sh"
 
+# Polybar
+bindsym $mod+Ctrl+h exec polybar-msg cmd toggle
 bindsym $mod+Shift+p exec "$HOME/.config/polybar/launch.sh && nitrogen --restore && exec notify-send 'Polybar and nitrogen restarted'"
 
 # dunst

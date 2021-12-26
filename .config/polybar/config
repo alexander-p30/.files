@@ -43,6 +43,8 @@ height = 36
 radius = 0.0
 fixed-center = true
 
+enable-ipc = true
+
 background = ${colors.background}
 foreground = ${colors.foreground}
 
