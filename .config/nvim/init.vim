@@ -14,7 +14,7 @@ Plug 'lambdalisue/fern.vim' |
       \ Plug 'lambdalisue/fern-git-status.vim' |
       \ Plug 'lambdalisue/fern-renderer-nerdfont.vim' |
       \ Plug  'lambdalisue/glyph-palette.vim'
-Plug 'nvim-telescope/telescope.nvim', { 'commit': '914da77' } |
+Plug 'nvim-telescope/telescope.nvim' |
       \ Plug 'nvim-lua/plenary.nvim' |
       \ Plug 'nvim-lua/popup.nvim'   |
       \ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }

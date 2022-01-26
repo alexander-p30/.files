@@ -19,28 +19,36 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   buf_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  buf_set_keymap('n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+  buf_set_keymap('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
   buf_set_keymap('n', '[e', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
   buf_set_keymap('n', ']e', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<leader>li', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
+local lsp_dirs = vim.fn.stdpath("data") .. "/lsp_servers"
+
 nvim_lsp.elixirls.setup{
   capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
   on_attach = on_attach,
-  cmd = { vim.fn.stdpath("data") .. "/lsp_servers/elixir/elixir-ls/language_server.sh" },
+  cmd = { lsp_dirs .. "/elixir/elixir-ls/language_server.sh" },
 }
 
 nvim_lsp.efm.setup({
   capabilities = capabilities,
   filetypes = { "elixir" },
-  cmd = { vim.fn.stdpath("data") .. "/lsp_servers/efm/efm-langserver" }
+  cmd = { lsp_dirs .. "/efm/efm-langserver" }
 })
 
 nvim_lsp.gopls.setup{
   capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
   on_attach = on_attach,
-  cmd = { vim.fn.stdpath("data") .. "/lsp_servers/go/gopls" },
+  cmd = { lsp_dirs .. "/go/gopls" },
+}
+
+nvim_lsp.tsserver.setup{
+  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+  on_attach = on_attach,
+  cmd = { lsp_dirs .. "/tsserver/node_modules/typescript-language-server/lib/cli.js", "--stdio" },
 }
 
 require "lsp_signature".setup({

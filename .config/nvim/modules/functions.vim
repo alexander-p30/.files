@@ -12,7 +12,7 @@ fun! TestInNeoterm(option)
 endfun
 
 fun! LintInNeoterm()
-  T mix format && mix credo --strict && mix dialyzer
+  T MIX_ENV=test mix format && mix credo --strict && mix dialyzer
   Topen
 endfun
 
