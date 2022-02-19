@@ -51,6 +51,12 @@ nvim_lsp.tsserver.setup{
   cmd = { lsp_dirs .. "/tsserver/node_modules/typescript-language-server/lib/cli.js", "--stdio" },
 }
 
+nvim_lsp.clangd.setup{
+  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+  on_attach = on_attach,
+  cmd = { lsp_dirs .. "/clangd/clangd/bin/clangd" },
+}
+
 require "lsp_signature".setup({
   bind = true,
   handler_opts = {
