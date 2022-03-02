@@ -69,6 +69,7 @@ Plug 'rmagatti/auto-session'
 " Themes / Visual
 Plug 'navarasu/onedark.nvim'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+Plug 'tiagovla/tokyodark.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'NTBBloodbath/doom-one.nvim'
