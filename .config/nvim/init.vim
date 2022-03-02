@@ -36,6 +36,7 @@ Plug 'hrsh7th/cmp-nvim-lsp' |
       \ Plug 'saadparwaiz1/cmp_luasnip' |
       \ Plug 'L3MON4D3/LuaSnip'
 Plug 'ray-x/lsp_signature.nvim'
+Plug 'onsails/lspkind-nvim'
 Plug 'vim-test/vim-test'
 Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
 Plug 'rstacruz/vim-closer'
@@ -253,7 +254,7 @@ nmap <leader>yfp :let @" = expand("%")<CR>
 nnoremap <silent> <C-h> :noh<CR>
 
 " Update configs
-nnoremap <C-s> :so ~/.config/nvim/init.vim<CR>
+nnoremap <leader>re :so ~/.config/nvim/init.vim<CR>
 
 " Reparse buffers
 nnoremap <silent> <leader>rt :write \| edit \| TSBufEnable highlight<CR>
