@@ -27,6 +27,7 @@ blue = ${xrdb:blue:#61AFEF}
 cyan = ${xrdb:cyan:#56B6C2}
 white = ${xrdb:white:#ABB2BF}
 orange = ${xrdb:orange:#BE5046}
+filesystem = ${colors.background-alt}
 backlight = ${colors.cyan}
 volume = ${colors.primary}
 memory = ${colors.green}
@@ -63,10 +64,11 @@ font-2 = "Iosevka Nerd Font Mono:antialias=true:size=13;4"
 font-3 = "Iosevka Nerd Font Mono:antialias=true:size=18;5"
 font-4 = "Iosevka Nerd Font Mono:antialias=true:size=24;6"
 font-5 = "Font Awesome 5 Free Solid:style=Solid:antialias=true:pixelsize=12;2"
+font-6 = "MesloLGS:antialias=true:size=8;4"
 
 modules-left = i3 xwindow-left xwindow xwindow-right
-modules-center = popup-calendar-left popup-calendar popup-calendar-right
-modules-right = ${env:MODULES_RIGHT:backlight-left backlight backlight-right pulseaudio-left pulseaudio pulseaudio-right memory-left memory memory-right cpu-left cpu cpu-right battery-left battery battery-right}
+modules-center = popup-calendar-left popup-calendar popup-calendar-right uptime-left uptime uptime-right
+modules-right = ${env:MODULES_RIGHT:filesystem-left filesystem filesystem-right backlight-left backlight backlight-right pulseaudio-left pulseaudio pulseaudio-right memory-left memory memory-right cpu-left cpu cpu-right battery-left battery battery-right}
 
 tray-position = right
 tray-padding = 0
@@ -241,6 +243,20 @@ ramp-capacity-7 = ""
 ramp-capacity-8 = ""
 ramp-capacity-9 = ""
 
+[module/filesystem]
+type = internal/fs
+mount-0 = /
+interval = 10
+spacing = 4
+label-mounted = %mountpoint%: %percentage_used%% of %total%
+label-mounter-foreground = ${colors.background-alt}
+
+[module/uptime]
+type = custom/script
+exec = ~/.scripts/system-uptime-pretty.sh
+label = "%{T7}%output%%{T-}"
+interval = 30
+
 [module/popup-calendar]
 type = custom/script
 exec = ~/.scripts/calendar.sh
@@ -272,6 +288,22 @@ content-foreground = ${colors.yellow}
 [module/xwindow-right]
 inherit = module/right-limit
 content-foreground = ${colors.yellow}
+
+[module/uptime-left]
+type = custom/text
+content = "%{T7} up for %{T-}"
+
+[module/uptime-right]
+type = custom/text
+content = " "
+
+[module/filesystem-left]
+type = custom/text
+content = " "
+
+[module/filesystem-right]
+type = custom/text
+content = " "
 
 [module/backlight-left]
 type = custom/text
