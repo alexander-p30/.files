@@ -56,6 +56,7 @@ bindsym $mod+w exec --no-startup-id rofi -show window
 
 # Terminal
 bindsym $mod+Return exec kitty
+bindsym $mod+Shift+Return exec --no-startup-id kitty --class floating --title boxy
 
 # Reset keyboard config
 bindsym $mod+Ctrl+k exec "$HOME/.scripts/keebs.sh"
@@ -213,6 +214,9 @@ assign [class="Google-chrome"] $ws3
 for_window [class="Spotify"] move to workspace $ws4
 
 # Open specific applications in floating mode
+for_window [class="floating"] floating enabled
+for_window [class="flameshot"] floating enabled
+for_window [title="boxy"] resize set 900 px 600 px
 for_window [class="Steam" title="Friends List"] floating enable
 for_window [class="Steam" title="Friends List"] resize set 800 px 400 px
 for_window [class="SpeedCrunch"] floating enable
