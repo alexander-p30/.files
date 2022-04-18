@@ -16,6 +16,7 @@
 !.config/polybar/
 !.config/rofi/
 !.config/xfce4/
+!.docker/*
 !.extended/git-aliases
 !.extended/rails-aliases
 !.extended/soft-aliases
