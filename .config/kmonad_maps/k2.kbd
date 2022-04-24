@@ -12,29 +12,52 @@
   ` 1 2 3 4 5 6 7 8 9 0 - = bspc
     q w e r t y u i o p [ ] \
   caps  a s d f g h j k l  ; '
-    z x c v b n m , . /
-          spc
+    z x c v b n m , . / spc ralt
 )
 
 (defalias
-  esc-or-ctrl-hmrw (tap-next esc (layer-toggle ctrl-or-hmrw-utils))
+  esc-or-ctrl-hmrw (tap-next esc (layer-toggle hmrw-utils))
+)
+
+(defalias
+    met_a (tap-hold-next-release 120 a lmet)
+    alt_s (tap-hold-next-release 120 s lalt)
+    ctl_d (tap-hold-next-release 120 d lctl)
+    sft_f (tap-hold-next-release 120 f lsft)
+
+    sft_j (tap-hold-next-release 120 j rsft)
+    ctl_k (tap-hold-next-release 120 k rctl)
+    alt_l (tap-hold-next-release 120 l lalt)
+    met_; (tap-hold-next-release 120 ; rmet)
+)
+
+(defalias
+  altgr-or-number-hmrw (tap-next ralt (layer-toggle hmrw-numbers))
 )
 
 (deflayer qwerty
   caps                            del
   ` 1 2 3 4 5 6 7 8 9 0 - = bspc
     q w e r t y u i o p [ ] \
-  @esc-or-ctrl-hmrw  a s d f g h j k l  ; '
+  @esc-or-ctrl-hmrw @met_a   @alt_s   @ctl_d   @sft_f   g   h   @sft_j   @ctl_k   @alt_l   @met_; '
     z x c v b n m , . /
-        spc
+        spc @altgr-or-number-hmrw
 )
 
-(deflayer ctrl-or-hmrw-utils
+(deflayer hmrw-utils
   caps                          C-del
   C-` C-1 C-2 C-3 C-4 C-5 C-6 C-7 C-8 C-9 C-0 C-- C-= C-bspc
     C-q C-w C-e C-r C-t C-y C-u C-i C-o C-p pgup pgdn C-\
   @esc-or-ctrl-hmrw  C-a C-s C-d C-f C-g left down up right  home  end
     C-z C-x C-c C-v C-b C-n C-m C-, C-. C-/
-        C-spc
+        C-spc @altgr-or-number-hmrw
 )
 
+(deflayer hmrw-numbers
+  caps                            del
+  RA-` RA-1 RA-2 RA-3 RA-4 RA-5 RA-6 RA-7 RA-8 RA-9 RA-0 RA-- RA-= RA-bspc
+    RA-q RA-w RA-e RA-r RA-t RA-y RA-u RA-i RA-o RA-p RA-[ RA-] RA-\
+  @esc-or-ctrl-hmrw  1 2 3 4 5 6 7 8 9 0 RA-\
+    RA-z RA-x RA-c RA-v RA-b RA-n RA-m RA-, RA-. RA-/
+          spc @altgr-or-number-hmrw
+)

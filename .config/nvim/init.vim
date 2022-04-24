@@ -65,6 +65,7 @@ Plug 'andyl/vim-projectionist-elixir'
 Plug 'kassio/neoterm'
 Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'rmagatti/auto-session'
+Plug 'simeji/winresizer'
 
 " Themes / Visual
 Plug 'navarasu/onedark.nvim'
@@ -283,7 +284,7 @@ nnoremap <Leader>df :call DeleteFileAndCloseBuffer()<CR>
 nnoremap <Leader>db :bufdo bd!
 
 " Increment number under the cursor
-nnoremap <C-S-X> <C-a>
+nnoremap <C-s> <C-a>
 
 " Sort selection
 vnoremap <silent> <leader>so :'<,'>sort<CR>
