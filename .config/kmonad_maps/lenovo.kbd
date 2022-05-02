@@ -29,6 +29,26 @@
     ctl_k (tap-hold-next-release 120 k rctl)
     alt_l (tap-hold-next-release 120 l lalt)
     met_; (tap-hold-next-release 120 ; rmet)
+
+    hmrw_a (tap-hold-next-release 120 C-a lmet)
+    hmrw_s (tap-hold-next-release 120 C-s lalt)
+    hmrw_d (tap-hold-next-release 120 C-d lctl)
+    hmrw_f (tap-hold-next-release 120 C-f lsft)
+
+    hmrw_j (tap-hold-next-release 120 down rsft)
+    hmrw_k (tap-hold-next-release 120 up rctl)
+    hmrw_l (tap-hold-next-release 120 right lalt)
+    hmrw_; (tap-hold-next-release 120 home rmet)
+
+    num_a (tap-hold-next-release 120 1 lmet)
+    num_s (tap-hold-next-release 120 2 lalt)
+    num_d (tap-hold-next-release 120 3 lctl)
+    num_f (tap-hold-next-release 120 4 lsft)
+
+    num_j (tap-hold-next-release 120 7 rsft)
+    num_k (tap-hold-next-release 120 8 rctl)
+    num_l (tap-hold-next-release 120 9 lalt)
+    num_; (tap-hold-next-release 120 0 rmet)
 )
 
 (defalias
@@ -48,7 +68,7 @@
   caps                          C-del
   C-` C-1 C-2 C-3 C-4 C-5 C-6 C-7 C-8 C-9 C-0 C-- C-= C-bspc
     C-q C-w C-e C-r C-t C-y C-u C-i C-o C-p pgup pgdn C-\
-  @esc-or-ctrl-hmrw  C-a C-s C-d C-f C-g left down up right  home  end
+  @esc-or-ctrl-hmrw  @hmrw_a @hmrw_s @hmrw_d @hmrw_f C-g left @hmrw_j @hmrw_k @hmrw_l @hmrw_; end
     C-z C-x C-c C-v C-b C-n C-m C-, C-. C-/
         C-spc @altgr-or-number-hmrw
 )
@@ -57,7 +77,7 @@
   caps                            del
   RA-` RA-1 RA-2 RA-3 RA-4 RA-5 RA-6 RA-7 RA-8 RA-9 RA-0 RA-- RA-= RA-bspc
     RA-q RA-w RA-e RA-r RA-t RA-y RA-u RA-i RA-o RA-p RA-[ RA-] RA-\
-  @esc-or-ctrl-hmrw  1 2 3 4 5 6 7 8 9 0 RA-\
+  @esc-or-ctrl-hmrw @num_a @num_s @num_d @num_f 5 6 @num_j @num_k @num_l @num_; RA-\
     RA-z RA-x RA-c RA-v RA-b RA-n RA-m RA-, RA-. RA-/
           spc @altgr-or-number-hmrw
 )

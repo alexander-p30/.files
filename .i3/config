@@ -48,7 +48,6 @@ bindsym $mod+F3 exec pcmanfm
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec flameshot gui
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
-bindsym $mod+n exec kitty --class note-editor ~/.scripts/notetaker.sh
 
 # rofi
 bindsym $mod+d exec --no-startup-id rofi -show drun
