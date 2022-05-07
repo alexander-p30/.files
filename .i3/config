@@ -14,7 +14,7 @@ font xft:URWGothic-Book 11
 
 # Borders {{{
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 1
+default_border pixel 2
 default_floating_border normal
 
 # Hide borders
@@ -318,7 +318,7 @@ set $white #ABB2BF
 # Theme colors
 # Default
 # class                   border  backgr. text    indic.   child_border
-client.focused          $white $white $darkgray $darkgray
+client.focused          $purple $purple $darkgray $darkgray
 client.focused_inactive $darkgray $darkgray $yellow $gray
 client.unfocused        $darkgray $darkgray $yellow $gray
 client.urgent           $red $red $aqua $blue
@@ -330,7 +330,7 @@ client.background       $bg
 # i3 Gaps {{{
 
 # Set inner/outer gaps
-gaps inner 8
+gaps inner 10
 gaps outer -2
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
