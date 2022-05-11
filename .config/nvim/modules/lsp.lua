@@ -65,6 +65,6 @@ require "lsp_signature".setup({
 })
 
 -- Auto-format on save
-vim.api.nvim_command('autocmd BufWritePre *.ex lua vim.lsp.buf.formatting_sync(nil, 500)')
-vim.api.nvim_command('autocmd BufWritePre *.exs lua vim.lsp.buf.formatting_sync(nil, 500)')
-vim.api.nvim_command('autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 500)')
+-- vim.api.nvim_command('autocmd BufWritePre *.ex lua vim.lsp.buf.format { timeout_ms = 500 }')
+-- vim.api.nvim_command('autocmd BufWritePre *.exs lua vim.lsp.buf.format { timeout_ms = 500 }')
+-- vim.api.nvim_command('autocmd BufWritePre *.go lua vim.lsp.buf.format { timeout_ms = 500 }')
