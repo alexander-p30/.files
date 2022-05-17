@@ -17,6 +17,7 @@
 !.config/rofi/
 !.config/xfce4/
 !.docker/*
+!.doom.d/*
 !.extended/git-aliases
 !.extended/rails-aliases
 !.extended/soft-aliases

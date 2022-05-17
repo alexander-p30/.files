@@ -170,8 +170,8 @@ bindsym $mod+minus [title="^(?!diary.org – Doom Emacs).*$"] scratchpad show
 
 # Note taking {{{
 bindsym $mod+n [con_mark="org_mode"] scratchpad show
-bindsym $mod+Shift+n exec "emacs -T 'diary.org – Doom Emacs' ~/Dropbox/org/personal/diary.org"
-bindsym $mod+Shift+w exec "emacs -T 'diary.org – Doom Emacs' ~/Dropbox/org/work/diary.org"
+bindsym $mod+Shift+n exec "emacs -T 'diary.org – Doom Emacs' ~/Dropbox/org/zk/20220516215911-personal_diary.org"
+bindsym $mod+Shift+w exec "emacs -T 'diary.org – Doom Emacs' ~/Dropbox/org/zk/20220516215640-work_diary.org"
 
 for_window [title="diary.org – Doom Emacs"] floating enable
 for_window [title="diary.org – Doom Emacs"] resize set 1280 px 800 px
