@@ -298,7 +298,7 @@ mode "resize" {
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id xautolock -time 15 -locker "betterlockscreen -l blur" -notify 30 --notifier "notify-send 'Screen will lock in 30s'" corners --++
+exec --no-startup-id xautolock -time 15 -locker "betterlockscreen -l blur" -notify 30 -notifier "notify-send 'Screen will lock in 30s'" -corners --++
 exec --no-startup-id $HOME/.scripts/keebs.sh
 exec --no-startup-id dropbox
 exec --no-startup-id compton -b -f
