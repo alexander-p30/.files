@@ -71,9 +71,6 @@ bindsym Mod1+space exec dunstctl close
 
 # i3 Binds {{{
 
-# Lock screen
-bindsym $mod+9 exec --no-startup-id i3lock -c 282C34
-
 # Exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -257,7 +254,7 @@ for_window [urgent=latest] focus
 bindsym $mod+0 mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3lock -c 282C34, mode "default"
+    bindsym l exec --no-startup-id betterlockscreen -l blur, mode "default"
     bindsym s exec --no-startup-id i3exit suspend, mode "default"
     bindsym u exec --no-startup-id i3exit switch_user, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
@@ -301,7 +298,7 @@ mode "resize" {
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id xautolock -time 15 -locker "i3lock -c 282C34" -notify 30 -corners --++
+exec --no-startup-id xautolock -time 15 -locker "betterlockscreen -l blur" -notify 30 --notifier "notify-send 'Screen will lock in 30s'" corners --++
 exec --no-startup-id $HOME/.scripts/keebs.sh
 exec --no-startup-id dropbox
 exec --no-startup-id compton -b -f
