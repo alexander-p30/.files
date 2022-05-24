@@ -89,6 +89,8 @@ set foldexpr=nvim_treesitter#foldexpr()
 source $HOME/.config/nvim/modules/doom_one.lua
 " }}}
 
+highlight LineNr guifg=#9ca0a4
+
 " General Sets and Cmds {{{
 " Indentation
 set tabstop=2 softtabstop=2
