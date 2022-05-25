@@ -74,9 +74,6 @@ bindsym Mod1+space exec dunstctl close
 
 # i3 Binds {{{
 
-# Exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
 # reload the configuration file
 bindsym $mod+Shift+c reload; exec notify-send "i3 config reloaded"
 
@@ -107,8 +104,6 @@ bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_
 
 # Layout/Orientation {{{
 # split orientation
-bindsym $mod+Shift+v split h;exec notify-send 'tile horizontally'
-bindsym $mod+v split v;exec notify-send 'tile vertically'
 bindsym $mod+q split toggle
 
 # change container layout (stacked, tabbed, toggle split)
