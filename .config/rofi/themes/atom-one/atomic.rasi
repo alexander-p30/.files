@@ -13,6 +13,7 @@ configuration {
 
 * {
   black:      #1B2229;
+  black-alt:  #1B2229aa;
   red:        #E06C75;
   green:      #98C379;
   yellow:     #E5C07B;
@@ -92,8 +93,9 @@ element {
 }
 
 element selected {
-  /* background-color: @emphasis; */
-  background-color: @bgsolid;
+  border: 1px;
+  border-color: @magenta;
+  background-color: @black-alt;
   text-color: @text;
 }
 

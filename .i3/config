@@ -55,7 +55,10 @@ bindsym $mod+w exec --no-startup-id rofi -show window
 
 # Terminal
 bindsym $mod+Return exec kitty
-bindsym $mod+Shift+Return exec --no-startup-id kitty --class floating --title boxy
+bindsym $mod+Shift+Return exec --no-startup-id "notify-send -u low 'Boxy launched!'; kitty --class floating --title boxy"
+
+for_window [title="boxy"] resize set 900 px 600 px
+for_window [title="boxy"] move scratchpad
 
 # Reset keyboard config
 bindsym $mod+Ctrl+k exec "$HOME/.scripts/keebs.sh"
@@ -167,8 +170,8 @@ bindsym $mod+minus [title="^(?!Zettelkasten Machine).*$"] scratchpad show
 
 # Note taking {{{
 bindsym $mod+n [title="Zettelkasten Machine"] scratchpad show
-bindsym $mod+Shift+n exec "emacs -T 'Zettelkasten Machine' ~/Dropbox/org/zk/20220516215911-personal_diary.org"
-bindsym $mod+Shift+w exec "emacs -T 'Zettelkasten Machine' ~/Dropbox/org/zk/20220516215640-work_diary.org"
+bindsym $mod+Shift+n exec "notify-send -u low 'Zettelkasten Machine up and running!'; emacs -T 'Zettelkasten Machine' ~/Dropbox/org/zk/20220516215911-personal_diary.org"
+bindsym $mod+Shift+w exec "notify-send -u low 'Zettelkasten Machine up and running!'; emacs -T 'Zettelkasten Machine' ~/Dropbox/org/zk/20220516215640-work_diary.org"
 
 for_window [title="Zettelkasten Machine"] floating enable
 for_window [title="Zettelkasten Machine"] resize set 1280 px 800 px
@@ -223,7 +226,6 @@ for_window [class="Spotify"] move to workspace $ws4
 # Open specific applications in floating mode
 for_window [class="floating"] floating enabled
 for_window [class="flameshot"] floating enabled
-for_window [title="boxy"] resize set 900 px 600 px
 for_window [class="Steam" title="Friends List"] floating enable
 for_window [class="Steam" title="Friends List"] resize set 800 px 400 px
 for_window [class="SpeedCrunch"] floating enable
@@ -304,7 +306,7 @@ exec --no-startup-id dropbox
 exec --no-startup-id compton -b -f
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-exec_always --no-startup-id $HOME/.config/autorandr/startup.sh
+exec_always --no-startup-id sleep 0.2; $HOME/.config/autorandr/startup.sh
 exec_always --no-startup-id sleep 1; $HOME/.config/polybar/launch.sh
 
 # }}}

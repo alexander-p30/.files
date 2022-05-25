@@ -70,7 +70,7 @@ modules-left = i3 xwindow-left xwindow xwindow-right
 modules-center = popup-calendar-left popup-calendar popup-calendar-right uptime-left uptime uptime-right
 modules-right = ${env:MODULES_RIGHT:filesystem-left filesystem filesystem-right backlight-left backlight backlight-right pulseaudio-left pulseaudio pulseaudio-right memory-left memory memory-right cpu-left cpu cpu-right battery-left battery battery-right}
 
-tray-position = right
+tray-position = ${env:TRAY_POS:}
 tray-padding = 0
 tray-maxsize = 16
 
@@ -80,7 +80,7 @@ cursor-scroll = ns-resize
 [module/xwindow]
 type = internal/xwindow
 
-format-prefix = " :: "
+format-prefix = " %{T3}::%{T-}  "
 format-suffix = " "
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
