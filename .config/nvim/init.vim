@@ -69,6 +69,7 @@ Plug 'simeji/winresizer'
 
 " Themes / Visual
 Plug 'navarasu/onedark.nvim'
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'tiagovla/tokyodark.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -84,12 +85,6 @@ set nofoldenable
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 " }}}
-
-" Theming and styling {{{
-source $HOME/.config/nvim/modules/doom_one.lua
-" }}}
-
-highlight LineNr guifg=#9ca0a4
 
 " General Sets and Cmds {{{
 " Indentation
@@ -320,3 +315,18 @@ source $HOME/.config/nvim/modules/telescope.lua
 source $HOME/.config/nvim/modules/treesitter.lua
 source $HOME/.config/nvim/modules/which_key.lua
 " }}}
+
+" Theming and styling {{{
+" source $HOME/.config/nvim/modules/doom_one.lua
+
+lua << EOF
+local catppuccin = require("catppuccin")
+-- configure it
+catppuccin.setup({ transparent_background = true, term_colors = true, integrations = { telescope = true }})
+EOF
+
+let g:catppuccin_flavour = "mocha" " latte, frappe, macchiato, mocha
+colorscheme catppuccin
+" }}}
+
+highlight LineNr guifg=#9ca0a4
