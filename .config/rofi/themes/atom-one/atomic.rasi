@@ -15,20 +15,20 @@ configuration {
   black:      #1B2229;
   black-alt:  #1B2229aa;
   red:        #E06C75;
-  green:      #98C379;
-  yellow:     #E5C07B;
-  blue:       #61AFEF;
-  magenta:   #C678DD;
-  cyan:       #56B6C2;
-  emphasis:   #2257A0;
-  text:       #ABB2BF;
-  text-alt:   #5C6370;
-  fg:         #ABB2BF;
-  bg:         #282c34dd;
-  bgsolid:    #282C34;
+  green:      #A6E3A1;
+  yellow:     #F9E2AF;
+  blue:       #89B4FA;
+  magenta:   #CBA6F7;
+  cyan:       #89B4FA;
+  emphasis:   #B4BEFE;
+  text:       #CDD6F4;
+  text-alt:   #BAC2DE;
+  fg:         #CDD6F4;
+  bg:         #1E1E2Edd;
+  bgsolid:    #1E1E2E;
 
   background-color: transparent;
-  highlight: bold #61AFEF;
+  highlight: bold #B4BEFE;
 
   text-color: #FFFFFF;
 }

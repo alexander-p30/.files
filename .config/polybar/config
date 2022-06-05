@@ -202,7 +202,7 @@ ramp-volume-2 = ""
 type = internal/battery
 battery = ${env:BATTERY_ADAPTER:BAT1}
 adapter = ADP1
-full-at = 99
+full-at = 97
 
 format-full-prefix = " "
 format-full-suffix = " "
