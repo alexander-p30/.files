@@ -268,6 +268,7 @@ nnoremap <leader>gP :Git push<CR>
 nnoremap <leader>gsP :call SetBranchUpstream()<CR>
 nnoremap <leader>gp :Git pull<CR>
 nnoremap <leader>gcb :Git checkout -b 
+nnoremap <leader>gc- :Git checkout -
 nnoremap <leader>gbD :Git branch -D 
 
 " Profiling
@@ -315,6 +316,8 @@ source $HOME/.config/nvim/modules/telescope.lua
 source $HOME/.config/nvim/modules/treesitter.lua
 source $HOME/.config/nvim/modules/which_key.lua
 " }}}
+
+tnoremap <Esc> <C-\><C-n>
 
 " Theming and styling {{{
 " source $HOME/.config/nvim/modules/doom_one.lua
