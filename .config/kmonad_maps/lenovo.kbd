@@ -12,11 +12,20 @@
   ` 1 2 3 4 5 6 7 8 9 0 - = bspc
     q w e r t y u i o p [ ] \
   caps  a s d f g h j k l  ; '
-    z x c v b n m , . / spc ralt
+    z x c v b n m , . / 
+      lalt spc ralt
 )
 
 (defalias
   esc-or-ctrl-hmrw (tap-next esc (layer-toggle hmrw-utils))
+)
+
+(defalias
+  altgr-or-number-hmrw (tap-next ralt (layer-toggle hmrw-numbers))
+)
+
+(defalias
+  lalt-or-symbol-hmrw (tap-next lalt (layer-toggle hmrw-symbols))
 )
 
 (defalias
@@ -49,10 +58,16 @@
     num_k (tap-hold-next-release 120 8 rctl)
     num_l (tap-hold-next-release 120 9 lalt)
     num_; (tap-hold-next-release 120 0 rmet)
-)
 
-(defalias
-  altgr-or-number-hmrw (tap-next ralt (layer-toggle hmrw-numbers))
+    sym_a (tap-hold-next-release 120 ` lmet)
+    sym_s (tap-hold-next-release 120 - lalt)
+    sym_d (tap-hold-next-release 120 = lctl)
+    sym_f (tap-hold-next-release 120 \ lsft)
+
+    sym_j (tap-hold-next-release 120 [ rsft)
+    sym_k (tap-hold-next-release 120 ] rctl)
+    sym_l (tap-hold-next-release 120 \( lalt)
+    sym_; (tap-hold-next-release 120 \) rmet)
 )
 
 (deflayer qwerty
@@ -61,7 +76,7 @@
     q w e r t y u i o p [ ] \
   @esc-or-ctrl-hmrw @met_a   @alt_s   @ctl_d   @sft_f   g   h   @sft_j   @ctl_k   @alt_l   @met_; '
     z x c v b n m , . /
-        spc @altgr-or-number-hmrw
+   @lalt-or-symbol-hmrw spc @altgr-or-number-hmrw
 )
 
 (deflayer hmrw-utils
@@ -70,14 +85,23 @@
     C-q C-w C-e C-r C-t C-y C-u C-i C-o C-p pgup pgdn C-\
   @esc-or-ctrl-hmrw  @hmrw_a @hmrw_s @hmrw_d @hmrw_f C-g left @hmrw_j @hmrw_k @hmrw_l @hmrw_; end
     C-z C-x C-c C-v C-b C-n C-m C-, C-. C-/
-        C-spc @altgr-or-number-hmrw
+        @lalt-or-symbol-hmrw C-spc @altgr-or-number-hmrw
 )
 
 (deflayer hmrw-numbers
   caps                            del
   RA-` RA-1 RA-2 RA-3 RA-4 RA-5 RA-6 RA-7 RA-8 RA-9 RA-0 RA-- RA-= RA-bspc
-    RA-q RA-w RA-e RA-r RA-t RA-y RA-u RA-i RA-o RA-p RA-[ RA-] RA-\
+    ! @ # $ % ^ & * \( \) RA-[ RA-] RA-\
   @esc-or-ctrl-hmrw @num_a @num_s @num_d @num_f 5 6 @num_j @num_k @num_l @num_; RA-\
     RA-z RA-x RA-c RA-v RA-b RA-n RA-m RA-, RA-. RA-/
-          spc @altgr-or-number-hmrw
+    @lalt-or-symbol-hmrw spc @altgr-or-number-hmrw
+)
+
+(deflayer hmrw-symbols
+  caps                            del
+  RA-` RA-1 RA-2 RA-3 RA-4 RA-5 RA-6 RA-7 RA-8 RA-9 RA-0 RA-- RA-= RA-bspc
+    ~ \_ + | % ^ & * \( \) RA-[ RA-] RA-\
+    @esc-or-ctrl-hmrw @sym_a @sym_s @sym_d @sym_f RA-g RA-h @sym_j @sym_k @sym_l @sym_; RA-\
+    RA-z RA-x RA-c RA-v RA-b RA-n RA-m RA-, RA-. RA-/
+    @lalt-or-symbol-hmrw spc @altgr-or-number-hmrw
 )
