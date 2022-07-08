@@ -24,7 +24,7 @@ hide_edge_borders none
 # Sound {{{
 
 exec --no-startup-id start-pulseaudio-x11
-bindsym $mod+Ctrl+m exec pavucontrol
+bindsym $mod+Ctrl+m exec pavucontrol -t 3
 
 # Volume controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%

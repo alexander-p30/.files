@@ -100,7 +100,7 @@
 (deflayer hmrw-symbols
   caps                            del
   RA-` RA-1 RA-2 RA-3 RA-4 RA-5 RA-6 RA-7 RA-8 RA-9 RA-0 RA-- RA-= RA-bspc
-    ~ \_ + | % ^ & * \( \) RA-[ RA-] RA-\
+    ~ \_ + | % ^ \( \) \( \) RA-[ RA-] RA-\
     @esc-or-ctrl-hmrw @sym_a @sym_s @sym_d @sym_f RA-g RA-h @sym_j @sym_k @sym_l @sym_; RA-\
     RA-z RA-x RA-c RA-v RA-b RA-n RA-m RA-, RA-. RA-/
     @lalt-or-symbol-hmrw spc @altgr-or-number-hmrw
