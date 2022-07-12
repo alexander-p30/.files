@@ -64,8 +64,10 @@ Plug 'andyl/vim-projectionist-elixir'
 " Other
 Plug 'kassio/neoterm'
 Plug 'antoinemadec/FixCursorHold.nvim'
-Plug 'rmagatti/auto-session'
+Plug 'rmagatti/auto-session' |
+      \ Plug 'rmagatti/session-lens'
 Plug 'simeji/winresizer'
+Plug 'ustrajunior/ex_maps'
 
 " Themes / Visual
 Plug 'navarasu/onedark.nvim'
@@ -95,8 +97,6 @@ set smartindent
 
 set timeoutlen=500
 set updatetime=500
-" Cursor
-set guicursor=
 " Dinamically loaded vim configs
 set exrc
 
@@ -136,6 +136,9 @@ set splitright
 syntax enable
 
 " Plugin configs {{{
+"  ex_maps
+lua require("ex_maps").setup { create_mappings = true, mapping = "mtt" }
+
 " nvim-web-devicons
 lua require'nvim-web-devicons'.setup { default = true; }
 
@@ -149,7 +152,7 @@ let g:neoterm_autoscroll = 1
 let g:neoterm_automap_keys = ''
 
 " gitgutter {{{
-let gitgutter_character = "▎"
+let gitgutter_character = "▋"
 let g:gitgutter_sign_added = gitgutter_character
 let g:gitgutter_sign_modified = gitgutter_character
 let g:gitgutter_sign_removed = gitgutter_character
@@ -279,7 +282,8 @@ nnoremap <leader>profs :call EndSessionProfiling()<CR>
 nnoremap <Leader>df :call DeleteFileAndCloseBuffer()<CR>
 
 " Delete all buffers
-nnoremap <Leader>db :bufdo bd!
+nnoremap <Leader>db :%bd <bar> e#
+nnoremap <Leader>dab :%bd
 
 " Increment number under the cursor
 nnoremap <C-s> <C-a>
