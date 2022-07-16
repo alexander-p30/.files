@@ -57,6 +57,18 @@ nvim_lsp.clangd.setup{
   cmd = { lsp_dirs .. "/clangd/clangd/bin/clangd" },
 }
 
+nvim_lsp.hls.setup{
+  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+  on_attach = on_attach,
+  cmd = { lsp_dirs .. "/haskell/haskell-language-server-wrapper", "--lsp" },
+}
+
+nvim_lsp.rust_analyzer.setup{
+  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+  on_attach = on_attach,
+  cmd = { lsp_dirs .. "/rust/rust-analyzer" },
+}
+
 require "lsp_signature".setup({
   bind = true,
   handler_opts = {
@@ -68,3 +80,4 @@ require "lsp_signature".setup({
 vim.api.nvim_command('autocmd BufWritePre *.ex lua vim.lsp.buf.format { timeout_ms = 500 }')
 vim.api.nvim_command('autocmd BufWritePre *.exs lua vim.lsp.buf.format { timeout_ms = 500 }')
 vim.api.nvim_command('autocmd BufWritePre *.go lua vim.lsp.buf.format { timeout_ms = 500 }')
+vim.api.nvim_command('autocmd BufWritePre *.rs lua vim.lsp.buf.format { timeout_ms = 500 }')

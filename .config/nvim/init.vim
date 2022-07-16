@@ -55,6 +55,7 @@ Plug 'kmonad/kmonad-vim'
 Plug 'tversteeg/registers.nvim', { 'branch': 'main' }
 Plug 'Olical/conjure', { 'for': 'clojure' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'rust-lang/rust.vim'
 
 " Projectionist
 Plug 'tpope/vim-projectionist'
@@ -331,6 +332,8 @@ local catppuccin = require("catppuccin")
 -- configure it
 catppuccin.setup({ transparent_background = true, term_colors = true, integrations = { telescope = true }})
 EOF
+
+lua require("luasnip.loaders.from_snipmate").lazy_load()
 
 let g:catppuccin_flavour = "mocha" " latte, frappe, macchiato, mocha
 colorscheme catppuccin
